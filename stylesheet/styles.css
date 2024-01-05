@@ -34,6 +34,10 @@ font-family: "mr-eaves-sans", sans-serif;
     text-decoration: none;
 }
 
+.viewport_alignment {
+    height: 100dvh;
+}
+
 .hero_section {
     height: 100dvh;
 }
@@ -192,7 +196,7 @@ font-family: "mr-eaves-sans", sans-serif;
 .chats_section {
     width: 100dvw;
     height: 100dvh;
-    position: absolute;
+    position: relative;
 }
 
 .vertical_container {
@@ -289,6 +293,14 @@ font-family: "mr-eaves-sans", sans-serif;
     fill: #E8E9EB;
 }
 
+.container {
+    display: flex;
+}
+
+.content {
+    width: 100dvw;
+}
+
 .chat_headline_container {
     display: flex;
     flex-direction: column;
@@ -330,6 +342,62 @@ font-family: "mr-eaves-sans", sans-serif;
     color: #193c4c;
 }
 
+.resume_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.resume_item {
+    border: 1px solid #26292C;
+    width: 33dvw;
+    margin-top: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.resume_heading {
+    font-family: "mr-eaves-sans", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    font-variant: small-caps;
+    color: #193c4c;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #193c4c;
+}
+
+.skill_title {
+    font-family: "mr-eaves-sans", sans-serif;
+    font-weight: 600;
+}
+
+.skill_level {
+    font-family: "mr-eaves-sans", sans-serif;
+    font-weight: 300;
+}
+
+.expert {
+    color: mediumpurple;
+}
+
+.experienced {
+    color: green;
+}
+
+.skillful {
+    color: orange;
+}
+
+.beginner {
+    color: darksalmon;
+}
+
+.novice {
+    color: lightpink;
+}
+
 /* element selections */
 html::-webkit-scrollbar {
     display: none;
@@ -342,7 +410,6 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    margin-bottom: 2dvh;
     border-bottom: 1px solid #26292C;
 }
 
