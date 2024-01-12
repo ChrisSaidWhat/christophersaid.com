@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order</title>
+        <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+
+        <link href="./assignmentStyles.css" rel="stylesheet">
+
+        <style>
+
+            @media screen and (max-width: 450px) {
+
+               .container {
+                width: 80dvw;
+               }
+
+               .flex-row-inner{
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+               }
+
+               .flex-row-bottom {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+               }
+
+               h1 {
+                text-align: center;
+                font-size: 3em;
+               }
+
+               body {
+                height: 100dvh;
+                margin: none;
+               }
+
+               .reset-btn {
+                margin-left: 0px;
+                margin-top: 10px;
+               }
+
+               .process-btn {
+                margin-right: 0px;
+               }
+               
+            }
+
+        </style>
+
+        <script>
+
+            function pageSetup() {
+                const selectElement = document.querySelector("#selectProduct");
+                
+                selectElement.addEventListener("change", function() {
+                    console.log("Current Value Of Select Element: " + selectElement.value);
+                });
+
+            }
+
+            function processInput() {
+
+                const companyName = document.querySelector("#companyName").value;
+                const emailAddress = document.querySelector("#emailAddress").value;
+                const phoneNumber = document.querySelector("#contactPhoneNum").value;
+                const orderDate = document.querySelector("#orderDate").value;
+                const selectProduct = document.querySelector("#selectProduct").value;
+                const orderQuantity = document.querySelector("#orderQuantity").value;
+                const noDiscount = document.querySelector("#noDiscountRadio").checked;
+                const discount10Radio = document.querySelector("#discount10Radio").checked;
+                const discount15Radio = document.querySelector("#discount15Radio").checked;
+
+                console.log("--------------------------------------");
+                console.log("Company Name: " + companyName);
+                console.log("Contact Email: " + emailAddress);
+                console.log("Contact Phone Number: " + phoneNumber);
+                console.log("Date Of Order: " + orderDate);
+                console.log("Product Selection: " + selectProduct);
+                console.log("Quantity: " + orderQuantity);
+                console.log("No Discount Radio: " + noDiscount);
+                console.log("10% Discount Radio: " + discount10Radio);
+                console.log("15% Discount Radio: " + discount15Radio);
+                console.log("--------------------------------------");
+
+            }
+
+        </script>
+
+    </head>
+
+    <body onload="pageSetup()">
+        
+        <div class="container">
+
+            <form method="post" action="#">
+                        
+                <h1>Order Here!</h1>
+
+                    <div class="flex-row-inner">
+
+                        <label for="companyName">Company Name:</label>
+                        <input type="text" id="companyName" name="companyName" placeholder="Company Name" class="input-format">  
+                        
+                    </div>
+
+                    <div class="flex-row-inner">
+
+                        <label for="emailAddress">Contact Email Address:</label>
+                        <input type="email" id="emailAddress" name="emailAddress" placeholder="Contact Email Address" class="input-format">
+
+                    </div>
+
+                    <div class="flex-row-inner">
+
+                        <label for="contactPhoneNum">Contact Phone Number:</label>
+                        <input type="phone" id="contactPhoneNum" name="contactPhoneNum" placeholder="Contact Phone Number" class="input-format">
+
+                    </div>
+
+                    <div class="flex-row-inner">
+
+                        <label for="orderDate">Date Of Order:</label>
+                        <input type="date" id="orderDate" name="orderDate" class="input-format">
+
+                    </div>
+
+                    <div class="flex-row-inner">
+
+                        <label for="selectProduct">Select Product For Purchase:</label>
+                        <select name="selectProduct" id="selectProduct" class="input-format">
+                            <option value="" class="input-format">Please Select Product:</option>
+                            <option value="2.49" class="input-format">Name Badge Lanyard</option>
+                            <option value="1.34" class="input-format">Customized Pen</option>
+                            <option value="3.87" class="input-format">Can Koozie</option>
+                            <option value="0.48" class="input-format">Custom Decal</option>
+                        </select>
+
+                    </div>
+
+                    <div class="flex-row-inner">
+
+                        <label for="orderQuantity">Quantity:</label>
+                        <input type="number" id="orderQuantity" name="orderQuantity" placeholder="0" class="input-format">
+
+                    </div>
+
+                <div class="flex-row-bottom radio-div">
+
+                    <div>    
+                        <label for="noDiscountRadio">No Discount:</label>
+                        <input type="radio" id="noDiscountRadio" name="discountRadios" class="radio-btn">
+                    </div>
+
+                    <div>    
+                        <label for="discount10Radio">10% Discount:</label>
+                        <input type="radio" id="discount10Radio" name="discountRadios" class="radio-btn">
+                    </div>    
+
+                    <div>
+                        <label for="discount15Radio">15% Discount:</label>
+                        <input type="radio" id="discount15Radio" name="discountRadios" class="radio-btn">
+                    </div>   
+
+                </div>
+                        
+                <div class="flex-row-bottom">
+                        
+                    <input type="button" name="submit" value="Process Order" class="process-btn" onclick="processInput()">
+                        
+                    <input type="reset" class="reset-btn">
+                        
+                </div>
+                
+            </form>
+
+        </div>
+            
+    </body>
+
+</html>

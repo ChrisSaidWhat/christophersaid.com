@@ -1,0 +1,208 @@
+<html>
+
+    <head>
+
+        <title>Contact Us</title>
+        <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+        <meta name="author" content="Christopher Said">
+        <link type="text/css" rel="stylesheet" href="styles.css">
+        <link type="text/css" rel="stylesheet" href="structure.css">
+
+        <style>
+            
+            .flex-container {background-color: tan;
+                border-left-color: rgb(212, 163, 98);
+                border-left-width:3px;
+                border-left-style:solid;
+                border-right-color: rgb(212, 163, 98);
+                border-right-width:3px;
+                border-right-style:solid;
+                border-top-color: rgb(212, 163, 98);
+                border-top-width:3px;
+                border-top-style:solid;
+                display:flex;
+                flex-direction:row;
+                flex-wrap: nowrap;}
+
+            .flex-container div, .flex-container .opt div {width:50%;}
+            
+            .flex-container .opt div {width:100%}
+
+            .flex-container h3 {height:40px;
+                width:1028px;}
+
+            .name input {margin-right:10px;}
+
+            .name label {display:inline-block;
+                width:200px;
+                text-align:left;}
+
+            .select {background-color: tan;
+                border-left-color: rgb(212, 163, 98);
+                border-left-width:3px;
+                border-left-style:solid;
+                border-right-color: rgb(212, 163, 98);
+                border-right-width:3px;
+                border-right-style:solid;
+                border-bottom-color: rgb(212, 163, 98);
+                border-bottom-width:3px;
+                border-bottom-style:solid;
+                margin-bottom:50px;}
+            
+            .select p {margin-top:0px;
+                padding-top:10px;}
+
+            .select select {margin-right:50px;}
+
+            .feildSize {width:150px;}
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <header>
+            
+                <img src="./images/koala_banner.jpg" alt="Koala Website Banner" width="1028px">
+
+                <h1>Koala Bear National Information Center</h1>
+
+                <h2>Contact Us</h2>
+
+            </header>
+
+            <nav>
+
+                <ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="saveKoalas.html">Save Koalas!</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="adopt.html">Adopt</a></li>
+					<li><a href="contactUs.html">Contact Us</a></li>
+				</ul>
+
+            </nav>
+
+            <main>
+
+                <form method="post" action="form_response_basic.php">
+
+                    <h3>Volunteer Sign-Up Form</h3>
+                                
+                            <div class="flex-container">
+
+                                <div class="name">
+
+                                    <p>
+                                        <label for="firstName">First Name:</label>
+                                        <input type="text" name="firstName" id="firstName">
+                                    </p>
+
+                                    <p>
+                                        <label for="lastName">Last Name:</label>
+                                        <input type="text" name="lastName" id="lastName">
+                                    </p>
+
+                                    <p>
+                                        <label for="streetAddress">Street Address:</label>
+                                        <input type="text" name="streetAddress" id="streetAddress">
+                                    </p>
+
+                                </div>
+                                    
+                                <div class="opt">
+
+                                    <div class="name">
+
+                                        <p>
+                                            <label for="telephone">Telephone Number:</label>
+                                            <input class="fieldSize" type="tel" name="telephone" id="telephone">
+                                        </p>
+                                        
+                                        <p>
+                                            <label for="email">Email Address:</label>
+                                            <input class="fieldSize" type="email" name="email" id="email">
+                                        </p>
+
+                                    </div>
+
+                                    <p>
+                                        Receive Updates Via Text:
+
+                                        <label for="textOptIn">Opt In</label>
+                                        <input type="radio" name="optText" id="textOptIn" value="Opt In" checked>
+
+                                        <label for="textOptOut">Opt Out</label>
+                                        <input type="radio" name="optText" id="textOptOut" value="Opt Out">
+                                    </p>
+
+                                    
+
+                                    <p>
+                                        Receive Updates Via Email:
+
+                                        <label for="emailOptIn">Opt In</label>
+                                        <input type="radio" name="optEmail" id="emailOptIn" value="Opt In" checked>
+
+                                        <label for="emailOptOut">Opt Out</label>
+                                        <input type="radio" name="optEmail" id="emailOptOut" value="Opt Out">
+                                    </p>
+
+                                </div>
+                                    
+                               
+
+                            </div>
+
+                                <div class="select">
+
+                                    <p>
+                                        <label for="volunteerJob">Desired Volunteer Position:</label>
+                                        <select name="volunteerJob" id="volunteerJob">
+                                            <option value="">Please Select A Position</option>
+                                            <option value="Literature">Literature Distribution</option>
+                                            <option value="Letters">Letter Writing</option>
+                                            <option value="Doors">Door to Door</option>
+                                            <option value="Cleaning">Litter Pickup</option>
+                                            <option value="Fundraising">Fundraising</option>
+                                            <option value="Events">Event Planning</option>
+                                        </select>
+                                    </p>
+
+                                    <p>
+                                        <label for="comments">Comments:</label>
+                                        <textarea name="comments" id="comments" rows="4" columns="200"></textarea>
+                                    </p>
+
+                                    <div class="submit">
+
+                                        <p>
+                                            <input type="submit" name="submitButton" value="Submit">
+                                            <input type="reset" name="resetButton">
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                </form>
+
+            </main>
+
+            <footer>
+
+                <p>Copyright 2018 All rights reserved. Australian Koala Foundation</p> 
+
+				<a href="https://en.wikipedia.org/wiki/Koala"><img src="images/koala_logo.svg" alt="Koala Logo" width="25%" height="25%"></a>
+
+            </footer>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Object</title>
+    <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+
+    <script>
+
+        let bookTitles = ["Beginning Javascript", "Logic with ES6", "Javascript Ojbects Made Easy"];
+        let bookPrices = [19.99, 29.49, 999.99];
+        let bookAuthor = ["Smith", "Johson-Parker", "Westin"];
+
+        function createBookObjectLiterals() {
+
+            let bookA = {
+                bookAuthor: "",
+                bookPrice: 0,
+                bookTitle: "",
+                setBookAuthor: function (inAuthor) {
+                    this.bookAuthor = inAuthor;
+                },
+                getBookAuthor() {
+                    return this.bookAuthor;
+                },
+                setBookPrice: function (inPrice) {
+                    this.bookPrice = inPrice;
+                },
+                getBookPrice() {
+                    return this.bookPrice;
+                },
+                setBookTitle: function (inTitle) {
+                    this.bookTitle = inTitle;
+                },
+                getBookTitle() {
+                    return this.bookTitle;
+                },
+                studentDiscountPrice(inPrice) {
+                    let discount = inPrice * .2;
+                    let newPrice = inPrice - discount;
+                    let formattedStudentPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(newPrice);    //  citation: taken from ChatGPT
+                    return formattedStudentPrice;
+                },
+                toString() {
+                    let string = "Author: " + this.getBookAuthor();
+                    string += ", ";
+                    string += "Title: " + this.getBookTitle();
+                    string += ", ";
+                    string += "Price: " + this.getBookPrice();
+                    return string;
+                }
+            }
+            let bookB = {
+                bookAuthor: "",
+                bookPrice: 0,
+                bookTitle: "",
+                setBookAuthor: function (inAuthor) {
+                    this.bookAuthor = inAuthor;
+                },
+                getBookAuthor() {
+                    return this.bookAuthor;
+                },
+                setBookPrice: function (inPrice) {
+                    this.bookPrice = inPrice;
+                },
+                getBookPrice() {
+                    return this.bookPrice;
+                },
+                setBookTitle: function (inTitle) {
+                    this.bookTitle = inTitle;
+                },
+                getBookTitle() {
+                    return this.bookTitle;
+                },
+                studentDiscountPrice(inPrice) {
+                    let discount = inPrice * .2;
+                    let newPrice = inPrice - discount;
+                    let formattedStudentPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(newPrice);    //  citation: taken from ChatGPT
+                    return formattedStudentPrice;
+                },
+                toString() {
+                    let string = "Author: " + this.getBookAuthor();
+                    string += ", ";
+                    string += "Title: " + this.getBookTitle();
+                    string += ", ";
+                    string += "Price: " + this.getBookPrice();
+                    return string;
+                }
+            }
+            let bookC = {
+                bookAuthor: "",
+                bookPrice: 0,
+                bookTitle: "",
+                setBookAuthor: function (inAuthor) {
+                    this.bookAuthor = inAuthor;
+                },
+                getBookAuthor() {
+                    return this.bookAuthor;
+                },
+                setBookPrice: function (inPrice) {
+                    this.bookPrice = inPrice;
+                },
+                getBookPrice() {
+                    return this.bookPrice;
+                },
+                setBookTitle: function (inTitle) {
+                    this.bookTitle = inTitle;
+                },
+                getBookTitle() {
+                    return this.bookTitle;
+                },
+                studentDiscountPrice(inPrice) {
+                    let discount = inPrice * .2;
+                    let newPrice = inPrice - discount;
+                    let formattedStudentPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(newPrice);    //  citation: taken from ChatGPT
+                    return formattedStudentPrice;
+                },
+                toString() {
+                    let string = "Author: " + this.getBookAuthor();
+                    string += ", ";
+                    string += "Title: " + this.getBookTitle();
+                    string += ", ";
+                    string += "Price: " + this.getBookPrice();
+                    return string;
+                }
+            }
+
+            for (let i = 0; i < 3; i++) {
+                if (i == 0) {
+                    bookA.setBookTitle(bookTitles[i]);
+                    bookA.setBookPrice(bookPrices[i]);
+                    bookA.setBookAuthor(bookAuthor[i]);
+                }
+                else if (i == 1) {
+                    bookB.setBookTitle(bookTitles[i]);
+                    bookB.setBookPrice(bookPrices[i]);
+                    bookB.setBookAuthor(bookAuthor[i]);
+                }
+                else if (i == 2) {
+                    bookC.setBookTitle(bookTitles[i]);
+                    bookC.setBookPrice(bookPrices[i]);
+                    bookC.setBookAuthor(bookAuthor[i]);
+                }
+
+            }
+
+            let newBooks = [bookA, bookB, bookC];
+
+            return newBooks;
+        }
+
+        let newBooks = createBookObjectLiterals();
+        let bookA = newBooks[0];
+        let bookB = newBooks[1];
+        let bookC = newBooks[2];
+
+        let bookAJSON = JSON.stringify(bookA);
+        let bookBJSON = JSON.stringify(bookB);
+        let bookCJSON = JSON.stringify(bookC);
+
+        console.log(bookAJSON);
+        console.log(bookBJSON);
+        console.log(bookCJSON);
+
+        let bookAJS = JSON.parse(bookAJSON);
+        let bookBJS = JSON.parse(bookBJSON);
+        let bookCJS = JSON.parse(bookCJSON);
+
+        console.log(bookAJS);
+        console.log(bookBJS);
+        console.log(bookCJS);
+
+    </script>
+
+</head>
+
+<body>
+
+    <h2>JSON Format</h2>
+    <script>
+
+        document.write("<p>" + bookAJSON + "</p>");
+        document.write("<p>" + bookBJSON + "</p>");
+        document.write("<p>" + bookCJSON + "</p>");
+
+    </script>
+
+</body>
+
+</html>

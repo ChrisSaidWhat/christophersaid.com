@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Math Operators</title>
+
+        <script>
+
+            let totalSales = 234.67;
+
+            //  display "Good Sales" if totalSales is over 100
+
+            if(totalSales > 100.00) {
+
+                //  true branch - this will run if the condition is true
+                console.log("Good Sales");
+
+            }
+
+            //  display a message "Needs Improvment" if score is less than 75, otherwise display "Good Job"
+
+            /* Test Plan
+            
+                Input       Expected Output
+                ----------------------------
+                50          "Needs Improvment"
+                80          "Good Job"
+                74          "Needs Improvement"
+                75          "Good Job"
+                76          "Good Job"
+                84          "Good Job"
+                85          "Great Job"
+                86          "Great Job"
+                0           "Needs Improvement"
+                -10         ERROR - Invalid (Negative)
+                100         "Good Job"
+                105         ERROR - Invalid (Too Big)
+                a           ERROR - Invalid (Wrong Type)
+
+            */
+
+            let gradeScore = 50;
+
+            if(gradeScore < 75) {
+
+                //  true branch - this code runs if the condition is true
+                console.log("Needs Improvement");
+
+            }
+            else {
+
+                //  false branch - this code runs if the condition resolves to false
+                console.log("Good Job");
+
+            }
+
+            /*
+            
+            85-100  Great Job
+            75-84   Good Job
+            0-74    Needs Improvement
+            
+            */
+
+            //  ask three questions for each score (stacked if statements)
+
+            if(gradeScore < 75) {
+                console.log("Needs Improvement");
+            }
+            if(gradeScore >= 75 && gradeScore < 85) {
+                console.log("Good Job");
+            }
+            if(gradeScore >= 85) {
+                console.log("Great Job");
+            }
+
+            //  nested if statement (same as above)
+
+            if(gradeScore < 75) {
+                console.log("Needs Improvement");
+            }
+            else {
+                if(gradeScore >= 75 && gradeScore < 85){
+                    console.log("Good Job");
+                }
+                else {
+                    console.log("Great Job");
+                }
+            }
+
+            //  ternary operator (conditional operator) seen below
+
+            age = "";
+
+            let voteable = (age < 18) ? "Too Young":"Old Enough";
+
+            //  comperable if statement
+
+            if(age < 18) {
+                let voteable = "Too Young";
+            }
+            else {
+                let voteable = "Old Enough";
+            }
+
+            //  switch statement (case logic)
+            //  doesn't work in every situation so you have to think about if it will work
+            //  switch statements look for one or more exact matches (no ranges)
+
+            //  display a message for each grade letter
+            
+            let gradeLetter = "";
+
+            switch (gradeLetter) {
+                case "A": 
+                    //code
+                    break;
+                case "B":
+                    //code
+                    break;
+                case "C":
+                    //code
+                    break;
+                case "D":
+                    //code
+                    break;
+                case "F":
+                    //code
+                    break;
+                default:
+                    //code 
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 8 - If Statements &amp; Conditions "Selection Logic"</h2>
+
+    </body>
+
+</html>

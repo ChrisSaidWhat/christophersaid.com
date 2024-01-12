@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Defined Objects</title>
+
+    <script>
+
+        //  JSON are objects that we can use across the Internet
+        //  JSON is not JavaScript, it is based on the JavaScript language, JavaScript Object Notation
+        //  JSON transfers data between applications and is available to most languages
+        //  JSON.parse()    converts a JSON object into a JavaScript object
+        //  JSON.string()   converts a JavaScript object into a JSON formatted object
+
+        let student = {
+            name:"Mary",
+            major:"GRD",
+            id:12345
+        }
+
+        console.log(student);
+        console.log(student.name);
+
+        //  convert into a JSON object -- JSON formatted object
+        //  JSON.stringify(JSObject)    converts a JavaScript object into JSON
+        //  JSON.parse(JSONObject)    converts a JSON object into a JavaScript object
+
+        let studentJSON = JSON.stringify(student);      //    convert student into a JSON object
+
+        console.log(studentJSON);
+        console.log(studentJSON.name);
+        console.log(studentJSON.id);
+
+        //  JSON is a format we use to convert a JavaScript object to a format that can be shared
+
+        let newStudent = JSON.parse(studentJSON);   //  converts a JSON object into a JavaScript object
+
+        console.log(newStudent);
+
+    </script>
+</head>
+<body>
+    <h1>WDV 221 Intro JavaScript</h1>
+
+    <h2>Unit 13 - JSON</h2>
+
+    <p><script>document.write(student);</script></p>
+    <p><script>document.write(studentJSON);</script></p>
+</body>
+</html>

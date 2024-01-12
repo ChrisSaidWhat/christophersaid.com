@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JavaScript Arrays</title>
+
+        <script>
+
+            //  array a group/collection/list/table of values with the same name
+            //  an object is a container that holds data and has tools we can use in a program (an array is an object)
+            //  arrays are commonly declared using const, but we will use let as it cannot be fathomed why const is used with something that changes
+
+            let teamName1 = "Reds";
+            let teamName2 = "Browns";
+            let teamName3 = "Cardinals";
+
+            //  array[] - means an array    [index/row number]
+
+            let teamNames = ["Reds", "Browns", "Cardinals"];    //  created an array with 3 values
+
+            console.log(teamNames);
+            console.log(teamNames[1]);  //  display the value stored at that indext/row number
+            console.log(teamNames[3]);  //  returns undefined as it is out of bounds 
+            
+            teamNames[10] = "Greens";
+            console.log(teamNames);     //  JavaScript arrays will dynamically scale depending on its contents
+
+            teamNames.push("Cubs");     //  push() will add new items to the end of the array
+            console.log(teamNames);
+
+            teamNames[1] = "Oranges"    //  this will simply overwrite the previous value 
+            console.log(teamNames);
+
+            let teamScores = [1,0,3];
+
+            console.log(teamScores);
+
+            teamScores[1] += 5;         //  this will modify the contents of the specified index
+            console.log(teamScores);
+
+            
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 11 - Arrays Examples</h2>
+
+        <p>Team Names: <script>document.write(teamNames);</script></p>
+
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Code</title>
+    <link rel="icon" type="image/x-icon" href="./personalMonogramLogo.svg">
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28232%2C233%2C235%2C1%29&t=one-dark&wt=none&l=sql&width=878&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=JetBrains+Mono&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%252F*%2520%250AChristopher%2520Said%250AUnit%25207%2520Ch.10%2520Assignment%250A*%252F%250A%250A--%2520Problem%2520%25231%250ASELECT%2520INITCAP%28firstname%29%2520%2522First%2520Name%2522%252C%2520INITCAP%28lastname%29%2520%2522Last%2520Name%2522%250AFROM%2520customers%253B%250A%250A--%2520Problem%2520%25232%250ASELECT%2520customer%2523%252C%2520NVL2%28referred%252C%2520%27REFERRED%27%252C%2520%27NOT%2520REFERRED%27%29%2520%2522Referred%2522%250AFROM%2520customers%253B%250A%250A--%2520Problem%2520%25233%250ASELECT%2520b.title%252C%2520TO_CHAR%28%28b.retail%2520*%25202%29-b.cost%252C%2520%27%2524999.00%27%29%2520%2522Profit%2522%250AFROM%2520orderitems%2520oi%2520JOIN%2520books%2520b%250A%2520%2520%2520%2520ON%2520oi.isbn%2520%253D%2520b.isbn%250AWHERE%2520order%2523%2520%253D%25201002%253B%250A%250A--%2520Problem%2520%25234%2520%28From%2520ChatGPT%29%250ASELECT%2520TO_CHAR%28ROUND%28%28retail-cost%29*100%29%252C%2520%27999999%27%29%2520%257C%257C%2520%27%2525%27%2520%2522Markup%2522%250AFROM%2520books%253B%250A%250A--%2520Problem%2520%25235%250ASELECT%2520TO_CHAR%28SYSDATE%252C%2520%27DAY%252C%2520HH%253AMI%253ASS%27%29%2520%2522Current%2520Date%252FTime%2522%250AFROM%2520DUAL%253B%2520%250A%250A--%2520Problem%2520%25236%250ASELECT%2520title%252C%2520LPAD%28cost%252C%252012%252C%2520%27*%27%29%2520%2522Cost%2522%250AFROM%2520books%253B%250A%250A--%2520Problem%2520%25237%250ASELECT%2520DISTINCT%28LENGTH%28isbn%29%29%2520%2522Length%2520of%2520ISBN%2522%250AFROM%2520books%253B%250A%250A--%2520Problem%2520%25238%250ASELECT%2520title%252C%2520pubdate%252C%2520CURRENT_DATE%252C%2520ABS%28ROUND%28MONTHS_BETWEEN%28pubdate%252CCURRENT_DATE%29%29%29%2520%2522Age%2522%250AFROM%2520books%253B%250A%250A--%2520Problem%2520%25239%250ASELECT%2520NEXT_DAY%28CURRENT_DATE%252C%2520%27WEDNESDAY%27%29%2520%2522NEXT%2520WED%2520ON%2520CALENDAR%2522%250AFROM%2520DUAL%253B%250A%250A--%2520Problem%2520%252310%250ASELECT%2520customer%2523%252C%2520zip%2520%252CSUBSTR%28zip%252C%25203%252C%25202%29%2520%2522Third%2520and%2520Fourth%2520Zip%2520Nums%2522%252C%2520INSTR%28customer%2523%252C%2520%273%27%29%2520%25223%2520In%2520Customer%2523%2522%250AFROM%2520customers%253B"
+        style="width: 878px; height: 1065px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+    </iframe>
+</body>
+
+</html>

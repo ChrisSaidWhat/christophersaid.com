@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>WDV221 Intro Javascript</title>
+
+	<script>
+
+		var products = ["Garden Trowel", "Yard Spade", "Planting Spade"];
+
+		var productNumber = ["gt200", "yard-1", "plant-4"];
+
+		var selectionFactors = ["Price", "Quality", "Reviews", "Pictures"];
+
+		var references = ["Field and Stream", "Home and Garden", "Plant Life"];
+
+	</script>
+
+
+
+</head>
+
+<body>
+	<h1>WDV221 Intro Javascript</h1>
+	<h2>Skill Test - Loops and Arrays</h2>
+	<form name="form1" method="post" action="">
+		<fieldset>
+			<label>1. Which product did you purchase?
+				<br>
+				<br>
+				<select name="selectProduct" id="selectProduct">
+					<script>
+						//	citation: code was corrected by ChatGPT
+						for (let x = 0; x < products.length; x++) {
+							document.write("<option value=" + productNumber[x] + ">" + products[x] + "</option>");
+						}
+
+					</script>
+				</select>
+				<br>
+				<br>
+				2. Please choose the primary factor in why you purchased our product:
+				<br>
+				<br>
+				<script>
+					//	citation: checked W3Schools documentation for how radio buttons work indpendent of eachother 
+					for (let x = 0; x < selectionFactors.length; x++) {
+						document.write("<input type='radio' name='factors'>" + selectionFactors[x]);
+					}
+
+				</script>
+				<br>
+				<br>
+				3. How did your hear about us? Please select all that apply:<br>
+				<br>
+				<script>
+
+					for (let x = 0; x < references.length; x++) {
+						document.write("<input type='checkbox'>" + references[x]);
+					}
+
+				</script>
+				<br>
+				<br>
+				<input type="submit" name="button" id="button" value="Submit">
+				<input type="reset" name="button2" id="button2" value="Reset">
+				<br>
+			</label>
+			<legend>Your Input Matters</legend>
+		</fieldset>
+	</form>
+	<h3>Instructions:</h3>
+	<p>1. Use the products array and the productNumber array to dynamically populate the select menu. Include the
+		productNumbers as value atttributes.</p>
+	<p>2. Use the selectionFactors array to dynamically create a set of radio buttons. </p>
+	<p>3. Use the references array to dynamically create a set of check boxes. </p>
+	<p>&nbsp;</p>
+</body>
+
+</html>

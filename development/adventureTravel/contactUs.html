@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Christopher Said">
+        <meta name="description" content="A travel agency that provides premium adventure fun for the whole family!">
+        <meta name="keywords" content="travel, adventure, agency, booking, family, fun, national parks, trips">
+
+        <title>Adventure Travel Home</title>
+        <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <link href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap" rel="stylesheet"> 
+        <link type="text/css" rel="stylesheet" href="./structure.css">
+        <link type="text/css" rel="stylesheet" href="./styles.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script> 
+
+        <style>
+
+            .blockquote-footer {background-color:transparent;
+                margin:auto;}
+
+            .blockquote {text-align:center;}
+
+            .smallScreen {display:none;}
+            
+            @media screen and (max-width:400px) {
+                
+                form {margin-top:0px;
+                    padding:0px;
+                    text-align:center;
+                    display:flex;
+                    flex-direction:column;
+                    flex-wrap:wrap;}
+                
+                label {font-size:small;}
+                
+                .container {width:100%;}
+
+                .row {width:100%;
+                    margin-left:0px;}
+                
+                .col-12 {width:100%;}
+
+                .bgImgContact {height:100%;
+                    width:100%;}
+                
+                .smallScreen {display:flex;} 
+                
+                .largeScreen {display:none;}
+
+                .rebound {width:30%;}
+
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <header>
+            <img src="./images/adventureTravelBanner.jpg" alt="Adventure Travel Banner">
+
+            <a name="top"></a>
+        </header>
+
+        <nav class="navbar navbar-expand-md bg-light navbar-light">
+                
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+                    
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="adventureAdvantages.html">Adventure Advantages</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactUs.html">Contact Us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <main>
+
+            <div class="bgImgContact">
+
+                <div class="container-fluid">
+
+                    <div class="row align-content-center">
+
+                        <div class="col-12">
+
+                            <form method="post" action="reservationResponse.php">
+
+                                <div class="form-group row">
+
+                                    <div class="col-6">
+
+                                        <label for="firstName">First Name</label>
+                                        <input type="text" class="form-control" id="firstName">
+
+                                    </div>
+
+                                    <div class="col-6">
+
+                                        <label for="lastName">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName">
+
+                                    </div>
+
+                                </div> <!-- Close form row 1-->
+
+                                <div class="form-group row">
+
+                                    <div class="col-6 largeScreen">
+
+                                        <label for="streetAddress">Street Address</label>
+                                        <input type="text" class="form-control" id="streetAddress">
+
+                                    </div>
+
+                                    <div class="col-2 largeScreen">
+
+                                        <label for="city">City</label>
+                                        <input type="text" class="form-control" id="city">
+
+                                    </div>
+
+                                    <div class="col-2 largeScreen">
+
+                                        <label for="state">State</label>
+                                        <input type="text" class="form-control" id="state">
+
+                                    </div>
+
+                                    <div class="col-2 largeScreen">
+
+                                        <label for="zip">ZIP</label>
+                                        <input type="text" class="form-control" id="zip">
+
+                                    </div>
+
+                                </div> <!-- Close form row 2-->
+
+                                    <div class="form-group row smallScreen">
+
+                                        <div class="col-12">
+
+                                            <label for="streetAddress">Street Address</label>
+                                            <input type="text" class="form-control" id="streetAddress">
+    
+                                        </div>
+
+                                    </div> <!-- Close .smallScreen div-->
+
+                                    <div class="form-group row smallScreen">
+
+                                        <div class="col-4">
+
+                                            <label for="city">City</label>
+                                            <input type="text" class="form-control" id="city">
+
+                                        </div>
+
+                                        <div class="col-4">
+
+                                            <label for="state">State</label>
+                                            <input type="text" class="form-control" id="state">
+
+                                        </div>
+
+                                        <div class="col-4">
+
+                                            <label for="zip">ZIP</label>
+                                            <input type="text" class="form-control" id="zip">
+
+                                        </div>
+
+                                    </div> <!-- Close .smallScreen div-->
+
+                                <div class="form-group row">
+
+                                    <div class="col-6">
+
+                                        <label for="phone">Phone No.</label>
+                                        <input type="text" class="form-control" id="phone">
+
+                                    </div>
+
+                                    <div class="col-6">
+
+                                        <label for="email">Email Address</label>
+                                        <input type="text" class="form-control" id="email">
+
+                                    </div>
+
+                                </div> <!-- Close form row 3-->
+
+                                <blockquote class="blockquote">
+
+                                    <p>“Traveling - it leaves you speechless, then turns you into a storyteller.”</p>
+
+                                    <footer class="blockquote-footer">Ibn Battuta</footer>
+
+                                </blockquote>
+
+                                <div class="form-group row">
+
+                                    <div class="col-4 largeScreen">
+
+                                        <label for="vacationPackage">Select Package:</label>
+                                        <select class="form-control" id="vacationPackage">
+                                            <option value="">Select Vacation Package...</option>
+                                            <option value="utahFamily">Utah Family | Arches & Canyonlands</option>
+                                            <option value="utahBryceZion">Utah | Bryce Canyon & Zion</option>
+                                            <option value="arizonaFamily">Arizona | Grand Canyon National Park Family Vacation</option>
+                                            <option value="arizonaUtah">Arizona & Utah | Grand Canyon to Bryce & Zion</option>
+                                            <option value="montanaGlacier">Montana | Glacier National Park</option>
+                                            <option value="albertaHike">Alberta | Banff Hike Adventure</option>
+                                            <option value="wyomingMontana">Wyoming & Montana | Tetons, Yellowstone, & Glacier Adventure</option>
+                                            <option value="californiaFamily">California | Yosemite Family Vacation & Tour</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="col-4 largeScreen">
+
+                                        <label for="dates">Select Dates:</label>
+                                        <select class="form-control" id="dates">
+                                            <option value="">Select Vacation Dates...</option>
+                                            <option value="02/05-02/11">02/05-02/11</option>
+                                            <option value="03/25-04/02">03/25-04/02</option>
+                                            <option value="05/13-05/19">05/13-05/19</option>
+                                            <option value="06/01-06/09">06/01-06/09</option>
+                                            <option value="06/20-06/27">06/20-06/27</option>
+                                            <option value="07/06-07/14">07/06-07/14</option>
+                                            <option value="07/21-07/27">07/21-07/27</option>
+                                            <option value="08/10-08/17">08/10-08/17</option>
+                                            <option value="08/23-08/31">08/23-08/31</option>
+                                            <option value="09/05-09/15">09/05-09/15</option>
+                                            <option value="09/25-10/01">09/25-10/01</option>
+                                            <option value="10/19-10/27">10/19-10/27</option>
+                                            <option value="11/02-11/08">11/02-11/08</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="col-2 largeScreen">
+
+                                        <label for="adults">Adults:</label>
+                                        <input type="number" class="form-control" id="adults" min="1" max="5">
+
+                                    </div>
+
+                                    <div class="col-2 largeScreen">
+
+                                        <label for="children">Children:</label>
+                                        <input type="number" class="form-control" id="children" min="0" max="3">
+
+                                    </div>
+
+                                </div> <!-- Close form row 4-->
+
+                                    <div class="form-group row smallScreen">
+
+                                        <div class="col-12">
+
+                                            <label for="vacationPackage">Select Package:</label>
+                                            <select class="form-control" id="vacationPackage">
+                                                <option value="">Select Vacation Package...</option>
+                                                <option value="utahFamily">Utah Family | Arches & Canyonlands</option>
+                                                <option value="utahBryceZion">Utah | Bryce Canyon & Zion</option>
+                                                <option value="arizonaFamily">Arizona | Grand Canyon National Park Family Vacation</option>
+                                                <option value="arizonaUtah">Arizona & Utah | Grand Canyon to Bryce & Zion</option>
+                                                <option value="montanaGlacier">Montana | Glacier National Park</option>
+                                                <option value="albertaHike">Alberta | Banff Hike Adventure</option>
+                                                <option value="wyomingMontana">Wyoming & Montana | Tetons, Yellowstone, & Glacier Adventure</option>
+                                                <option value="californiaFamily">California | Yosemite Family Vacation & Tour</option>
+                                            </select>
+    
+                                        </div>
+
+                                    </div> <!-- Close .smallScreen div-->
+
+                                    <div class="form-group row smallScreen">
+
+                                        <div class="col-12">
+    
+                                            <label for="dates">Select Dates:</label>
+                                            <select class="form-control" id="dates">
+                                                <option value="">Select Vacation Dates...</option>
+                                                <option value="02/05-02/11">02/05-02/11</option>
+                                                <option value="03/25-04/02">03/25-04/02</option>
+                                                <option value="05/13-05/19">05/13-05/19</option>
+                                                <option value="06/01-06/09">06/01-06/09</option>
+                                                <option value="06/20-06/27">06/20-06/27</option>
+                                                <option value="07/06-07/14">07/06-07/14</option>
+                                                <option value="07/21-07/27">07/21-07/27</option>
+                                                <option value="08/10-08/17">08/10-08/17</option>
+                                                <option value="08/23-08/31">08/23-08/31</option>
+                                                <option value="09/05-09/15">09/05-09/15</option>
+                                                <option value="09/25-10/01">09/25-10/01</option>
+                                                <option value="10/19-10/27">10/19-10/27</option>
+                                                <option value="11/02-11/08">11/02-11/08</option>
+                                            </select>
+    
+                                        </div>
+
+                                    </div> <!-- Close .smallScreen div-->
+
+                                    <div class="form-group row  justify-content-center smallScreen">
+
+                                        <div class="col-4">
+
+                                            <label for="adults">Adults:</label>
+                                            <input type="number" class="form-control" id="adults" min="1" max="5">
+    
+                                        </div>
+    
+                                        <div class="col-4">
+    
+                                            <label for="children">Children:</label>
+                                            <input type="number" class="form-control" id="children" min="0" max="3">
+    
+                                        </div>
+
+                                    </div> <!-- Close .smallScreen div-->
+
+                                <div class="form-group row largeScreen">
+
+                                    <div class="col-8">
+
+                                        <label for="cardNo">Credit Card No.</label>
+                                        <input type="text" class="form-control" id="cardNo" placeholder="0000-0000-0000-0000">
+
+                                    </div>
+
+                                    <div class="col-2">
+
+                                        <label for="cardExp">Exp.</label>
+                                        <input type="text" class="form-control" id="cardExp" placeholder="MM/YY">
+
+                                    </div>
+
+                                    <div class="col-2">
+
+                                        <label for="cardCVC">CVC</label>
+                                        <input type="text" class="form-control" id="cardCVC" placeholder="000">
+
+                                    </div>
+
+                                </div> <!-- Close form row 5-->
+
+                                <div class="form-group row smallScreen">
+
+                                    <div class="col-12">
+
+                                        <label for="cardNo">Credit Card No.</label>
+                                        <input type="text" class="form-control text-center" id="cardNo" placeholder="0000-0000-0000-0000">
+
+                                    </div>
+
+                                </div> <!-- Close .smallScreen div-->
+
+                                <div class="form-group row justify-content-center smallScreen">
+
+                                    <div class="col-4">
+
+                                        <label for="cardExp">Exp.</label>
+                                        <input type="text" class="form-control text-center" id="cardExp" placeholder="MM/YY">
+
+                                    </div>
+
+                                    <div class="col-4">
+
+                                        <label for="cardCVC">CVC</label>
+                                        <input type="text" class="form-control text-center" id="cardCVC" placeholder="000">
+
+                                    </div>
+
+                                </div> <!-- Close .smallScreen div-->
+
+                                <div class="form-group row justify-content-center">
+
+                                    <button type="submit" class="btn btn-primary" value="Submit">Sumbit Reservation</button>
+
+                                    <button type="reset" class="btn btn-secondary" value="Reset">Reset Reservation Fields</button>
+
+                                </div> <!-- Close form row 6-->
+
+                            </form>
+
+                        </div> <!-- Close .col-12 div-->
+
+                    </div> <!-- Close .row div-->
+
+                </div> <!-- Close .container div-->
+
+            </div> <!-- Close .bgImgContact div-->
+
+        </main>
+
+        <footer class="text-center">
+
+            <p>&copy; Copyright 2022. Adventure Travel LLC.</p>
+
+            <small>Photo by <a href="https://unsplash.com/@dinoreichmuth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dino Reichmuth</a> on <a href="https://unsplash.com/s/photos/travel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </small>
+            
+            <a href="#top" class="btn btn-outline-dark rebound">Back To Top</a>
+
+        </footer>
+
+    </body>
+
+</html>

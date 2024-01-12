@@ -1,0 +1,110 @@
+@import url("https://use.typekit.net/jkw4jqd.css");
+@import url("https://use.typekit.net/jkw4jqd.css");
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-direction: column;
+    width: 800px;
+    background-color: #F2EFEA;
+
+}
+
+.flex-row-inner {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.flex-row-bottom {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px; 
+}
+
+.input-format {
+    width: 150px;
+    text-align: center;
+    font-family: "articulat-cf", sans-serif;
+}
+
+.input-format:focus {
+    background-color: #DA2C38E6;
+    color: #F2EFEA;
+}
+
+.radio-div {
+    justify-content: space-between;
+}
+
+.radio-btn {
+    accent-color: #DA2C38;
+}
+
+.process-btn {
+    border: solid #66D7D1 1px;
+    border-radius: 5%;
+    background-color: #CEF2F1;
+    margin-right: 10px; 
+}
+
+.process-btn:hover {
+    background-color: #AEEAE7;
+}
+
+.process-btn:active {
+    background-color: #DA2C38;
+    border-color: #9C1C24;
+}
+
+.reset-btn {
+    border: solid #66D7D1 1px;
+    border-radius: 5%;
+    background-color: #CEF2F1;
+    margin-left: 10px; 
+}
+
+.reset-btn:hover {
+    background-color: #AEEAE7;
+}
+
+.reset-btn:active {
+    background-color: #DA2C38;
+    border-color: #9C1C24;
+}
+
+h1 {
+    color:#66D7D1;
+    font-family: "evolver-variable", sans-serif;
+    font-variation-settings: "slnt" 0, "wght" 300;
+    font-size: 4.5em;
+    margin-bottom: 20px; 
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 1000px;
+    background-image:url(./desktopBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    font-family: "articulat-cf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+select:defined {
+    background-color:#DA2C38;
+    color:#F2EFEA;
+}
+
+::placeholder:focus {
+    color: #F2EFEA;
+}

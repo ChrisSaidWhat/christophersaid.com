@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JavaScript Objects</title>
+
+        <script>
+
+            let today = new Date(); //  instantiation line - create a new Date object
+
+            console.log(today); //  timestamp taken from computer on which it is running
+            console.log(today.getFullYear());
+            console.log(today.getMonth()); //   months start from zero (month stored as an array)
+            console.log(today.getDate());
+            console.log(today.getDay());    //  sunday = 0 days as numbers 
+
+            //  create a date object for Wed 11/08/2023
+
+            let thisDay = new Date("2023-11-8");
+            console.log(thisDay);
+
+            console.log(new Date(2023,10)); //  day and month off by 1 (NOV = 10) defaults to first of the month
+            console.log(new Date(2023,10,6));   //  the next parameter is the day of the month
+
+            //  month 0-11
+            //  day 0-6
+            //  date 1-31
+
+            let tomorrow = new Date();
+            tomorrow.setDate(7)
+            console.log(tomorrow);
+
+            let dueDate = new Date(); //  the due date is 10 days from today
+                //  take the current date, add 10 to that date, make that the due date
+                //  today.getDate();
+            dueDate.setDate(today.getDate()+60);
+            console.log(dueDate);
+
+            let todaysDate = today.getDate();
+            let dueDate10 = todaysDate + 10; 
+
+            dueDate.setDate(dueDate10);
+            console.log(dueDate);
+
+            function displayBillingMonth(inDateObject) {
+                //  this function will accept a date object as an input
+                //  it will display the month of the billing date 
+                return inDateObject.getMonth();
+            }
+
+            console.log("Billing Month: " + (displayBillingMonth(dueDate) + 1));
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 9 - Date Object Example</h2>
+
+        <p><script>document.write(today);</script></p>
+
+    </body>
+
+</html>

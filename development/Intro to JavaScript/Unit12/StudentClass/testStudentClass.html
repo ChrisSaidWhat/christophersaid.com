@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Object Oriented JavaScript</title>
+        <script src="Student.js"></script>
+
+        <script>
+
+            //  object - a container holding data with associated tools 
+            //  class - the blueprint used to describe the object, what it contains and what it can do, capitalized (the idea behind the tool we are going to use)
+            //  instantiation - create a new object (instance) of a class, use keyword new
+            //  dynamic data typing - just like with variables and data types, variables holding objects are dynamically typed and can be mutated
+
+            let student1 = new Student();
+
+            console.log(student1);
+
+            student1.setStudentName("Mary");
+            console.log(student1.getStudentName());
+
+            student1.studentAddress = "123 South Street";   //  using public access (bypassed any validation)
+            console.log(student1);
+
+            student1.studentID = 12324;    //   dynamically added a new property to an object
+            console.log(student1);
+
+        </script>
+    </head>
+
+    <body>
+        
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Proof Student Class</h2>
+
+    </body>
+</html>

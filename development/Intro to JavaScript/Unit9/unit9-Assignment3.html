@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9-3: Date Object Assignment</title>
+    <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+
+    <script>
+        let currentDate = new Date();
+
+        function formatMMDDYYYY(inputDate) {
+            let month = currentDate.getMonth() + 1;
+            let day = currentDate.getDate();
+            let year = currentDate.getFullYear();
+            
+            if(month < 10) {
+                month = "0" + month;
+            }
+
+            if(day < 10) {
+                day = "0" + day;
+            }
+
+            return month + "/" + day + "/" + year;
+        }
+
+        function pageSetup() {
+            document.querySelector("#currentDate").innerHTML = currentDate;
+            document.querySelector("#formattedDate").innerHTML = formatMMDDYYYY(currentDate);
+        }
+    </script>
+</head>
+<body onload="pageSetup()">
+    <h1>Date Formatter</h1>
+    <hr/>
+    <h4>Current Date: <span id="currentDate"></span></h4>
+    <hr/>
+    <h4>Formatted Date: <span id="formattedDate"></span></h4>
+
+</body>
+</html>

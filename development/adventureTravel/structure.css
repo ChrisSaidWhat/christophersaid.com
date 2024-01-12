@@ -1,0 +1,23 @@
+body {width:100vw;}
+
+header img {width:100vw;}
+
+nav {width:100vw;}
+
+.navbar-brand {flex-basis:10%;}
+
+nav img {width:100%;}
+
+.card {width:70%;
+    margin-top:10px;
+    margin-bottom:10px;}
+
+.col-5 {margin-left:-130px;}
+
+form {margin-top:155px;
+    padding:10px;}
+
+.rebound {display:block;
+    width:7%;
+    margin:auto;
+    margin-top:10px;}

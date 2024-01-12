@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+
+        <script>
+            //  must call a function to run it 
+                //  1. use its name in a script
+                //  2. use an event handler to call that function, user action like click or mouseover
+
+            function formatName(inFirstName,inLastName){
+                console.log(inLastName + ", " + inFirstName);
+            }
+
+            //  parameter order matters!
+            formatName("Mary","Smith");
+            formatName("Smith","Mary");
+
+            //  passing variables into parameters
+            let studentFirstName = "Mark";
+            let studentLastName = "Leaver";
+
+            formatName(studentFirstName,studentLastName);
+
+            //  HTML event attribute (HTML event handlers)
+
+            function displayName(){
+                console.log("Name Button has been pressed.");
+                formatName("Inside","displayName()");
+            }
+        </script>
+
+    </head>
+
+    <body>  
+
+        <h1>WDV221 Intro JavaScript</h1>
+
+        <h2>Unit-3 Funciton Examples</h2>
+
+        <p>
+            <!--The event handler understands JavaScript like style understands CSS-->
+            <button onclick="displayName()">Display Name</button>
+
+        </p>
+
+    </body>
+
+</html>

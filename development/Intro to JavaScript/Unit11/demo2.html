@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>JavaScript Arrays</title>
+
+        <script>
+
+            let teamNames = ["Reds", "Browns", "Cardinals"];  
+
+            let teamScores = [0,0,0];
+
+            //  parallel arrays - YOU choose to treat them as parallel arrays, work together, nothing inherently makes them parallel
+
+            //  add 3 to the Browns current teamScores 
+            /*
+                figure out what index is Browns in the teamNames array 
+                
+                use the same index to add the value 3 to that location in the teamScores array
+                "accumulator array" - add values to exisiting values in the array
+            
+            
+            */
+
+            console.log(teamNames.indexOf("Reds")); //  expected return value 0
+            console.log(teamNames.indexOf("Cubs")); //  expected return value -1
+
+            //  Browns, 3   Add 3 to their current teamScores
+
+            let teamIndex = teamNames.indexOf("Browns");
+            teamScores[teamIndex] += 3; 
+            console.log(teamScores);
+
+            teamIndex = teamNames.indexOf("Cubs");  //  returns -1 
+
+            if(teamIndex == -1) {
+                //  invalid team name
+                console.log("Name not found");
+            }
+            else{
+                //  team name exists, update the team scores
+                teamScores[teamIndex] += 5; 
+            }
+
+            /*
+                build a function that takes a team score (number) in as an input value/parameter
+                    find the team in the teamNames array, case sensitive or case insensitive
+                    if we find the name in the array
+                        add the score into the corresponding teamScores
+                    else (did not find the name)
+                        handle the error - console error message 
+            */
+
+            function updateTeamScores(inTeam, inScore) {
+                let teamIndex = teamNames.indexOf(inTeam);
+
+                if(teamIndex == -1) {
+                    //  invalid team name
+                    console.log(inTeam + " Team name not found");
+                }
+                else { 
+                    //  team name exists, update the team scores
+                    teamScores[teamIndex] += inScore; 
+                }
+
+            }
+
+            updateTeamScores("Reds", 5);
+            console.log(teamScores);
+            updateTeamScores("Cubs", 5);
+            console.log(teamScores);
+
+
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 11 - Arrays Examples 2</h2>
+
+        <p>
+            <script>// display the team names to the page 
+
+                for(let x = 0; x < teamNames.length; x++){
+                    document.write("<li>" + teamNames[x] + "</li>");
+                }
+            
+            </script>
+        </p>
+
+        <p>
+            <select name="teamNames">
+                <option value="">Select a team</option>
+                <script>// display the team names to the page 
+
+                    for(let x = 0; x < teamNames.length; x++){
+                        document.write("<option>" + teamNames[x] + "</option>");
+                    }
+                
+                </script>
+            </select>
+        </p>
+
+    </body>
+
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript</title>
+<link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+
+<style>
+
+  #validationMsg {
+    color: red; 
+    font-weight: bold; 
+  }
+
+</style>
+
+<script>
+  //  compares two numbers 
+  function compareNumbers() {
+
+  //  cleans up the previous contents of the form elements and spans
+  document.querySelector("#validationMsg").innerHTML = "";
+  document.querySelector("#displayResult").innerHTML = "";
+
+  let value1 = document.querySelector("#value1").value;
+  
+  //  converts the string contents to a whole number for processing 
+
+  value1 = parseInt(value1);  
+
+  let value2 = document.querySelector("#value2").value;
+
+  value2 = parseInt(value2);
+  
+  //  validates that the input is an int and not blank
+
+  if (isNaN(value1) || isNaN(value2) || value1 == "" || value2 == "") {
+
+    document.querySelector("#validationMsg").innerHTML = "TWO NUMBERS MUST BE ENTERED!";
+
+  } //  problem 2
+
+  //  displays equal if values are same and the higher value if they are different 
+
+  else {
+
+    if (value1 == value2) {
+      document.querySelector("#displayResult").innerHTML = "Equal";
+    }
+    else if (value1 > value2) {
+      document.querySelector("#displayResult").innerHTML = value1;
+    } 
+    else {
+      document.querySelector("#displayResult").innerHTML = value2;
+    } //  problem 4 & 5
+
+  } //  problem 3
+
+} //  problem 1
+
+  //  resets the span elements at the same time as the form fields 
+
+  function resetFields() {
+
+    document.querySelector("#displayResult").innerHTML = "";
+    document.querySelector("#validationMsg").innerHTML = "";
+    
+  } //  problem 6
+</script>
+
+</head>
+
+<body>
+<h1>WDV221 Intro Javascript</h1>
+<h2>Comparisons and IF Statements</h2>
+<h3>Compare Numbers Assignment </h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+<p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
+<p>Using Blackboard submit this  Assignment.</p>
+<hr />
+<form id="form1" name="form1" method="post" action="">
+  <p>Value 1: 
+    <input type="text" name="value1" id="value1" />
+  </p>
+  <p>Value 2: 
+    <input type="text" name="value2" id="value2" />
+  </p>
+  <p>Result: <span id="displayResult"></span></p>
+  <span id="validationMsg"></span>
+  <p>
+    <input type="button" value="Compare Numbers" onclick="compareNumbers()" />
+  </p>
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset" onclick="resetFields()" />
+  </p>
+</form>
+
+<p>Instructions:</p>
+<ol>
+  <li>Create a function called compareNumbers( ).</li>
+  <li>The function will compare two numbers entered in the form above. </li>
+  <li>The input fields should be validated. The validations should not allow an empty field and the input must be numeric.</li>
+  <li>The function should display the largest number or &quot;Equal&quot; if both values are the same.</li>
+  <li>The results will be displayed in a span element using the .innerHTML property.</li>
+  <li>Provide a reset function that will properly clear the form between attempts.</li>
+</ol>
+</body>
+</html>
+

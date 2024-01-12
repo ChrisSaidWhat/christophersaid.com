@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Code</title>
+    <link rel="icon" type="image/x-icon" href="./personalMonogramLogo.svg">
+    <link type="text/css" rel="stylesheet" href="./styles.css">
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28232%2C233%2C235%2C1%29&t=one-dark&wt=none&l=sql&width=878&ds=false&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=true&fl=1&fm=JetBrains+Mono&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%252F*%2520%250AChristopher%2520Said%250AUnit%25206%2520Ch.9%2520Assignment%2520Traditional%2520Method%250A*%252F%250A%250A--%2520Problem%2520%25233%250ASELECT%2520c.firstname%252C%2520c.lastname%250AFROM%2520customers%2520c%252C%2520orders%2520o%252C%2520orderitems%2520oi%252C%2520books%2520b%250A%2520%2520%2520%2520WHERE%2520c.customer%2523%2520%253D%2520o.customer%2523%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520o.order%2523%2520%253D%2520oi.order%2523%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520oi.isbn%2520%253D%2520b.isbn%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520state%2520%253D%2520%27FL%27%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520category%2520%253D%2520%27COMPUTER%27%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A--%2520Problem%2520%25237%250ASELECT%2520p.gift%250AFROM%2520orderitems%2520oi%252C%2520books%2520b%252C%2520promotion%2520p%250A%2520%2520%2520%2520WHERE%2520oi.isbn%2520%253D%2520b.isbn%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520b.retail%2520BETWEEN%2520p.minretail%2520AND%2520p.maxretail%250A%2520%2520%2520%2520%2520%2520%2520%2520AND%2520title%2520%253D%2520%27SHORTEST%2520POEMS%27%253B%250A%250A--%2520Problem%2520%25239%250ASELECT%2520b.title%252C%2520oi.order%2523%252C%2520o.order%2523%252C%2520c.state%250AFROM%2520books%2520b%252C%2520orderitems%2520oi%252C%2520orders%2520o%252C%2520customers%2520c%250A%2520%2520%2520%2520WHERE%2520c.customer%2523%2520%28%252B%29%2520%253D%2520o.customer%2523%250A%2520%2520%2520%2520AND%2520o.order%2523%2520%28%252B%29%2520%253D%2520oi.order%2523%250A%2520%2520%2520%2520AND%2520oi.isbn%2520%28%252B%29%2520%253D%2520b.isbn%253B"
+        style="width: 878px; height: 674px; border:0; transform: scale(1); overflow:hidden;"
+        sandbox="allow-scripts allow-same-origin">
+    </iframe>
+</body>
+
+</html>

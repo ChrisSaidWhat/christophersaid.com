@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Math Operators</title>
+
+        <script>
+
+            let counter = 1;    //  global scope -- number data type
+
+            console.log(counter);
+
+            counter++;  //  add 1 to the current value of counter
+            counter++;
+            counter++;
+            counter++;
+
+            console.log(counter);
+
+            counter--;  //  subtract 1 to the current value of counter
+            counter--;
+
+            console.log(counter);
+
+            salesCounter = 2.3; //  global scope -- number data type
+            
+            salesCounter++;
+
+            salesCounter = salesCounter + 1.7;      //  accumulator 
+
+            console.log(salesCounter);
+
+            salesCounter += 2;  //  combineed operator -- same as salesCounter = salesCounter + 2
+
+            //  all increment salesCounter by 1
+            salesCounter++; //  post-fix incrementor, use the value then add 1 (most used)
+            ++salesCounter; //  pre-fix incrementor, add 1 to value then use the value
+            salesCounter += 1;
+            salesCounter = salesCounter + 1; 
+
+            //  modulus processing - the remiander of a division process
+
+            let val1 = 3;
+            let val2 = 4;
+            let total = val1/val2;
+
+            console.log(3/4);   //  results in 0.75
+            console.log(total);
+
+            console.log(4/3);   //  results in 1.3333333333
+
+            console.log(4%3);   //  results in 1
+
+            console.log(2000%4);    //  results in 0
+
+            console.log(2004%4); // even number division will always result in 0 if the number can go in without any remainder (date processing)
+
+            let averageProcessingDays = 26;
+
+            console.log("Expect your order in " + averageProcessingDays / 7 + " weeks.");
+            console.log("Expect your order in " + averageProcessingDays % 7 + " days."); // estimated shipping time 
+
+            let monthlySales = 2345.67; //  global  number
+
+            let totalSales = "123456.78";   //  global String
+
+            console.log(totalSales += monthlySales);    //  concatenation with a String will always result in a String
+
+            console.log(totalSales - monthlySales);    //  browser checks a String for numeric values
+
+            //  parseInt() and parseFloat() convert numerical String data types to numbers
+
+            console.log("34" * 2);  //  the browser reaches into the String for a number and uses it in the math operation except for + 
+            console.log("34Fredd" * 2); //  NaN
+
+            console.log(parseInt("34Den") * 2);
+            console.log(parseFloat("34Den") * 2);
+
+            console.log(parseInt("34.5Den") * 2);
+            console.log(parseFloat("34.5Den") * 2); //  includes decimal points so results in 69 
+            
+            console.log(parseInt("34Den")); //  returns numeric 34
+            console.log(parseFloat("34.5Den")); //  returns numeric 34.5
+
+            console.log(parseFloat("34.00Fredd"));  //  returns numeric 34
+            
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 7 - Math Operators</h2>
+        
+    </body>
+
+</html>

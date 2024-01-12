@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>If Examples</title>
+
+        <style>
+
+            .lowInventory {
+
+                color: red;
+
+            }
+
+        </style>
+
+        <script>
+
+            /*
+                get an input number from the customer, display the input on the page
+                if the input is less than 10, style it with a red color
+
+                -need a form with a text field
+                -need a function called by the 'submit' button
+                function... 
+                    will get the input text value
+                    will place that value on the page in the 'displayNumber' element
+                    will check if the value < 10 apply the .lowInventory to the display element 
+
+            */
+
+            function displayInput() {
+                console.log(document.querySelector("#inNumber").value);
+                let inNumber = document.querySelector("#inNumber").value;
+                document.querySelector("#displayNumber").innerHTML = inNumber;
+
+                if(inNumber < 10) {
+                    //  assign the .lowInventory to the display field
+                    document.querySelector("#displayNumber").className = "lowInventory";
+                }
+                else {
+                    document.querySelector("#displayNumber").className = "";
+                }
+            }
+
+            function clearDisplay() {
+                document.querySelector("#displayNumber").innerHTML = "";
+            }
+
+            /*  test plan for displayInput()
+
+                Input       Expectation
+                5           5 Red
+                10          10
+                15          15
+                ""          Error - Invalid Number
+                0           0 Red
+                -1          -1 Red
+                'a'         Error - Invalid Number
+                +           Error - Invalid Number
+                42B         Error - Invalid Number
+
+            */
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 8 - If Statements Examples</h2>
+
+        <form method="post" action="#">
+
+            <p>
+
+                <label for="inNumber">Enter a Number: </label>
+                <input type="text" name="inNumber" id="inNumber">
+
+            </p>
+
+            <p>
+
+                <input type="button" value="Get Number" onclick="displayInput()">
+                <input type="reset" onclick="clearDisplay()">
+
+            </p>
+
+            <p>Input Number: <span id="displayNumber"></span></p>
+
+        </form>
+ 
+    </body>
+
+</html>

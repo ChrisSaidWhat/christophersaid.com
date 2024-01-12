@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300&display=swap');
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link {color:black;}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover     {background-color:rosybrown;
+    color:white;}
+
+.bgImgIndex {background-image: url("./images/backgroundIndex.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;}
+
+.bgImgAA {background-image: url("./images/adventureAdvantagesBackground.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:100vw;}
+
+.bgImgDest {background-image: url("./images/destinationsBackground.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:100vw;}
+
+.bgImgFAQ {background-image: url("./images/backgroundFAQ.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:100vw;}
+
+.bgImgContact {background-image: url("./images/contactBackground.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;}
+
+.jumbotron {background-color:white;}
+
+.questionTop {background-color:rgba(242,242,242,0.7);
+    border-top-width:2px;
+    border-top-style:solid;
+    border-top-color:#e4e2e2;
+    border-left-width:2px;
+    border-left-style:solid;
+    border-left-color:#e4e2e2;
+    border-right-width:2px;
+    border-right-width:solid;
+    border-right-color:#e4e2e2;}
+
+.question {background-color:rgba(242,242,242,0.7);
+    border-left-width:2px;
+    border-left-style:solid;
+    border-left-color:#e4e2e2;
+    border-right-width:2px;
+    border-right-width:solid;
+    border-right-color:#e4e2e2;}
+
+.questionBottom {background-color:rgba(242,242,242,0.7);
+        border-left-width:2px;
+        border-left-style:solid;
+        border-left-color:#e4e2e2;
+        border-right-width:2px;
+        border-right-style:solid;
+        border-right-color:#e4e2e2;
+        border-bottom-width:2px;
+        border-bottom-style:solid;
+        border-bottom-color:#e4e2e2;}
+
+.answerTop {background-color:rgba(229,229,229,0.7);
+    border-top-width:2px;
+    border-top-style:solid;
+    border-top-color:#d9d7d7;
+    border-left-width:2px;
+    border-left-style:solid;
+    border-left-color:#d9d7d7;
+    border-right-width:2px;
+    border-right-style:solid;
+    border-right-color:#d9d7d7;}
+
+.answerBottom {background-color:rgba(229,229,229,0.7);
+    border-left-width:2px;
+    border-left-style:solid;
+    border-left-color:#d9d7d7;
+    border-right-width:2px;
+    border-right-style:solid;
+    border-right-color:#d9d7d7;
+    border-bottom-width:2px;
+    border-bottom-style:solid;
+    border-bottom-color:#d9d7d7;}
+
+.answer {background-color:rgba(229,229,229,0.7);
+    border-left-width:2px;
+    border-left-style:solid;
+    border-left-color:#d9d7d7;
+    border-right-width:2px;
+    border-right-style:solid;
+    border-right-color:#d9d7d7;}
+
+.secretSale {display:none;}
+
+.backgroundDestOp {background-color:rgba(229,229,229,0.7);
+    border-width:2px;
+    border-style:solid;
+    border-color:rgba(229,229,229,0.9);
+    margin-top:10px;}
+
+p, h1, h2, h3, h4, h5, h6, small {font-family: 'Switzer', sans-serif;}
+
+a {font-family: 'Assistant', sans-serif;}
+
+ul {list-style-type:none;}
+
+form {background-color:rgba(255,255,255,0.7);
+    border-radius:5px;}
+
+footer {background-color:white;
+    color:black;}
+
+footer a {color:black;}
+
+footer a:hover {color:white; 
+    background-color:rosybrown;}
+
+div:hover .secretSale {display:block;}
+
+::selection {color:rosybrown;
+    background-color:rgba(255,255,255,0.5);}

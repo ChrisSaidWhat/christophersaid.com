@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+
+    </head>
+
+    <body>
+
+        <h1>WDV221 Intro to JavaScript</h1>
+        
+        <h2>Unit 1 - Introduction</h2>
+
+        <script>
+
+            document.write("Hello Class!");
+
+            document.write("<div>This is a div container!</div>");
+
+            document.write("<span>This is a span container!</span>");
+
+        </script>
+
+        <p>Welcome <script>document.write("Mary");</script> to class.</p>
+
+        <script>
+
+            //four ways to display content 
+            //1. document.write()
+            //2. console.log()
+            //3. window.alert() alert() ultimate in pop up - modal
+            //4. object.innerHTML = "value"
+            //  access the desired object within the document object
+            //  access the content we want to change - we need to know the property to work with
+            //  .querySelector()    uses CSS selectors 
+
+            console.log("Hello from the console?");
+
+            alert("Hello from the alert method!");
+
+          
+
+        </script>
+
+        <p>The class name is: <span id="newClass">Test</span></p>
+
+        <script>
+
+        //need to access the span object
+        console.log( document.getElementById("newClass").innerHTML = "Carl" );
+
+        console.log( document.querySelector("#newClass").innerHTML = "Carl" );
+
+        </script>
+
+    </body>
+
+</html>

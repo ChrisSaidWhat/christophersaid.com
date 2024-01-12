@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript Form Handling</title>
+
+        <script>
+
+            function processInput(){
+                //alert("inside processInput()");
+
+                console.log("First Name Input Value: ");
+                console.log(document.querySelector("#firstName").value);
+
+                console.log("What Color Was Selected: ");
+                console.log(document.querySelector("#colorRed").checked);
+                console.log(document.querySelector("#colorRed").value);
+                console.log(document.querySelector("#colorGreen").checked);
+                console.log(document.querySelector("#colorGreen").value);
+                console.log(document.querySelector("#colorBlue").checked);
+                console.log(document.querySelector("#colorBlue").value);
+
+                console.log("Checkbox:");
+                console.log(document.querySelector("#newsletter").checked);
+                console.log(document.querySelector("#newsletter").value);
+                console.log(document.querySelector("#noNewsletter").checked);
+                console.log(document.querySelector("#noNewsletter").value);
+
+                console.log("Select:")
+                console.log(document.querySelector("#selectColor").value);
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>WDV 221 Intro JavaScript</h1>
+
+        <h2>Unit 6 - Form Handling</h2>
+
+        <form method="post" action="#">
+
+            <p>
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName" id="firstName" placeholder="First Name">
+            </p>
+
+            <p>
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+            </p>
+
+            <p>
+                <label for="colorRed">Select Red</label>
+                <input type="radio" name="colorGroup" id="colorRed" value="red">
+                <label for="colorGreen">Select Green</label>
+                <input type="radio" name="colorGroup" id="colorGreen" value="green">
+                <label for="colorBlue">Select Blue</label>
+                <input type="radio" name="colorGroup" id="colorBlue" value="blue">
+            </p>
+
+            <p>
+                <label for="newsletter">Newsletter</label>
+                <input type="checkbox" name="newsletter" id="newsletter" value="newsletter">
+                <label for="noNewsletter">No Newsletter</label>
+                <input type="checkbox" name="noNewsletter" id="noNewsletter" value="noNewsletter">
+            </p>
+
+            <label for="selectColor">Select A Color:</label>
+            <select name="selectColor" id="selectColor">
+                <option>Please Select A Color:</option>
+                <option value="red color code">Red</option>
+                <option value="green color code">Green</option>
+                <option value="blue color code">Blue</option>
+            </select>
+
+            <p>
+                <input type="button" name="submit" value="Register Here" onclick="processInput()">
+                <input type="reset">
+            </p>
+
+        </form>
+
+    </body>
+
+</html>
