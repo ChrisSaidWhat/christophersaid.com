@@ -17,6 +17,15 @@ font-family: "mr-eaves-sans", sans-serif;
 }
 
 /* id selections */
+#graphic_design_content {
+    background-color: #FCE2D9;
+}
+
+#web_design_content {
+   
+    background-color: #CDD7D6;
+}
+
 #html_css_content {
     background-color: #EC7846;
 }

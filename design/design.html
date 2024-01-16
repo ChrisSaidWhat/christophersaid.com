@@ -17,6 +17,18 @@
             document.documentElement.scrollTop = 0;
         }
 
+        //  code adapted and learned from W3Schools.com
+        function displayTab(tabToDisplay, element, color) {
+            document.querySelector("#graphic_design_content").style.display = "none";
+            document.querySelector("#web_design_content").style.display = "none";
+
+            document.querySelector("#graphic_design_btn").style.backgroundColor = "#e8e9eb";
+            document.querySelector("#web_design_btn").style.backgroundColor = "#e8e9eb";
+
+            document.getElementById(tabToDisplay).style.display = "block";
+            element.style.backgroundColor = color;
+        }
+
     </script>
 
 </head>
@@ -42,9 +54,141 @@
                 <div class="headline_container border_bottom">
                     <h2 class="headline">Graphic &amp; Web Design</h2>
                 </div>
+                <div class="tab_btn_container">
+                    <button id="graphic_design_btn" class="tab_btn"
+                        onclick="displayTab('graphic_design_content', this, '#FCE2D9')">Graphic Design</button>
+                    <button id="web_design_btn" class="tab_btn"
+                        onclick="displayTab('web_design_content', this, '#CDD7D6')">Web Design</button>
+                </div>
+                <div id="graphic_design_content" class="tab_content border_bottom">
+                    <h3>Graphic Design Projects</h3>
+                    <div class="tab_content_container">
+                        <div>
+                            <h5>PHOTOSHOP</h5>
+                            <a href="./photoshop/textbookCover.html" target="_blank" class="no_underline">
+                                <p>Textbook Cover Redesign</p>
+                                <img src="../images/photoshopBookCoverThumbnail.jpg" alt="Overview of the Photoshop design.">
+                            </a>
+                            <a href="./photoshop/jewelCase.html" target="_blank" class="no_underline">
+                                <p>CD Jewel Case Design</p>
+                                <img src="../images/photoshopJewelCaseFrontThumbnail.jpg"
+                                    alt="Overview of the Photoshop design.">
+                            </a>
+                            <a href="./photoshop/magazineCover.html" target="_blank" class="no_underline">
+                                <p>Magazine Cover Design</p>
+                                <img src="../images/photoshopSkaterMagThumbnail.jpg" alt="Overview of the Photoshop design.">
+                            </a>
+                            <a href="./photoshop/billboards.html" target="_blank" class="no_underline">
+                                <p>Billboard Design</p>
+                                <img src="../images/photoshopBusBillboardThumbnail.jpg" alt="Overview of the Photoshop design.">
+                            </a>
+                            <a href="./photoshop/moviePoster.html" target="_blank" class="no_underline">
+                                <p>Movie Poster Design</p>
+                                <img src="../images/photoshopMoviePosterThumbnail.jpg" alt="Overview of the Photoshop design.">
+                            </a>
+                        </div>
+                        <div>
+                            <h5>ILLUSTRATOR</h5>
+                            <a href="./illustrator/legendairyBranding.html" target="_blank" class="no_underline">
+                                <p>LegenDairy Vegan Cheese Branding</p>
+                                <img src="../images/legendairyLogo.jpg" alt="Overview of the Illustrator design.">
+                            </a>
+                        </div>
+                        <div>
+                            <h5>INDESIGN</h5>
+                            <a href="../pdfs/indesignCookbook.pdf" target="_blank" class="no_underline">
+                                <p>German Cookbook</p>
+                                <img src="../images/cookbookThumbnail.png" alt="Overview of the InDesign design.">
+                            </a>
+                            <a href="../pdfs/indesignNapaTrifold.pdf" target="_blank" class="no_underline">
+                                <p>Napa Valley Wine Train Trifold</p>
+                                <img src="../images/indesignTrifoldThumbnail.png" alt="Overview of the InDesign design.">
+                            </a>
+                            <a href="./indesign/editorial.html" target="_blank" class="no_underline">
+                                <p>Interior Design Editorial Spread</p>
+                                <img src="../images/indesignEditorialMockup.png" alt="Overview of the InDesign design.">
+                            </a>
+                            <a href="../pdfs/indesignGreetingCard.pdf" target="_blank" class="no_underline">
+                                <p>Greeting Card</p>
+                                <img src="../images/indesignGreetingCardThumbnail.png" alt="Overview of the InDesign design.">
+                            </a>
+                            <a href="../pdfs/indesignInvitationDiecut.pdf" target="_blank" class="no_underline">
+                                <p>Museum Invitation Die-Cut</p>
+                                <img src="../images/indesignDiecutThumbnail.png" alt="Overview of the InDesign design.">
+                            </a>
+                            <a href="./indesign/diecutSocialMedia.html" target="_blank" class="no_underline">
+                                <p>Museum Invitation Social Media Marketing</p>
+                                <img src="../images/indesignDiecutSocialMediaFacebook.jpg" alt="Overview of the InDesign design.">
+                            </a>
+                        </div>
+                        <div>
+                            <h5>TYPOGRAPHY</h5>
+                            <a href="./typography/monogram.html" target="_blank" class="no_underline">
+                                <p>Personal Monogram Logo</p>
+                                <img src="../images/typographyMonogram.jpg" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="../pdfs/typographicPortrait.pdf" target="_blank" class="no_underline">
+                                <p>Jon Stewart Typographic Portrait</p>
+                                <img src="../images/typographicPortraitThumbnail.png" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="./typography/swissDesignMoviePoster.html" target="_blank" class="no_underline">
+                                <p>Swiss Design Movie Poster Redesign</p>
+                                <img src="../images/swissDesignPosterThumbnail.png" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="./typography/netflixTitleCard.html" target="_blank" class="no_underline">
+                                <p>Netflix Title Card Typographic Treatment</p>
+                                <img src="../images/netflixTitleCardTypographicTreatment.png" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="./typography/typographicVoice.html" target="_blank" class="no_underline">
+                                <p>Typographic Voice Album Cover</p>
+                                <img src="../images/typographicVoiceClassicalMusicThumbnail.jpg" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="./typography/typographicPattern.html" target="_blank" class="no_underline">
+                                <p>Typographic Pattern</p>
+                                <img src="../images/typographicPatternThumbnail.jpg" alt="Overview of the typographic design.">
+                            </a>
+                            <a href="../pdfs/brothersGrimmFairyTalesBookDesign.pdf" target="_blank" class="no_underline">
+                                <p>Cover &amp; Contents of The Brother&rsquo;s Grimm</p>
+                                <img src="../images/grimmThumbnail.png" alt="Overview of the typographic design.">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="web_design_content" class="tab_content border_bottom">
+                    <h3>Web Design Projects</h3>
+                    <div class="tab_content_container">
+                        <div>
+                            <h5>INTRODUCTION TO WEB DESIGN</h5>
+                            <a href="https://xd.adobe.com/view/a4e9f247-f08d-4276-9562-d00582dfff9a-f1ba/" target="_blank"
+                                class="no_underline">
+                                <p>Urban Gardens (Desktop Version)</p>
+                                <img src="../images/urbanGardensDesktopThumbnail.png"
+                                    alt="Overview of the web design project.">
+                            </a>
+                            <a href="https://xd.adobe.com/view/90b6e2b7-5339-4281-aed2-b1e519bf53c4-c5e5/" target="_blank"
+                                class="no_underline">
+                                <p>Urban Gardens (Mobile Version)</p>
+                                <img src="../images/urbanGardensMobileThumbnail.png"
+                                    alt="Overview of the web design project.">
+                            </a>
+                            <a href="https://xd.adobe.com/view/a0f66262-b078-4669-8be9-23c21a24d11c-f5a5/" target="_blank"
+                                class="no_underline">
+                                <p>Grace Abounding In OCD (Desktop Version)</p>
+                                <img src="../images/graceAboundingDesktopThumbnail.png"
+                                    alt="Overview of the web design project.">
+                            </a>
+                            <a href="https://xd.adobe.com/view/1dab9e0e-ac6e-4b19-8030-579fdff0f556-48f8/" target="_blank"
+                                class="no_underline">
+                                <p>Grace Abounding In OCD (Mobile Version)</p>
+                                <img src="../images/graceAboundingMobileThumbnail.png"
+                                    alt="Overview of the web design project.">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <footer class="border_top border_bottom">
+        <footer class="border_top border_bottom dynamic_content_footer">
             <div class="footer_copy_box">
                 <div class="footer_copy">
                     <div class="copyright">&copy; 2024 Christopher Said - All Rights Reserved</div>
