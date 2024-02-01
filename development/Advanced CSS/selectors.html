@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Advanced Selectors</title>
+        <link rel="icon" type="image/x-icon" href="../personalMonogramLogo.svg">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+            .imgContainerBtm {
+                align-items: center;
+                background-color: #F7FF58;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .imgContainerTop {
+                align-items: center;
+                background-color: #F7FF58;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .forceDown {
+                height: 50%;
+            }
+
+            body {
+                background-color: #252323;
+            }
+
+            form {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            fieldset:first-child {
+                margin-bottom: 30px;
+            }
+
+            header > h1 {
+                color: #F7FF58;
+                font-family: "Orbitron", serif;
+                font-size: 3rem;
+                margin-left: 50px;
+                text-decoration: underline;
+            }
+
+            fieldset {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                border-style: solid;
+                border-color: #F7FF58;
+                width: 70dvw;
+            }
+
+            fieldset:nth-child(1) {
+                background-color: #fe6de6;
+            }
+
+            fieldset:nth-child(2) {
+                background-color: #3ef9fe;
+            }
+
+            fieldset > legend {
+                color: #F7FF58;
+                font-family: "Orbitron", serif;
+                font-size: 1.25rem;
+            }
+
+            section > img {
+                object-fit: cover;
+                height: 200px;
+                width: 200px;
+            }
+
+            section > p {
+                color: #252323;
+                font-family: "JetBrains Mono", monospace;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            div {
+                line-height: 1.5rem;
+            }
+
+            img[alt~="web"] {
+                border-style: solid;
+                border-color: #F7FF58;
+                border-width: 2px;
+            }
+
+            input[type|="checkbox"] {
+                accent-color: #F7FF58;
+            }
+
+            label[for] {
+                color: #252323;
+                font-family: "JetBrains Mono", monospace;
+                font-size: .75rem;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Web Development Checklist</h1>
+        </header>
+        <main>
+            <form>
+                <fieldset>
+                    <legend>HTML:</legend>
+                    <section>
+                        <div>
+                            <input id="metaTag" name="metaTag" type="checkbox">
+                            <label for="metaTag">Correct Meta Tags In Head</label>
+                        </div>
+                        <div>
+                            <input id="scriptTag" name="scriptTag" type="checkbox">
+                            <label for="scriptTag">Script Tag In Head</label>
+                        </div>
+                        <div>
+                            <input id="styleTag" name="styleTag" type="checkbox">
+                            <label for="styleTag">Style Tag In Head</label>
+                        </div>
+                        <div>
+                            <input id="changedTitle" name="changedTitle" type="checkbox">
+                            <label for="changedTitle">Changed Title In Head</label>
+                        </div>
+                        <div>
+                            <input id="linkTag" name="linkTag" type="checkbox">
+                            <label for="linkTag">Necessary Link Tags In Head</label>
+                        </div>
+                        <div>
+                            <input id="headerElement" name="headerElement" type="checkbox">
+                            <label for="headerElement">Added Header</label>
+                        </div>
+                        <div>
+                            <input id="logoHeader" name="logoHeader" type="checkbox">
+                            <label for="logoHeader">Logo In Header</label>
+                        </div>
+                        <div>
+                            <input id="h1Header" name="h1Header" type="checkbox">
+                            <label for="h1Header">H1 Element In Header</label>
+                        </div>
+                        <div>
+                            <input id="navElement" name="navElement" type="checkbox">
+                            <label for="navElement">Added Nav</label>
+                        </div>
+                        <div>
+                            <input id="ulNav" name="ulNav" type="checkbox">
+                            <label for="ulNav">UL Element In Nav</label>
+                        </div>
+                        <div>
+                            <input id="mainElement" name="mainElement" type="checkbox">
+                            <label for="mainElement">Added Main</label>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <input id="properHElement" name="properHElement" type="checkbox">
+                            <label for="properHElement">Proper H Tags In Main</label>
+                        </div>
+                        <div>
+                            <input id="paraElement" name="paraElement" type="checkbox">
+                            <label for="paraElement">Paragraph Elements Added</label>
+                        </div>
+                        <div>
+                            <input id="neededSpan" name="neededSpan" type="checkbox">
+                            <label for="neededSpan">Necessary Span Elements Added</label>
+                        </div>
+                        <div>
+                            <input id="neededFormatting" name="neededFormatting" type="checkbox">
+                            <label for="neededFormatting">Necessary Formatting Tags Added To Paragraph Text</label>
+                        </div>
+                        <div>
+                            <input id="typographerQuotes" name="typographerQuotes" type="checkbox">
+                            <label for="typographerQuotes">Changed Quotes To Typographer's Quotes</label>
+                        </div>
+                        <div>
+                            <input id="imgElement" name="imgElement" type="checkbox">
+                            <label for="imgElement">Added Image Elements</label>
+                        </div>
+                        <div>
+                            <input id="videoElement" name="videoElement" type="checkbox">
+                            <label for="videoElement">Necessary Video Elements Added</label>
+                        </div>
+                        <div>
+                            <input id="audioElement" name="audioElement" type="checkbox">
+                            <label for="audioElement">Necessary Audio Elements Added</label>
+                        </div>
+                        <div>
+                            <input id="footerElement" name="footerElement" type="checkbox">
+                            <label for="footerElement">Added Footer</label>
+                        </div>
+                        <div>
+                            <input id="copyrightFooter" name="copyrightFooter" type="checkbox">
+                            <label for="copyrightFooter">Copyright Statement In Footer</label>
+                        </div>
+                        <div>
+                            <input id="backTopBtn" name="backTopBtn" type="checkbox">
+                            <label for="backTopBtn">Back To Top Button In Footer</label>
+                        </div>
+                    </section>
+                    <section class="imgContainerTop">
+                        <img alt="Male web developer at his laptop in the synthwave aesthetic."
+                             src="maleWebDeveloper.jpg">
+                        <p class="forceDown">CODE ON!</p>
+                    </section>
+                </fieldset>
+                <fieldset>
+                    <legend>CSS:</legend>
+                    <section class="imgContainerBtm">
+                        <p class="forceDown">DREAM ON!</p>
+                        <img alt="Female web developer at his laptop in the synthwave aesthetic."
+                             src="femaleWebDeveloper.jpg">
+                    </section>
+                    <section>
+                        <div>
+                            <input id="boxSizingProperty" name="boxSizingProperty" type="checkbox">
+                            <label for="boxSizingProperty">Set All To Box Sizing: Border Box</label>
+                        </div>
+                        <div>
+                            <input id="efficientSelectors" name="effocientSelectors" type="checkbox">
+                            <label for="efficientSelectors">Used Most Efficient Selector Type &amp; Refactored</label>
+                        </div>
+                        <div>
+                            <input id="colorProperty" name="colorProperty" type="checkbox">
+                            <label for="colorProperty">Applied Color Property To All Necessary Elements</label>
+                        </div>
+                        <div>
+                            <input id="backgroundProperty" name="backgroundProperty" type="checkbox">
+                            <label for="backgroundProperty">Applied Background Properties To All Necessary
+                                Elements</label>
+                        </div>
+                        <div>
+                            <input id="borderMarginPaddingProperty" name="borderMarginPaddingProperty" type="checkbox">
+                            <label for="borderMarginPaddingProperty">Applied Border, Margin, &amp; Padding To All
+                                Necessary
+                                Elements</label>
+                        </div>
+                        <div>
+                            <input id="heightWidth" name="heightWidth" type="checkbox">
+                            <label for="heightWidth">Set Height &amp; Width Properties</label>
+                        </div>
+                        <div>
+                            <input id="customFont" name="customFont" type="checkbox">
+                            <label for="customFont">Applied Custom Fonts</label>
+                        </div>
+                        <div>
+                            <input id="textProperties" name="textProperties" type="checkbox">
+                            <label for="textProperties">Applied Text Properties</label>
+                        </div>
+                        <div>
+                            <input id="columnProperty" name="columnProperty" type="checkbox">
+                            <label for="columnProperty">Applied Column Properties As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="linkProperties" name="linkProperties" type="checkbox">
+                            <label for="linkProperties">Applied Link Properties</label>
+                        </div>
+                        <div>
+                            <input id="listProperties" name="listProperties" type="checkbox">
+                            <label for="listProperties">Applied List Properties</label>
+                        </div>
+                        <div>
+                            <input id="createContainer" name="createContainer" type="checkbox">
+                            <label for="createContainer">Created Containers For Content Layout</label>
+                        </div>
+                        <div>
+                            <input id="textMaxWidth" name="textMaxWidth" type="checkbox">
+                            <label for="textMaxWidth">Set A Max-Width For Readable Text</label>
+                        </div>
+                    </section>
+                    <section>
+                        <div>
+                            <input id="flexboxGrid" name="flexboxGrid" type="checkbox">
+                            <label for="flexboxGrid">Applied Flexbox OR Grid To The Layout Containers</label>
+                        </div>
+                        <div>
+                            <input id="positionProperty" name="positionProperty" type="checkbox">
+                            <label for="positionProperty">Applied Position Property As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="zIndexProperty" name="zIndexProperty" type="checkbox">
+                            <label for="zIndexProperty">Applied Z-Index Property As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="opacityProperty" name="opacityProperty" type="checkbox">
+                            <label for="opacityProperty">Applied Opacity Property As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="gradientShadowProperty" name="gradientShadowProperty" type="checkbox">
+                            <label for="gradientShadowProperty">Applied Gradients &amp; Shadows As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="overflowProperty" name="overflowProperty" type="checkbox">
+                            <label for="overflowProperty">Controlled Overflow As Necessary</label>
+                        </div>
+                        <div>
+                            <input id="pseudoClass" name="pseudoClass" type="checkbox">
+                            <label for="pseudoClass">Added Necessary Pseudo Classes For Functionality</label>
+                        </div>
+                        <div>
+                            <input id="transitionAnimation" name="transitionAnimation" type="checkbox">
+                            <label for="transitionAnimation">Added Transitions &amp; Animations</label>
+                        </div>
+                        <div>
+                            <input id="specificity" name="specificity" type="checkbox">
+                            <label for="specificity">Ensured Conflicting CSS Has Proper Specificity</label>
+                        </div>
+                        <div>
+                            <input id="precedence" name="precedence" type="checkbox">
+                            <label for="precedence">Ensured All CSS Has Proper Precedence</label>
+                        </div>
+                        <div>
+                            <input id="inheritance" name="inheritance" type="checkbox">
+                            <label for="inheritance">Ensured &amp; Refactored All CSS Inherits Properly &amp; Most
+                                Efficiently</label>
+                        </div>
+                        <div>
+                            <input id="mediaQuery" name="mediaQuery" type="checkbox">
+                            <label for="mediaQuery">Added Media Queries To All Pages Activating At Common
+                                Breakpoints</label>
+                        </div>
+                        <div>
+                            <input id="browserSupport" name="browserSupport" type="checkbox">
+                            <label for="browserSupport">Checked &amp; Refactored For Browser Support</label>
+                        </div>
+                    </section>
+                </fieldset>
+            </form>
+        </main>
+    </body>
+</html>
