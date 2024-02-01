@@ -161,6 +161,10 @@ font-family: "mr-eaves-sans", sans-serif;
     height: 100dvh;
 }
 
+about_section h2 {
+    text-decoration: solid #26292C underline;
+}
+
 .about_content_box {
     display: flex; 
     flex-direction: row;
@@ -429,6 +433,7 @@ font-family: "mr-eaves-sans", sans-serif;
 .tab_content p {
     background-color: transparent;
     margin-bottom: 2px;
+    width: 240px;
 }
 
 .tab_content img {
@@ -557,6 +562,306 @@ footer {
     bottom: 0;
 }
 
+@media screen and (max-width: 1440px) {
+    .header_logo {
+        flex-basis: unset;
+        justify-content: space-around;
+    }
+
+    .header_logo img {
+        width: 120px;
+    }
+
+    .header_logo h1 {
+        font-size: 40px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav_item {
+        width: 8dvw;
+        font-size: 14px;
+    }
+    .hero_section {
+        height: 130dvh;
+    }
+
+    .about_section {
+        height: 120dvh;
+    }
+
+    .about_content_box {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about_section h2 {
+        text-decoration: solid #26292C underline;
+    }
+
+    .social_icons {
+        display: flex;
+        flex-direction: row;
+        margin-left: 5px;
+    }
+
+    .tab_content_container {
+        flex-direction: row;
+    }
+
+    .tab_content p {
+        width: 240px;
+    }
+
+    .resume_container {
+        flex-direction: row;
+    }
+
+    .resume_item {
+        padding: 10px;
+    }
+
+    .force_resume_footer {
+        position: unset;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .header_logo {
+        flex-basis: unset;
+        justify-content: space-around;
+    }
+
+    .header_logo img {
+        width: 90px;
+    }
+
+    .header_logo h1 {
+        font-size: 30px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav_item {
+        width: 7dvw;
+        font-size: 10px;
+    }
+    .hero_section {
+        height: 150dvh;
+    }
+
+    .about_section {
+        height: 90dvh;
+    }
+
+    .about_content_box {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about_section h2 {
+        text-decoration: solid #26292C underline;
+    }
+
+    .fast_fact_icon {
+        width: 75px;
+        height: 75px;
+    }
+
+    .fast_fact {
+        height: 75px;
+        font-size: medium;
+    }
+
+    .footer_copy_box {
+        width: 75%;
+    }
+
+    .social_icons {
+        display: flex;
+        flex-direction: row;
+        margin-left: 5px;
+    }
+
+    .tab_content_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab_content p {
+        width: 240px;
+    }
+
+    .resume_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume_item {
+        width: 90dvw;
+        padding: 10px;
+    }
+
+    .force_resume_footer {
+        position: unset;
+        margin-top: 10px;
+    }
+
+    .chat_content {
+        width: 90dvw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .header_logo {
+        flex-basis: unset;
+        justify-content: space-around;
+    }
+
+    .header_logo img {
+        width: 110px;
+    }
+
+    .header_logo h1 {
+        font-size: 40px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .mobileNav {
+        display: flex;
+    }
+
+    /* dropdown functionality taken from W3Schools */
+    .dropbtn {
+        background-color: #193c4c;
+        border: 1px solid #26292C;
+        color: #E8E9EB;
+        padding: 16px;
+        font-family: "new-order", sans-serif;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #26292C;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        float: right;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        border: 1px solid #26292C;
+        background-color: #E8E9EB;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        right: 0;
+    }
+
+    .dropdown-content a {
+        color: #26292C;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #193c4c;
+        color: #E8E9EB;
+    }
+
+    .show {display:block;}
+
+    .hero_section {
+        height: 120dvh;
+    }
+
+    .about_section {
+        height: 150dvh;
+    }
+
+    .about_content_box {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about_section h2 {
+        text-decoration: solid #26292C underline;
+    }
+
+    .left_half {
+        width: 75dvw;
+        border: none;
+    }
+
+    .right_half {
+        margin-top: 50px;
+        width: 75dvw;
+    }
+
+    .footer_copy_box {
+        width: 75%;
+    }
+
+    .social_icons {
+        display: flex;
+        flex-direction: row;
+        margin-left: 5px;
+    }
+
+    .tab_content_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab_content p {
+        width: 240px;
+    }
+
+    .resume_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resume_item {
+        width: 90dvw;
+        padding: 10px;
+    }
+
+    .force_resume_footer {
+        position: unset;
+        margin-top: 10px;
+    }
+
+    .chat_content {
+        width: 90dvw;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .header_logo {
         flex-basis: unset;
@@ -596,7 +901,6 @@ footer {
         padding: 16px;
         font-family: "new-order", sans-serif;
         font-size: 12px;
-        border: none;
         cursor: pointer;
     }
 
@@ -614,6 +918,7 @@ footer {
     .dropdown-content {
         display: none;
         position: absolute;
+        border: 1px solid #26292C;
         background-color: #E8E9EB;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -731,6 +1036,11 @@ footer {
 
     .tab_content_container {
         flex-direction: column;
+        align-items: center;
+    }
+
+    .tab_content p {
+        width: 240px;
     }
 
     .resume_container {
