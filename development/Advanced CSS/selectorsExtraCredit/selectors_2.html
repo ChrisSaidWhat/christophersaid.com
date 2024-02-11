@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Selectors Exercise 2</title>
+        <link rel="icon" type="image/x-icon" href="../../../images/personalMonogramLogo.svg">
+
+        <style>
+
+            .alert {
+                border: 1px grey solid;
+            }
+
+            .alert.stop {
+                background-color: red;
+            }
+
+            .alert.go {
+                background-color: green;
+            }
+
+            body {
+                background-color: #5DC2E0;
+            }
+
+            .flex-container {
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0.5em;
+            }
+
+            .container {
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 20px;
+                margin: 10px auto;
+                padding: 15px;
+                width: 650px;
+            }
+
+            .pagination a {
+                padding: 10px;
+            }
+
+            #special {
+                background-color: yellow;
+            }
+
+            /*WITHOUT CHANGING THE HTML, use CSS to do the following things:
+
+            Give the element with an id of special a yellow background.
+            Give the element with a class of alert a 1px grey border.
+            If the element with a class of alert also has a class of stop, make the background red.
+            If the element with a class of alert also has a class of go, make the background green.*/
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="flex-container">
+
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="instructions.html">Instructions</a>
+                <a href="selectors_1.html">Exercise 1</a>
+                <a href="selectors_2.html">Exercise 2</a>
+                <a href="selectors_3.html">Exercise 3</a>
+                <a href="selectors_4.html">Exercise 4</a>
+                <a href="selectors_5.html">Exercise 5</a>
+                <a href="#">&raquo;</a>
+            </div><!--close pagination div-->
+        </div><!--close flex container div-->
+
+        <div class="container">
+            <h1>This is a heading</h1>
+            <p>Veggies es <span class="alert">bonus vobis</span>, proinde vos postulo <span class="alert stop">essum magis</span>
+               kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+            <h2 id="special">A level 2 heading</h2>
+            <p>Gumbo beet greens corn soko endive gumbo gourd.</p>
+            <h2>Another level 2 heading</h2>
+            <p><span class="alert go">Parsley shallot</span> courgette tatsoi pea sprouts fava bean collard greens
+                                                             dandelion okra wakame tomato. Dandelion cucumber earthnut
+                                                             pea peanut soko zucchini.</p>
+
+        </div>
+
+        <p><a href="images/selectors2.png">Selectors 2 Visual Answer</p>
+
+    </body>
+</html>

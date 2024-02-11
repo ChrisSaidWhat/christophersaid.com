@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CSS Selectors Exercise 5</title>
+        <link rel="icon" type="image/x-icon" href="../../../images/personalMonogramLogo.svg">
+
+        <style>
+
+            body {
+                background-color: #5DC2E0;
+            }
+
+            .flex-container {
+                background-color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0.5em;
+            }
+
+            .container {
+                background-color: white;
+                border: 1px solid black;
+                border-radius: 20px;
+                margin: 10px auto;
+                padding: 15px;
+                width: 650px;
+            }
+
+            .pagination a {
+                padding: 10px;
+            }
+
+
+
+            /*In this final task add CSS using attribute selectors to do the following:
+
+            Target the <a> element with a title attribute and make the border pink (border-color: pink).
+            Target the <a> element with an href attribute that contains the word contact somewhere in its value and make the border orange (border-color: orange).
+            Target the <a> element with an href value starting with https and give it a green border (border-color: green).*/
+
+
+            ul li {
+                background-color: white;
+                border: 2px solid grey;
+                margin: 20px;
+                padding: 6px;
+                width: 350px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="flex-container">
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="instructions.html">Instructions</a>
+                <a href="selectors_1.html">Exercise 1</a>
+                <a href="selectors_2.html">Exercise 2</a>
+                <a href="selectors_3.html">Exercise 3</a>
+                <a href="selectors_4.html">Exercise 4</a>
+                <a href="selectors_5.html">Exercise 5</a>
+                <a href="#">&raquo;</a>
+            </div><!--close pagination div-->
+        </div><!--close flex container div-->
+        <div class="container">
+            <ul>
+                <li><a href="https://example.com">Link 1</a></li>
+                <li><a href="http://example.com" title="Visit example.com">Link 2</a></li>
+                <li><a href="/contact">Link 3</a></li>
+                <li><a href="../contact/index.html">Link 4</a></li>
+            </ul>
+
+
+        </div>
+
+
+        <p><a href="images/selectors5.png">Selectors 5 Visual Answer</p>
+
+    </body>
+</html>
