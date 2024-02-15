@@ -66,7 +66,7 @@ font-family: "mr-eaves-sans", sans-serif;
 .viewport_alignment {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    min-height: 100vh;
 }
 
 .hero_content p {
@@ -328,6 +328,7 @@ font-family: "mr-eaves-sans", sans-serif;
 
 .container {
     display: flex;
+    flex-grow: 1;
 }
 
 .content {
@@ -496,8 +497,8 @@ font-family: "mr-eaves-sans", sans-serif;
     color: lightpink;
 }
 
-.dynamic_content_footer {
-
+.force_resume_footer {
+    margin-top: 0px;
 }
 
 /* element selections */
@@ -557,6 +558,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 1440px) {
