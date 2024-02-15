@@ -509,6 +509,10 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+html {
+    scrollbar-width: none;
+}
+
 body {
     margin: 0px;
     position: relative;
