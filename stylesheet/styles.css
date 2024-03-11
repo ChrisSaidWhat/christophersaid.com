@@ -88,10 +88,9 @@ font-family: "mr-eaves-sans", sans-serif;
     border-left: 1px solid #26292C;
     border-right: 1px solid #26292C;
     border-top: 1px solid #26292C;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     text-decoration: none;
-    width: 15%;
 }
 
 .nav_item:hover {
@@ -353,6 +352,7 @@ font-family: "mr-eaves-sans", sans-serif;
 .chat_container {
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 50px;
     position: relative;

@@ -1,0 +1,332 @@
+@import "styles.scss";
+
+/* || adopt page styling || */
+main {
+  grid-template-rows: .5fr 1fr;
+}
+
+.disclaimer {
+  font-size: smaller;
+  font-style: italic;
+}
+
+section {
+  align-items: center;
+  display: grid;
+  grid-row: 1/2;
+  justify-items: center;
+
+  h3 {
+    font-size: 2.5rem;
+  }
+}
+
+form {
+  accent-color: $verdigris;
+  grid-row: 2/3;
+  padding: 20px;
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+
+    legend {
+      font-weight: bold;
+    }
+
+    label {
+      @include labelFont;
+    }
+
+    input {
+      @include inputFont;
+    }
+
+    select, option {
+      @include inputFont;
+    }
+
+    textarea {
+      @include inputFont;
+    }
+
+    img {
+      width: 60%;
+    }
+  }
+}
+
+.formFields {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.formImg {
+  align-items: center;
+  display: grid;
+  justify-items: center;
+}
+
+.radioGroup {
+  display: grid;
+  font-size: smaller;
+  grid-column: 2/3;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+
+  div:nth-child(1) {
+    grid-column: 1/2;
+  }
+
+  div:nth-child(2) {
+    grid-column: 2/3;
+  }
+
+  div:nth-child(3) {
+    grid-column: 3/4;
+  }
+}
+
+.koalaCategory {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  p {
+    font-size: .9rem;
+    grid-column: 1/2;
+    margin-left: 10px;
+  }
+
+  div {
+    grid-column: 2/3;
+    justify-self: end;
+    margin-right: 10px;
+  }
+}
+
+.messageBox {
+  align-items: center;
+  border-left: $raisin-black 1px solid;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  p {
+    font-size: .9rem;
+    grid-column: 1/2;
+    margin-left: 10px;
+  }
+
+  div {
+    grid-column: 2/3;
+    margin-right: 10px;
+  }
+}
+
+.formControls {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  margin-top: 10px;
+
+  input[type="submit"] {
+    @include inputFont;
+    grid-column: 1/2;
+  }
+
+  input[type="reset"] {
+    grid-column: 2/3;
+    @include inputFont;
+  }
+}
+
+/* ||            end adopt page styling                || */
+
+/* || media queries || */
+
+/* || @1200px || */
+@media screen and (max-width: 1200px) {
+  main {
+    grid-column: 2/12;
+  }
+}
+
+/* ||              end @1200px                          || */
+
+/* || @979px || */
+@media screen and (max-width: 979px) {
+  section {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+
+  form {
+    fieldset {
+
+      label {
+        font-size: .9rem;
+      }
+
+      input {
+        font-size: .8rem;
+      }
+    }
+  }
+
+  .radioGroup {
+    grid-column: 1/3;
+  }
+
+  .koalaCategory {
+    p {
+      font-size: .8rem;
+    }
+  }
+
+  .messageBox {
+    p {
+      font-size: .8rem;
+    }
+  }
+
+}
+
+/* ||               end @979px                           || */
+
+/* || @767px || */
+@media screen and (max-width: 767px) {
+  main {
+    section {
+      padding: 30px;
+    }
+  }
+
+  form {
+    fieldset {
+      img {
+        width: 80%;
+      }
+    }
+  }
+
+  .koalaCategory {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    p {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      margin-left: 0;
+      margin-right: 10px;
+      text-align: center;
+    }
+
+    div {
+      grid-column: 1/2;
+      grid-row: 2/3;
+      justify-self: center;
+    }
+  }
+
+  .messageBox {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    p {
+      grid-column: 1/2;
+      grid-row: 1/2;
+      text-align: center;
+    }
+
+    div {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+  }
+
+  .formatAltLayout {
+    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+
+    label {
+      align-self: end;
+      grid-row: 1/2;
+    }
+
+    textarea {
+      grid-row: 2/3;
+    }
+  }
+}
+
+/* ||              end @767px                           || */
+
+/* || @480px || */
+@media screen and (max-width: 480px) {
+  main {
+    grid-column: 1/7;
+    padding-bottom: 0;
+  }
+
+  form {
+    fieldset {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+  .formFields {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .formImg {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .koalaCategory {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-items: center;
+
+    p {
+      margin-right: 0;
+      max-width: 40ch;
+    }
+  }
+
+  .messageBox {
+    border-left: none;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    justify-items: center;
+
+    p {
+      margin-left: 0;
+    }
+  }
+
+  .formControls {
+    margin-top: 25px;
+  }
+}
+
+/* ||             end @480px                          || */
+
+/* ||             end media queries                     || */

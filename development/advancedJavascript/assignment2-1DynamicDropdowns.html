@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDV321 Advanced JavaScript</title>
+    <link href="../../images/personalMonogramLogo.svg" rel="icon" type="image/x-icon">
+    <style>
+        #container {
+            background-color: blanchedalmond;
+            width:70%;
+            margin-left:auto;
+            margin-right:auto;
+            padding:5px;
+        }
+
+        section {
+            display:flex;
+            justify-content: center;
+        }
+
+        .leftSide, .rightSide {
+            border:thin solid brown;
+            width:50%;
+            padding-left:15px;         
+        }
+
+    </style>
+    <script>
+
+        const teamNames = ["Chiefs","Raiders","Cubs"];
+        const cookies = ["Chocolate Chip Cookie", "Sugar Cookie", "Peanut Butter Cookie"];
+        const candies = ["M&Ms","Baby Ruth","Snickers"];
+
+        let addRemoveCounter = 0;
+
+        function updateSelect() {
+            //  taken from ChatGPT provided the context of prior code as a solution to updating the dropdown
+            addRemoveCounter++;
+            console.log(addRemoveCounter);
+
+            let selectElement = document.querySelector("#teamNames");
+
+            selectElement.innerHTML = "<option value=''>Select a team</option>";
+
+            for(let i = 0; i < teamNames.length; i++) {
+                selectElement.innerHTML += "<option value='" + teamNames[i] + "'>" + teamNames[i] + "</option>";
+            }
+        }
+
+        function loadProducts() {
+            for(let i = 0; i < cookies.length; i++) {
+                let newOption = document.createElement("option");
+                newOption.setAttribute("value", cookies[i]);
+                newOption.text = cookies[i];
+                document.querySelector("#productDisplay").add(newOption);
+            }
+        }
+
+        function changeProduct() {
+            document.querySelector("#productDisplay").options.length = 0;
+
+            let isCookie = document.querySelector("#displayCookies").checked;
+            let isCandy = document.querySelector("#displayCandy").checked;
+
+            if(isCookie) {
+                //  create new default option
+                let newDefault = document.createElement("option");
+                newDefault.value = "";
+                newDefault.text = "Select a Product";
+                document.querySelector("#productDisplay").add(newDefault);
+
+                //  create and add cookies
+                loadProducts();
+            }
+            else if(isCandy) {
+                //  create new default option
+                let newDefault = document.createElement("option");
+                newDefault.value = "";
+                newDefault.text = "Select a Product";
+                document.querySelector("#productDisplay").add(newDefault);
+
+                //  create and add candies
+                for(let i = 0; i < candies.length; i++) {
+                    let newOption = document.createElement("option");
+                    newOption.setAttribute("value", candies[i]);
+                    newOption.text = candies[i];
+                    document.querySelector("#productDisplay").add(newOption);
+                }
+            }
+
+
+        }
+
+        function pageSetup() {
+            //  display the value of the currently selected team name
+            document.querySelector("#teamNames").onchange = function() {
+                document.querySelector("#outputName").innerHTML = document.querySelector("#teamNames").value;
+            }
+
+            //  add entered text to teamNames[]
+            document.querySelector("#addNameBtn").onclick = function() {
+                let addName = document.querySelector("#newTeamName").value;
+                teamNames.push(addName);
+                updateSelect();
+            }
+
+            //  reset button functionality
+            document.querySelector("#resetBtn").onclick = function() {
+                //  reset team names
+                document.querySelector("#outputName").innerHTML = "";
+                document.querySelector("#newTeamName").value = "";
+                for(let i = 0; i < addRemoveCounter; i++) {
+                    teamNames.pop();
+                }
+                let selectElement = document.querySelector("#teamNames");
+
+                selectElement.innerHTML = "<option value=''>Select a team</option>";
+
+                for(let i = 0; i < teamNames.length; i++) {
+                    selectElement.innerHTML += "<option value='" + teamNames[i] + "'>" + teamNames[i] + "</option>";
+                }
+                addRemoveCounter = 0;
+
+                //  reset products
+                document.querySelector("#displayCookies").checked = true;
+                document.querySelector("#displayCandy").checked = false;
+                changeProduct();
+            }
+
+            //  populate the products dropdown
+            loadProducts();
+
+            //  display the value of the currently selected product
+            document.querySelector("#productDisplay").onchange = function() {
+                document.querySelector("#outputProduct").innerHTML = document.querySelector("#productDisplay").value;
+            }
+
+            //  radio button functionality implementation
+            document.querySelector("#displayCookies").onchange = function() {
+                changeProduct()
+            }
+
+            document.querySelector("#displayCandy").onchange = function() {
+                changeProduct()
+            }
+        }
+
+
+    </script>
+</head>
+<body onload="pageSetup()">
+    <div id="container">
+        <header>
+
+        </header>
+        <main>
+            <h1>WDV321 Advanced JavaScript</h1>
+            <h2>Dynamic Content - Drop Down Lists</h2>
+            <p>The goals of this assignment:
+                <ol>
+                    <li>Demonstrate how to dynamically populate a select element using the document.write() technique</li>
+                    <li>Demonstrate how to dynamically populate a select element using the createElement() technique</li>
+                    <li>Demonstrate how to dynamically add an option to a select element</li>
+                    <li>Demonstrate how to dynamically change the options of a select element</li>
+                </ol>
+            </p>  
+            
+            <section>
+                <div class="leftSide">
+                    <h3>Team Names</h3>
+                    <div>
+                        <label for="teamNames">Team Names</label>
+                        <select name="teamNames" id="teamNames">
+                            <option value="">Select a team</option>
+                            <script>
+                                for(let i = 0; i < teamNames.length; i++) {
+                                    document.write("<option value='" + teamNames[i] + "'>" + teamNames[i] + "</option>");
+                                }
+                            </script>
+                        </select>
+                        <p>Team Name: <span id="outputName"></span></p>
+                    </div>
+                    <div>
+                        <form method="post" action="#">
+                            <label for="newTeamName">New Team Name: </label>
+                            <input type="text" name="newTeamName" id="newTeamName">
+                        </form>
+                        <p>
+                            <input type="submit" value="Add Team Name" id="addNameBtn">
+                            <input type="reset" id="resetBtn">
+                        </p>
+                    </div> 
+                    <div>
+                        <h4>Instructions:</h4>
+                        <ol>
+                            <li>Use document.write() and the teamNames array to populate the teamNames select element.</li>
+                            <li>When a team is selected display the selected name next to 'Team Name:'' on the page.</li>
+                            <li>When the Add Team Name button is clicked add the name entered in the textfield to the teamNames select element.</li>
+                            <li>The reset button should reset the fields to their original values.</li>
+                        </ol>
+                    </div>                   
+                </div>
+                <div class="rightSide">
+                    <h3>Cookies or Candy?</h3>
+                    <div>
+                        <label for="productDisplay">Products: </label>
+                        <select name="productDisplay" id="productDisplay">
+                            <option value="">Select a Product</option>
+                        </select>
+                        <p>
+                            Selected Product: <span id="outputProduct"></span>
+                        </p>
+                    </div>
+                    <p>
+                        <label for="displayCookies">Cookies: </label>
+                        <input type="radio" name="chooseProduct" id="displayCookies">
+                        <br>
+                        <label for="displayCandy">Candy: </label>
+                        <input type="radio" name="chooseProduct" id="displayCandy">
+                    </p>
+                    <div>
+                        <h4>Instructions:</h4>
+                        <ol>
+                            <li>Use the createElement() technique and the cookies array to populate the productDisplay select element.</li>
+                            <li>When a product is selected is selected, display the selected name next to 'Selected Product:'' on the page.</li>
+                            <li>Change the contents of the productDisplay based on which radio button is selected.</li>
+                            <li>The reset button should reset the fields to their original values.</li>
+                        </ol>
+                    </div>    
+                </div>
+
+            </section>
+
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+
+</body>
+</html>

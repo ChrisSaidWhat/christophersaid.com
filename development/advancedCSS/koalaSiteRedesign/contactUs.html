@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Christopher Said" name="author">
+        <meta content="The Koala Bear National Information Center needs more than financial help, we need boots on the ground! If saving Koalas is your jar of vegemite, sign up today and join us in making a difference!"
+              name="description">
+        <meta content="Koala Bear National Information Center, KBNIC, Volunteer, Support, Save Koalas, Rescue Koalas, Help, Koala, Give, Non-Profit, Charity, Animal Rescue, Animal Preservation, Animal Education, Environmental Protection, Australia, Sign Up, Register"
+              name="keywords">
+        <title>KBNIC Volunteer With Us</title>
+        <link href="../../../images/personalMonogramLogo.svg" rel="icon" type="image/x-icon">
+        <link href="styles/styles.css" rel="stylesheet" type="text/css">
+        <link href="styles/contactUs.css" rel="stylesheet" type="text/css">
+        <link href="styles/styles.scss" rel="stylesheet" type="text/css">
+        <link href="styles/contactUs.scss" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <img alt="Koala Logo" src="./images/koalaLogo.png">
+                <div>
+                    <h1>Koala Bear National Information Center</h1>
+                    <h2>Contact Us</h2>
+                </div>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="saveKoalas.html">Save Koalas</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="adopt.html">Adopt</a></li>
+                    <li><a href="contactUs.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h3>We'd Love Your Help, Mate!</h3>
+                <form action="php/volunteerResponse.php" method="post">
+                    <h4>Volunteer Sign-Up Form</h4>
+                    <fieldset>
+                        <legend>Contact Information</legend>
+                        <div class="formFields">
+                            <label for="firstName">First Name:</label>
+                            <input id="firstName" name="firstName" placeholder="First Name" type="text">
+                            <label for="lastName">Last Name:</label>
+                            <input id="lastName" name="lastName" placeholder="Last Name" type="text">
+                            <label for="streetAddress">Street Address:</label>
+                            <input id="streetAddress" name="streetAddress" placeholder="Street Address" type="text">
+                            <label for="telephone">Telephone Number:</label>
+                            <input class="fieldSize" id="telephone" name="telephone" placeholder="123-456-7890"
+                                   type="tel">
+                            <label for="email">Email Address:</label>
+                            <input class="fieldSize" id="email" name="email" placeholder="name@example.com"
+                                   type="email">
+                        </div>
+                    </fieldset>
+                    <div class="formImg">
+                        <img alt="Doodle of koalas marching off to volunteer."
+                             src="images/koalasMarchingToVolunteer.png">
+                    </div>
+                    <fieldset>
+                        <legend>Volunteer Details</legend>
+                        <div class="formContactOptions">
+                            <div class="radioGroupTextOpt">
+                                <p>Receive Updates Via Text: </p>
+                                <div>
+                                    <label for="textOptIn">Opt In</label>
+                                    <input checked id="textOptIn" name="optText" type="radio" value="Opt In">
+                                </div>
+                                <div>
+                                    <label for="textOptOut">Opt Out</label>
+                                    <input id="textOptOut" name="optText" type="radio" value="Opt Out">
+                                </div>
+                            </div>
+                            <div class="radioGroupEmailOpt">
+                                <p>Receive Updates Via Email: </p>
+                                <div>
+                                    <label for="emailOptIn">Opt In</label>
+                                    <input checked id="emailOptIn" name="optEmail" type="radio" value="Opt In">
+                                </div>
+                                <div>
+                                    <label for="emailOptOut">Opt Out</label>
+                                    <input id="emailOptOut" name="optEmail" type="radio" value="Opt Out">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formVolunteerPositions">
+                            <label for="volunteerJob">Desired Volunteer Position:</label>
+                            <select id="volunteerJob" name="volunteerJob">
+                                <option value="">Please Select A Position</option>
+                                <option value="Literature">Literature Distribution</option>
+                                <option value="Letters">Letter Writing</option>
+                                <option value="Doors">Door to Door</option>
+                                <option value="Cleaning">Litter Pickup</option>
+                                <option value="Fundraising">Fundraising</option>
+                                <option value="Events">Event Planning</option>
+                            </select>
+                        </div>
+                        <div class="formVolunteerComments">
+                            <label for="comments">Comments:</label>
+                            <textarea id="comments" name="comments" placeholder="Write message here..."></textarea>
+                        </div>
+                    </fieldset>
+                    <div class="formControls">
+                        <input name="submitButton" type="submit" value="Submit">
+                        <input name="resetButton" type="reset">
+                    </div>
+                </form>
+            </main>
+            <footer>
+                <p>Copyright 2018 All rights reserved. Australian Koala Foundation</p>
+                <a href="https://en.wikipedia.org/wiki/Koala"><img alt="Koala Logo"
+                                                                   src="images/koalaLogo.png"></a>
+            </footer>
+        </div>
+    </body>
+</html>

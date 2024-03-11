@@ -1,0 +1,163 @@
+@import "styles.scss";
+/*  || gallery page styling || */
+
+main {
+  align-items: center;
+  grid-column: 2/12;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 1fr 1fr 1fr;
+
+  h3 {
+    font-size: 2.5rem;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: center;
+  }
+
+  div:nth-child(2) {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+
+  div:nth-child(3) {
+    grid-column: 1/4;
+    grid-row: 3/4;
+  }
+
+  div:nth-child(4) {
+    grid-column: 1/4;
+    grid-row: 4/5;
+  }
+}
+
+.figureContainer {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px 1fr;
+
+  h4 {
+    font-size: 1.75rem;
+    font-style: italic;
+    grid-row: 1/2;
+    margin-left: 40px;
+    text-decoration: underline;
+  }
+
+  figure:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  figure:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  figure:nth-child(4) {
+    grid-column: 3/4;
+    grid-row: 2/3;
+  }
+}
+
+figure {
+  align-self: start;
+  background-color: $seasalt;
+  border: $raisin-black 1px solid;
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+
+  img:hover {
+    filter: opacity(.5);
+  }
+
+  figcaption {
+    padding: 10px;
+  }
+}
+
+.koalaName {
+  color: $verdigris;
+  font-weight: bold;
+}
+
+.koalaDate {
+  color: $verdigris;
+  font-style: italic;
+}
+
+/* ||           end gallery styling            || */
+
+/* || media queries || */
+
+/* || @979px || */
+@media screen and (max-width: 979px) {
+  main {
+    grid-column: 2/12;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .figureContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 1fr 1fr;
+
+    h4 {
+      font-size: 1.75rem;
+    }
+
+    figure:nth-child(2) {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+
+    figure:nth-child(3) {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+
+    figure:nth-child(4) {
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+
+    figcaption {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* ||             end @979px              || */
+
+/* || @767px || */
+@media screen and (max-width: 767px) {
+  .figureContainer {
+    h4 {
+      font-size: 1.6rem;
+    }
+
+    figcaption {
+      font-size: .9rem;
+    }
+  }
+}
+
+/* ||            end @767px                 || */
+
+/* || @480px || */
+@media screen and (max-width: 480px) {
+  main {
+    grid-column: 1/7;
+  }
+}
+
+/* ||             end @480px                || */
+
+/* ||         end media queries          || */

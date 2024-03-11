@@ -16,6 +16,7 @@ $myArray = array("PHP", "HTML", "JavaScript");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2-1:PHP Basics</title>
+    <link href="../../images/personalMonogramLogo.svg" rel="icon" type="image/x-icon">
 </head>
 <script>
     let myArrayJS = [];
