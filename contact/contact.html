@@ -34,7 +34,162 @@
                     }
                 }
             }
+
+            function formPreprocessing() {
+                let validForm = true;
+
+                if(validateFirstName()) {
+
+                }
+                else {
+                    validForm = false;
+                }
+
+                if(validateLastName()) {
+
+                }
+                else {
+                    validForm = false;
+                }
+
+                if(validateEmail()) {
+
+                }
+                else {
+                    validForm = false;
+                }
+
+                if(validateContactReason()) {
+
+                }
+                else {
+                    validForm = false;
+                }
+
+                if(validForm) {
+                    document.querySelector("form").submit();
+                    document.querySelector("form").reset();
+                    resetFunctionality();
+                }
+            }
+
+            function prepareNewFirst() {
+                document.querySelector("#firstName").style.setProperty("color", "initial");
+                document.querySelector("#firstName").placeholder = "First Name";
+            }
+
+            function prepareNewLast() {
+                document.querySelector("#lastName").style.setProperty("color", "initial");
+                document.querySelector("#lastName").placeholder = "Last Name";
+            }
+
+            function prepareNewEmail() {
+                document.querySelector("#email").style.setProperty("color", "initial");
+                document.querySelector("#email").placeholder = "Email Address";
+            }
+
+            function prepareNewContactReason() {
+                document.querySelector("#contactReason").style.setProperty("color", "initial");
+                document.querySelector("#contactReason").style.setProperty("opacity", "1");
+                document.querySelector("#firstOpt").text = "Select A Reason...";
+            }
+
+            function resetFunctionality() {
+                prepareNewFirst();
+                prepareNewLast();
+                prepareNewEmail();
+                prepareNewContactReason();
+            }
+
+            function validateFirstName() {
+                let field = document.querySelector("#firstName").value;
+                let validForm = true;
+
+                if(field === "") {
+                    validForm = false;
+                    document.querySelector("#firstName").style.setProperty("color", "red");
+                    document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
+                }
+                if(field === null){
+                    validForm = false;
+                    document.querySelector("#firstName").style.setProperty("color", "red");
+                    document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
+                }
+                if(isNaN(field) === false && field.length > 0) {
+                    validForm = false;
+                    document.querySelector("#firstName").style.setProperty("color", "red");
+                    document.querySelector("#firstName").value = "";
+                    document.querySelector("#firstName").placeholder = "*Cannot Include Numbers!";
+                }
+
+                return validForm;
+            }
+
+            function validateLastName() {
+                let field = document.querySelector("#lastName").value;
+                let validForm = true;
+
+                if(field === "") {
+                    validForm = false;
+                    document.querySelector("#lastName").style.setProperty("color", "red");
+                    document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
+                }
+                if(field === null){
+                    validForm = false;
+                    document.querySelector("#lastName").style.setProperty("color", "red");
+                    document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
+                }
+                if(isNaN(field) === false && field.length > 0) {
+                    validForm = false;
+                    document.querySelector("#lastName").style.setProperty("color", "red");
+                    document.querySelector("#lastName").value = "";
+                    document.querySelector("#lastName").placeholder = "*Cannot Include Numbers!";
+                }
+
+                return validForm;
+            }
+
+            function validateEmail() {
+                let field = document.querySelector("#email").value;
+                let validForm = true;
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if(emailPattern.test(field) === false) {
+                    validForm = false;
+                    document.querySelector("#email").style.setProperty("color", "red");
+                    document.querySelector("#email").placeholder = "*Must Be A Valid Email!";
+                }
+
+                return validForm;
+            }
+
+            function validateContactReason() {
+                let field = document.querySelector("#contactReason").value;
+                let validForm = true;
+
+                if(field === "") {
+                    validForm = false;
+                    document.querySelector("#contactReason").style.setProperty("color", "red");
+                    document.querySelector("#contactReason").style.setProperty("opacity", ".54");
+                    document.querySelector("#firstOpt").text = "*Must Select A Reason!";
+                }
+
+                return validForm;
+            }
+
         </script>
+
+        <style>
+            .content {
+                display: grid;
+                grid-template-rows: 91.533px 1fr;
+            }
+
+            form {
+                align-self: center;
+                justify-self: center;
+            }
+        </style>
 
     </head>
 
@@ -72,6 +227,38 @@
                     <div class="headline_container border_bottom">
                         <h2 class="headline">Contact</h2>
                     </div>
+                    <form action="contactProcessing.php" method="post">
+                        <fieldset>
+                            <legend>Information</legend>
+
+                            <label for="firstName">First Name: </label>
+                            <input id="firstName" name="firstName" placeholder="First Name" required type="text" onclick="prepareNewFirst()">
+
+                            <label for="lastName">Last Name: </label>
+                            <input id="lastName" name="lastName" placeholder="Last Name" required type="text" onclick="prepareNewLast()">
+
+                            <label for="email">Email: </label>
+                            <input id="email" name="email" placeholder="Email Address" required type="email" onclick="prepareNewEmail()">
+
+                            <label for="contactReason">Reason For Contact: </label>
+                            <select id="contactReason" name="contactReason" required onclick="prepareNewContactReason()">
+                                <option value="" id="firstOpt">Select A Reason...</option>
+                                <option value="Freelance/Contract Work">Freelance/Contract Work</option>
+                                <option value="Schedule An Interview">Schedule An Interview</option>
+                                <option value="Internship Offer">Internship Offer</option>
+                                <option value="Employment Offer">Employment Offer</option>
+                                <option value="Tutoring Request">Tutoring Request</option>
+                                <option value="Further Information Request">Further Information Request</option>
+                            </select>
+
+                            <label for="additionalComments">Additional Comments: </label>
+                            <textarea id="additionalComments" name="additionalComments"
+                                      placeholder="Write Message Here..."></textarea>
+
+                            <input type="button" value="Submit" id="submitBtn" onclick="formPreprocessing()">
+                            <input type="reset" id="resetBtn" onclick="resetFunctionality()">
+                        </fieldset>
+                    </form>
                 </div>
             </div>
             <footer class="border_top border_bottom">

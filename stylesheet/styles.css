@@ -554,6 +554,89 @@ p {
     max-width: 70ch;
 }
 
+form {
+    width: 50%;
+}
+
+fieldset {
+    border: #26292C 1px solid;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 150px 1fr;
+    padding: 20px;
+}
+
+legend {
+    font-family: "new-order", sans-serif;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+label {
+    align-self: center;
+    font-family: "new-order", sans-serif;
+    font-weight: 300;
+}
+
+input {
+    accent-color: #26292C;
+    border: #26292C 1px solid;
+    font-family: "new-order", sans-serif;
+    padding: 5px;
+    font-size: .9rem;
+}
+
+[type="button"]:hover {
+    background-color: #193c4c;
+    color: #E8E9EB;
+    cursor: pointer;
+}
+
+[type="reset"]:hover {
+    background-color: #193c4c;
+    color: #E8E9EB;
+    cursor: pointer;
+}
+
+select {
+    accent-color: #26292C;
+    border: #26292C 1px solid;
+    font-family: "new-order", sans-serif;
+    padding: 5px;
+    font-size: .9rem;
+}
+
+textarea {
+    accent-color: #26292C;
+    border: #26292C 1px solid;
+    font-family: "new-order", sans-serif;
+    padding: 5px;
+    font-size: .9rem;
+}
+
+.field_highlight {
+    color: #193c4c;
+    font-style: italic;
+}
+
+.signature_lg {
+    color: #193c4c;
+    font-family: "acier-bat-gris", sans-serif;
+    font-size: 1.17em;
+}
+
+.motto {
+    color: #193c4c;
+    font-family: "new-order", sans-serif;
+    font-size: smaller;
+}
+
+.user_comments {
+    color: #193c4c;
+    border: #26292C 1px solid;
+    padding: 10px;
+    font-family: "new-order", sans-serif;
+}
 footer {
     display: flex;
     flex-direction: row;
@@ -1052,5 +1135,15 @@ footer {
     .chat_headline_container {
         padding: 10px;
     }
+
+    .message_box {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    form {
+        width: initial;
+    }
+
 
 }
