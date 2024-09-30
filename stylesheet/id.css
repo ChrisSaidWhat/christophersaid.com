@@ -133,6 +133,11 @@
     width: 50%;
 }
 
+#skill_ui_ux_design {
+    background-color: var(--primaryColor);
+    width: 40%;
+}
+
 #skill_verbal_communication {
     background-color: var(--primaryColor);
     /*width: 100%;*/
