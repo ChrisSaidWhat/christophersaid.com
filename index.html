@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="author" content="Christopher Said">
+        <meta name="description" content="The portfolio of web developer and graphic designer, Christopher Said, Ankeny, Iowa.">
+        <meta name="keywords" content="portfolio, web development, web developer, graphic design, graphic designer, photography, photographer, programming, programmer, software development, software developer, Iowa, Ankeny">
         <title>CS Design & Dev</title>
-        <link href="./images/personalMonogramLogo.svg" rel="icon" type="image/x-icon">
-        <link href="./stylesheet/styles.css" rel="stylesheet" type="text/css">
+        <link href="./assets/favicon.svg" rel="icon" type="image/x-icon">
+        <link href="./stylesheet/declaration.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheet/global.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheet/class.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheet/id.css" rel="stylesheet" type="text/css">
+        <link href="./stylesheet/responsive.css" rel="stylesheet" type="text/css">
 
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/73da6968f8.js"></script>
 
         <script>
-            //  code taken from W3Schools.com
-            let scrollBtn = document.querySelector(".scroll_btn");
-
-            function scrollToTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
-
             //  code taken from W3Schools
             function myFunction() {
                 document.getElementById("myDropdown").classList.toggle("show");
@@ -35,44 +34,113 @@
                     }
                 }
             }
+
+            function prepareFunctionality() {
+                //  code taken from ChatGPT after a discussion in which it was decided to modify previous iteration of this code
+                const toast = document.getElementById('toast');
+
+                // Function to attach event listeners to both .hover_item and .logo_link_alt
+                function attachHoverListeners() {
+                    const hoverItems = document.querySelectorAll('.hover_item, .hover_item_alt');
+
+                    hoverItems.forEach(hoverItem => {
+                        hoverItem.addEventListener('mouseenter', () => {
+                            toast.style.visibility = 'visible';
+                            toast.style.opacity = '1';
+                        });
+
+                        hoverItem.addEventListener('mouseleave', () => {
+                            setTimeout(() => {
+                                toast.style.visibility = 'hidden';
+                                toast.style.opacity = '0';
+                            }, 4000); // Toast disappears after 4 seconds
+                        });
+                    });
+                }
+
+                // Attach listeners initially
+                attachHoverListeners();
+
+                // Optional: Re-attach listeners on window resize (if dynamic layout changes are frequent)
+                window.addEventListener('resize', attachHoverListeners);
+            }
+
+            window.onload = prepareFunctionality;
+
+            //  code taken from W3Schools.com
+            window.onscroll = function () {
+                scrollIndicator()
+            };
+
+            function scrollIndicator() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll_indicator").style.width = scrolled + "%";
+            }
+
+            //  code taken from W3Schools.com
+
+            function scrollToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
         </script>
 
     </head>
 
-    <body class="viewport_alignment">
-        <div class="hero_section">
-            <header class="border_top">
-                <div class="header_logo">
-                    <img alt="CS Design & Dev logo." src="./images/personalMonogramLogo.svg">
-                    <h1>Christopher Said Design & Dev</h1>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9K6SPKXYX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-S9K6SPKXYX');
+    </script>
+
+    <body>
+        <header class="border_bottom">
+            <a class="no_underline" href="index.html">
+                <div class="cs_branding_container border_right">
+                    <img alt="CS Design & Dev logo." class="cs_logo" src="./assets/personalMonogramLogo.svg">
+                    <h1 class="branding_main">Christopher Said Design & Dev</h1>
+                    <h1 class="branding_alt">Christopher Said</h1>
                 </div>
-                <nav>
-                    <a class="nav_item" href="./index.html">Home</a>
-                    <a class="nav_item" href="./design/design.html">Design</a>
-                    <a class="nav_item" href="./development/development.html">Development</a>
-                    <a class="nav_item" href="./resume/resume.html">Resume</a>
-                    <a class="nav_item" href="./contact/contact.html">Contact</a>
-                </nav>
-                <nav class="mobileNav">
-                    <!-- Code taken from W3Schools-->
-                    <div class="dropdown">
-                        <button class="dropbtn" onclick="myFunction()">Menu</button>
-                        <div class="dropdown-content" id="myDropdown">
-                            <a href="./index.html">Home</a>
-                            <a href="./design/design.html">Design</a>
-                            <a href="./development/development.html">Development</a>
-                            <a href="./resume/resume.html">Resume</a>
-                            <a href="./contact/contact.html">Contact</a>
-                        </div>
+            </a>
+            <nav>
+                <a class="nav_item" href="./index.html">Home</a>
+                <a class="nav_item" href="./work/work.html">My Work</a>
+                <a class="nav_item" href="./resume/resume.html">Resume</a>
+                <a class="nav_item" href="./contact/contact.html">Contact</a>
+            </nav>
+            <nav class="mobile_nav">
+                <!-- Code taken from W3Schools-->
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><i class="fa-solid fa-bars"></i></button>
+                    <!-- Bars from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/bars?f=classic&s=solid -->
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="./index.html">Home</a>
+                        <a href="./work/work.html">My Work</a>
+                        <a href="./resume/resume.html">Resume</a>
+                        <a href="./contact/contact.html">Contact</a>
                     </div>
-                </nav>
-            </header>
-            <div class="hero_content">
-                <div class="headline_container border_bottom">
-                    <h2 class="headline">Designing Dreams, Coding Reality - Where Creativity Meets Code</h2>
                 </div>
-                <div class="hero_content_box">
-                    <p class="welcome border_right hero_content_spacer">
+            </nav>
+            <div class="progress_container">
+                <div class="progress_bar" id="scroll_indicator"></div>
+            </div> <!-- Taken from W3Schools.com -->
+        </header>
+        <div class="hero_container border_bottom">
+            <div>
+                <h2 class="hero_text">I Code Because I Love It</h2>
+                <div>
+                    <p class="welcome_msg_lg">
                         Welcome to my portfolio! My name is Christopher Said and I am so glad that you have found your
                         way
                         here. On this site you will find my work in various disciplines and some background on who I am
@@ -105,179 +173,160 @@
                         <br><br>
                         <span class="signature">Christopher Said</span>
                     </p>
-                    <img alt="Photo of Christopher Said." class="headshot hero_content_spacer"
-                         src="./images/headshotCutout.png">
+                    <p class="welcome_msg_sm">
+                        Welcome to my portfolio! I’m Christopher Said, a web development and programming student with a
+                        diverse educational background that spans journalism, theology, and graphic design. My journey
+                        has been one of discovery, starting with an honors program in journalism, followed by theology
+                        and missions work, which honed my logical thinking. Later, I explored graphic design and
+                        photography, but my passion for coding, where logic meets creativity, led me to switch to web
+                        development. I’m eager to apply the varied skills I’ve gained over the years for clients or
+                        employers. Feel free to explore my work and reach out!
+                        <br><br>
+                        <span class="signature">Christopher Said</span>
+                    </p>
+                </div>
+            </div>
+            <div class="headshot_container">
+                <img alt="Photo of Christopher Said." class="headshot"
+                     src="./assets/headshotCutout.png">
+            </div>
+        </div>
+        <div class="fast_fact_container">
+            <h2>Fast Facts</h2>
+            <div class="fast_fact_left">
+                <div class="fast_fact_left_icons">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/eeouelif.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- School from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/486-school -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/hbtheitu.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Glasses from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/243-glasses -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/vlycxjwx.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Coding from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/742-code -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/xirobkro.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Computer from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/478-computer-display -->
+                </div>
+                <div class="fast_fact_left_text">
+                    <h4>6+ Years In College</h4>
+                    <h4><a class="hyperlink_text" href="pdfs/IQTestResults.pdf" target="_blank">IQ of 136</a></h4>
+                    <h4>6 Coding Languages Known</h4>
+                    <h4>Experience In Tutoring Coding</h4>
+                </div>
+            </div>
+            <div class="fast_fact_right">
+                <div class="fast_fact_right_text">
+                    <h4>6 Countries Visited</h4>
+                    <h4>3 Foreign Languages Studied</h4>
+                    <h4>Background In Photography</h4>
+                    <h4>Background In Graphic Design</h4>
+                </div>
+                <div class="fast_fact_right_icons">
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/pbbsmkso.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Globe from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/27-globe -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/wzrwaorf.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Consultation from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/981-consultation -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/ppwsfvnn.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Camera from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/61-camera -->
+                    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+                    <lord-icon
+                            colors="primary:#121331,secondary:#193c4c"
+                            src="https://cdn.lordicon.com/ghhwiltn.json"
+                            trigger="hover">
+                    </lord-icon>
+                    <!-- Edit Document from Lordicon is licensed under CC BY-ND 4.0 (https://creativecommons.org/licenses/by-nd/4.0/legalcode)
+                    and is available at https://lordicon.com/icons/wired/outline/245-edit-document -->
                 </div>
             </div>
         </div>
-        <div class="about_section">
-            <h2 class="headline_itc about_headline_separator">Fast Facts!</h2>
-            <div class="about_content_box">
-                <div class="left_half">
-                    <div class="icon_col">
-                        <img alt="Icon of a human brain." class="fast_fact_icon" src="./images/SVG/yearsCollege.svg">
-                        <img alt="Icon of a human brain." class="fast_fact_icon" src="./images/SVG/iq.svg">
-                        <img alt="Icon of angle brackets used in code." class="fast_fact_icon"
-                             src="./images/SVG/numLanguages.svg">
-                        <img alt="Icon of a computer monitor." class="fast_fact_icon"
-                             src="./images/SVG/peopleTutored.svg">
-                    </div>
-                    <div class="text_col_lt">
-                        <h4 class="fast_fact">6+ Years In College</h4>
-                        <h4 class="fast_fact">IQ of 136</h4>
-                        <h4 class="fast_fact">6 Coding Languages Known</h4>
-                        <h4 class="fast_fact">Experience In Tutoring Coding</h4>
-                    </div>
-                </div>
-                <div class="right_half">
-                    <div class="text_col_rt">
-                        <h4 class="fast_fact">6 Countries Visited</h4>
-                        <h4 class="fast_fact">3 Foreign Languages Studied</h4>
-                        <h4 class="fast_fact">Favorite Book: Bible</h4>
-                        <h4 class="fast_fact">Favorite Game: Minecraft</h4>
-                    </div>
-                    <div class="icon_col">
-                        <img alt="Icon of an imaginary country." class="fast_fact_icon"
-                             src="./images/SVG/countriesVisited.svg">
-                        <img alt="Icon of a speech bubble." class="fast_fact_icon" src="./images/SVG/langsStudied.svg">
-                        <img alt="Icon of a book." class="fast_fact_icon" src="./images/SVG/favBook.svg">
-                        <img alt="Icon of a video game controller." class="fast_fact_icon"
-                             src="./images/SVG/favVideoGame.svg">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="chats_section">
-            <h2 class="headline">My Chats With ChatGPT</h2>
-            <section class="vertical_container">
-                <a class="no_underline" href="./chats/howComputersWork.html">
-                    <div class="vertical_selection">
-                        <h3 class="vertical_selection_text">How A Computer Works</h3>
-                    </div>
-                </a>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-                <div class="vertical_selection">
-                    <h3 class="coming_soon_icon">⏳</h3>
-                </div>
-            </section>
-        </div>
-        <footer class="border_top border_bottom">
-            <div class="footer_copy_box">
-                <div class="footer_copy">
+        <footer class="border_top">
+            <div class="footer_left border_right">
+                <div class="footer_left_left_half">
                     <div class="copyright">&copy; 2024 Christopher Said - All Rights Reserved</div>
-                    <div class="attribution">Icons by <a href="https://icons8.com/" target="_blank">Icons8</a></div>
                 </div>
-                <div class="social_icons">
-                    <a class="no_underline" href="https://www.linkedin.com/in/cs-design-and-dev/" target="_blank">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                        <svg class="social_icon" id="Layer_1" style="enable-background:new 0 0 50 50;"
-                             version="1.1" viewBox="0 0 50 50" x="0px" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                            <style type="text/css">
-                                .st0 {
-                                    fill: #26292C;
-                                }
-                            </style>
-                            <path class="st0"
-                                  d="M41,4H9C6.2,4,4,6.2,4,9v32c0,2.8,2.2,5,5,5h32c2.8,0,5-2.2,5-5V9C46,6.2,43.8,4,41,4z M17,20v19h-6V20H17z
-                                M11,14.5c0-1.4,1.2-2.5,3-2.5s2.9,1.1,3,2.5c0,1.4-1.1,2.5-3,2.5C12.2,17,11,15.9,11,14.5z M39,39h-6c0,0,0-9.3,0-10c0-2-1-4-3.5-4
-                                h-0.1C27,25,26,27,26,29c0,0.9,0,10,0,10h-6V20h6v2.6c0,0,1.9-2.6,5.8-2.6c4,0,7.2,2.7,7.2,8.3V39z"/>
-                        </svg>
-                    </a>
-                    <a class="no_underline" href="https://github.com/ChrisSaidWhat" target="_blank">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                        <svg class="social_icon" id="Layer_1" style="enable-background:new 0 0 50 50;"
-                             version="1.1" viewBox="0 0 50 50" x="0px" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                            <style type="text/css">
-                                .st0 {
-                                    fill: #26292C;
-                                }
-                            </style>
-                            <path class="st0"
-                                  d="M17.8,46.8c0.7-0.3,1.2-1,1.2-1.8v-5.4c0-0.2,0-0.4,0-0.6c0,0,0,0,0,0c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8
-                        	c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2c2.5,0,3.8-0.1,4.6-0.6
-                        	c0.9-1.4,2.2-2.4,3.6-2.4v0c-5.7-0.2-9.3-2.1-11-5c-3.7,0-6.9,0.4-8.7,0.7c-0.1-0.3-0.1-0.7-0.2-1C6,27.4,9,27.1,12.5,27
-                        	c-0.1-0.3-0.2-0.6-0.3-0.8c-3.5-0.2-6.5,0-8.2,0.1c0-0.3,0-0.7-0.1-1c1.6-0.1,4.6-0.3,8-0.1c-0.1-0.5-0.1-1-0.1-1.5
-                        	c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1
-                        	c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5c0,0.5,0,1-0.1,1.4c3.5-0.2,6.5,0,8.2,0.1c0,0.3,0,0.7-0.1,1c-1.7-0.1-4.8-0.3-8.4-0.1
-                        	c-0.1,0.3-0.2,0.7-0.3,1c3.5,0,6.7,0.4,8.5,0.7c0,0.3-0.1,0.7-0.2,1c-1.9-0.3-5.2-0.7-8.9-0.7c-1.7,2.9-5.2,4.8-10.8,5v0
-                        	c2.6,0,5,3.9,5,6.6V45c0,0.8,0.5,1.5,1.2,1.8C41.4,43.8,48,35.2,48,25C48,12.3,37.7,2,25,2S2,12.3,2,25C2,35.2,8.6,43.8,17.8,46.8z"/>
-                        </svg>
-                    </a>
-                    <a class="no_underline" href="https://www.flickr.com/people/195699998@N02/" target="_blank">
-                        <?xml version="1.0" encoding="utf-8"?>
-                        <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                        <svg class="social_icon" id="Layer_1" style="enable-background:new 0 0 50 50;" version="1.1"
-                             viewBox="0 0 50 50" x="0px" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                            <style type="text/css">
-                                .st0 {
-                                    fill: #26292C;
-                                }
-                            </style>
-                            <path class="st0" d="M9,4C6.3,4,4,6.3,4,9v32c0,2.7,2.3,5,5,5h32c2.7,0,5-2.3,5-5V9c0-2.7-2.3-5-5-5H9z M9,6h32c1.7,0,3,1.3,3,3v32
-                                            c0,1.7-1.3,3-3,3H9c-1.7,0-3-1.3-3-3V9C6,7.3,7.3,6,9,6z M16,17c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S20.4,17,16,17z M34,17
-                                            c-4.4,0-8,3.6-8,8s3.6,8,8,8s8-3.6,8-8S38.4,17,34,17z"/>
-                            </svg>
-                    </a>
+                <div class="footer_left_right_half">
+                    <a class="no_underline logo_link" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                    <!-- LinkedIn logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/linkedin?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <!-- Instagram logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/instagram?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-xl"></i></a>
+                    <!-- GitHub logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/github?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-xl"></i></a>
+                    <!-- Flickr logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/flickr?f=brands&s=solid -->
+                    <a class="no_underline logo_link hover_item"><i class="fa-brands fa-creative-commons-by fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt hover_item_alt"><i
+                            class="fa-brands fa-creative-commons-by fa-xl"></i></a>
+                    <!-- Creative Commons BY logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/creative-commons-by?f=brands&s=solid -->
+                    <div class="toast" id="toast">
+                        <h6 class="toast_heading">Attribution</h6>
+                        <div class="attribution"><a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
+                        </div>
+                        <div class="attribution"><a href="https://fontawesome.com/">Brand and other icons by Font
+                            Awesome</a></div>
+                    </div>
                 </div>
             </div>
-            <div class="footer_btn_box scroll_btn" onclick="scrollToTop()">
-                <?xml version="1.0" encoding="utf-8"?>
-                <!-- Generator: Adobe Illustrator 28.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                <svg class="arrow_btn" style="enable-background:new 0 0 576.9 504.1;" version="1.1"
-                     viewBox="0 0 576.9 504.1" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                    <g id="Layer_1-2">
-                        <g>
-                            <path class="st0" d="M0,342.2c0.2-7,0.6-13.1,0.7-19.4C1,305.9,1.2,289,1.6,272c0-0.9,0.6-2,1.3-2.6c3.8-3.9,7.6-7.7,11.5-11.5
-                            c9.1-8.9,18.2-17.8,27.2-26.8c22.3-22,44.5-44.1,66.8-66.1c11.7-11.6,23.6-23,35.3-34.6c23.1-22.9,46.3-45.7,69.3-68.8
-                            c13-13,25.7-26.4,38.6-39.7c6.6-6.7,13.1-13.5,19.7-20.2c0.5-0.6,1.2-1.1,1.9-1.7c0.8,0.6,1.6,1,2.2,1.7
-                            c12.3,12.3,24.6,24.7,36.9,37c18.5,18.6,36.9,37.4,55.5,56c19.6,19.6,39.5,38.9,59.1,58.4c11.6,11.6,23.1,23.4,34.7,35
-                            c11.8,11.8,23.7,23.4,35.5,35.1c19.7,19.5,39.4,39,59.1,58.5c6.7,6.6,13.4,13.2,20.1,19.8c0.3,0.3,0.5,1,0.5,1.5
-                            c0,23.6,0.1,47.2,0.1,70.8c0,2.5,0,5,0,7.5c-0.2,0-0.5,0.1-0.7,0.1c-0.4-0.3-0.9-0.6-1.3-1c-9.3-9.8-18.4-19.6-27.8-29.2
-                            c-17.5-17.7-35-35.3-52.6-53c-19.6-19.6-39.4-39.2-59-58.9c-21-21-41.9-42-62.9-63c-19.5-19.6-38.9-39.3-58.4-58.8
-                            c-13.3-13.3-26.7-26.5-40.1-39.7c-0.4-0.4-0.7-0.7-1.1-1.1c-2.1-2.2-2.1-2.2-4.3-0.1c-7.1,6.9-14.2,13.8-21.3,20.8
-                            c-12.7,12.4-25.4,24.9-38.1,37.4c-20.2,19.9-40.4,39.8-60.6,59.8c-16.7,16.6-33.2,33.3-49.8,49.9c-17.2,17.1-34.6,34.1-51.8,51.3
-                            C32.2,310.2,17.6,325,2.8,339.7C2.1,340.5,1.3,341.1,0,342.2L0,342.2z"/>
-                            <path class="st0" d="M575.7,504.1c-0.8-0.6-1.3-0.9-1.6-1.4c-14.6-16.6-30.8-31.8-46.4-47.4c-15.6-15.6-31.1-31.3-46.7-46.9
-                            c-14.4-14.4-28.9-28.6-43.2-43c-13.8-13.9-27.3-27.9-41.1-41.7c-17.9-18-36-35.8-54.1-53.7c-16.2-16.1-32.5-32.1-48.9-48.1
-                            c-4.4-4.3-9.2-8.2-13.7-12.3c-0.4-0.4-0.5-1.3-0.5-1.9c0.4-23,0.8-46,1.2-69c0-2.1,0-4.2,0-6.8c0.7,0.5,1.3,0.8,1.7,1.2
-                            c12.8,13,25.4,26.1,38.2,39.1c10.7,10.8,21.5,21.4,32.2,32.2c16.6,16.7,33.2,33.5,49.9,50.2c14.6,14.7,29.4,29.3,44.1,44
-                            c12.2,12.2,24.3,24.4,36.5,36.6c9.1,9.1,18,18.4,27.1,27.5c20.2,20.4,40.3,40.7,60.5,61c0.8,0.8,1.6,1.7,2.3,2.6
-                            c0.3,0.4,0.6,1,0.5,1.3c-0.8,1.3,0.1,1.9,1,2.1c1.9,0.5,1.9,1.8,1.9,3.3c-0.2,19.8-0.4,39.5-0.6,59.3c0,3.2,0,6.4,0.1,9.5
-                            C575.9,502.5,575.8,503.1,575.7,504.1L575.7,504.1z"/>
-                        </g>
-                    </g>
-                </svg>
+            <div class="footer_right" onclick="scrollToTop()">
+                <i class="fa-solid fa-chevron-up fa-2xl"></i>
+                <!-- Chevron-up from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/chevron-up?f=classic&s=solid -->
             </div>
         </footer>
     </body>
-
 </html>

@@ -1,0 +1,166 @@
+#design_content {
+    background-color: #D0E17A;
+}
+
+#development_content {
+    background-color: #A4A9CB;
+}
+
+#education_content {
+    background-color: #82ABC4;
+}
+
+#experience_content {
+    background-color: #F6E979;
+}
+
+#field_email {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+#field_fname {
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+#field_lname {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+#field_select {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+#field_textarea {
+    display: grid;
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+#form_btns {
+    display: grid;
+    gap: 10px;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    grid-template-columns: 1fr 1fr;
+}
+
+#resetBtn {
+    background-color: var(--tertiaryColor);
+    border: 1px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    justify-self: end;
+    padding: 5px;
+    transition: color 1s, background-color 1s;
+    width: 50%;
+}
+
+#resetBtn:hover {
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    cursor: pointer;
+}
+
+#skill_adobe_suite {
+    background-color: var(--primaryColor);
+    width: 60%;
+}
+
+#skill_content {
+    background-color: #EC7846;
+}
+
+#skill_critical_thinking {
+    background-color: var(--primaryColor);
+    /*width: 100%;*/
+}
+
+#skill_css {
+    background-color: var(--primaryColor);
+    width: 80%;
+}
+
+#skill_git {
+    background-color: var(--primaryColor);
+    width: 30%;
+}
+
+#skill_graphic_design {
+    background-color: var(--primaryColor);
+    width: 60%;
+}
+
+#skill_html {
+    background-color: var(--primaryColor);
+    width: 80%;
+}
+
+#skill_java {
+    background-color: var(--primaryColor);
+    width: 40%;
+}
+
+#skill_javascript {
+    background-color: var(--primaryColor);
+    width: 50%;
+}
+
+#skill_marketing {
+    background-color: var(--primaryColor);
+    width: 40%;
+}
+
+#skill_photography {
+    background-color: var(--primaryColor);
+    width: 60%;
+}
+
+#skill_php {
+    background-color: var(--primaryColor);
+    width: 40%;
+}
+
+#skill_sql {
+    background-color: var(--primaryColor);
+    width: 50%;
+}
+
+#skill_verbal_communication {
+    background-color: var(--primaryColor);
+    /*width: 100%;*/
+}
+
+#skill_wordpress {
+    background-color: var(--primaryColor);
+    width: 50%;
+}
+
+#skill_written_communication {
+    background-color: var(--primaryColor);
+    /*width: 100%;*/
+}
+
+#submitBtn {
+    background-color: var(--tertiaryColor);
+    border: 1px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    justify-self: start;
+    padding: 5px;
+    transition: color 1s, background-color 1s;
+    width: 50%;
+}
+
+#submitBtn:hover {
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    cursor: pointer;
+}

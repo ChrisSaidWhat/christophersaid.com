@@ -1,0 +1,141 @@
+a {
+    color: var(--primaryColor);
+}
+
+body {
+    background-color: var(--tertiaryColor);
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+footer {
+    background-color: var(--tertiaryColor);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 50px;
+    min-height: 50px;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr .5fr;
+    margin-bottom: 10%;
+    width: 1200px;
+}
+
+h1 {
+    color: var(--secondaryColor);
+    font-family: var(--primaryFont);
+    font-size: var(--fontSizeH1);
+}
+
+h2 {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSizeH2);
+}
+
+h3 {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSizeH3);
+}
+
+h4 {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSizeH4);
+}
+
+h5 {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSizeH5);
+}
+
+h6 {
+    color: var(--secondaryColor);
+    font-family: var(--secondaryFont);
+    font-size: var(--fontSizeH6);
+}
+
+header {
+    align-content: center;
+    background-color: var(--tertiaryColor);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+hr {
+    border-color: var(--secondaryColor);
+    border-style: solid;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+input {
+    border: 1px solid var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+}
+
+label {
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizeH6);
+    font-weight: 600;
+}
+
+li {
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+    font-weight: 600;
+    list-style-image: url("../assets/splotch-solid.svg");
+}
+
+/* Splotch from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+and is available at https://fontawesome.com/icons/splotch?f=classic&s=solid */
+
+lord-icon {
+    height: 150px;
+    width: 150px;
+}
+
+nav {
+    align-content: center;
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    grid-template-columns: repeat(4, .9fr);
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+p {
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+}
+
+select {
+    border: 1px solid var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+}
+
+textarea {
+    border: 1px solid var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+    height: 50px;
+}

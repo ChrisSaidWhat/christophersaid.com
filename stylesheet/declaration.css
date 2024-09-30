@@ -1,0 +1,31 @@
+@import url("https://use.typekit.net/aig1tsi.css");
+
+:root {
+    --primaryColor: #193c4c;
+    --secondaryColor: #26292C;
+    --tertiaryColor: #E8E9EB;
+
+    --primaryFont: "acier-bat-gris", sans-serif;
+    --secondaryFont: "new-order", sans-serif;
+    --tertiaryFont: "mr-eaves-sans", sans-serif;
+
+    --fontSizeHero: 4.76875rem;
+    --fontSizeH1: 3.815rem;
+    --fontSizeH2: 3.052rem;
+    --fontSizeH3: 2.441rem;
+    --fontSizeH4: 1.953rem;
+    --fontSizeH5: 1.563rem;
+    --fontSizeH6: 1.25rem;
+    --fontSizePg: 1rem;
+    --fontSizeSm: 0.8rem;
+    --fontSizeXs: 0.64rem;
+
+    --space-xxs: 0.64rem;
+    --space-xs: 0.8rem;
+    --space-sm: 1rem;
+    --space-md: 1.25rem;
+    --space-lg: 1.56rem;
+    --space-xl: 1.95rem;
+    --space-xxl: 2.44rem;
+    --space-xxxl: 3.05rem;
+}

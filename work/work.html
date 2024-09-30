@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="author" content="Christopher Said">
+        <meta name="description" content="The web development and graphic design work of Christopher Said, Ankeny, Iowa.">
+        <meta name="keywords" content="portfolio, work, web development, web developer, graphic design, graphic designer, photography, photographer, programming, programmer, software development, software developer, Iowa, Ankeny">
+        <title>CS Design & Dev - My Work</title>
+        <link href="../assets/favicon.svg" rel="icon" type="image/x-icon">
+        <link href="../stylesheet/declaration.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/global.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/class.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/id.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/responsive.css" rel="stylesheet" type="text/css">
+
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/73da6968f8.js"></script>
+
+        <script>
+            //  code adapted and learned from W3Schools.com and ChatGPT
+            function displayModal(modalToDisplay, modalOverlay) {
+                const modal = document.getElementById(modalToDisplay);
+                const overlay = document.getElementById(modalOverlay);
+
+                if (modal.style.display === "block") {
+                    modal.style.display = "none";
+                    overlay.style.display = "none"; // Hide overlay when modal is closed
+                }
+                else {
+                    modal.style.display = "block";
+                    overlay.style.display = "block"; // Show overlay when modal is open
+                }
+            }
+
+            //  code adapted and learned from W3Schools.com
+            function displayTab(tabToDisplay, element, color) {
+                document.querySelector("#design_content").style.display = "none";
+                document.querySelector("#development_content").style.display = "none";
+
+                document.querySelector("#design_btn").style.backgroundColor = "#e8e9eb";
+                document.querySelector("#development_btn").style.backgroundColor = "#e8e9eb";
+
+                document.getElementById(tabToDisplay).style.display = "block";
+                element.style.backgroundColor = color;
+            }
+
+            //  code taken from W3Schools
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+
+            function prepareFunctionality() {
+                //  code taken from ChatGPT after a discussion in which it was decided to modify previous iteration of this code
+                const toast = document.getElementById('toast');
+
+                // Function to attach event listeners to both .hover_item and .logo_link_alt
+                function attachHoverListeners() {
+                    const hoverItems = document.querySelectorAll('.hover_item, .hover_item_alt');
+
+                    hoverItems.forEach(hoverItem => {
+                        hoverItem.addEventListener('mouseenter', () => {
+                            toast.style.visibility = 'visible';
+                            toast.style.opacity = '1';
+                        });
+
+                        hoverItem.addEventListener('mouseleave', () => {
+                            setTimeout(() => {
+                                toast.style.visibility = 'hidden';
+                                toast.style.opacity = '0';
+                            }, 4000); // Toast disappears after 4 seconds
+                        });
+                    });
+                }
+
+                // Attach listeners initially
+                attachHoverListeners();
+
+                // Optional: Re-attach listeners on window resize (if dynamic layout changes are frequent)
+                window.addEventListener('resize', attachHoverListeners);
+            }
+
+            window.onload = prepareFunctionality;
+
+            //  code taken from W3Schools.com
+            window.onscroll = function () {
+                scrollIndicator()
+            };
+
+            function scrollIndicator() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll_indicator").style.width = scrolled + "%";
+            }
+
+            //  code taken from W3Schools.com
+            function scrollToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+
+    </head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9K6SPKXYX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-S9K6SPKXYX');
+    </script>
+
+    <body>
+        <header class="border_bottom">
+            <a class="no_underline" href="../index.html">
+                <div class="cs_branding_container border_right">
+                    <img alt="CS Design & Dev logo." class="cs_logo" src="../assets/personalMonogramLogo.svg">
+                    <h1 class="branding_main">Christopher Said Design & Dev</h1>
+                    <h1 class="branding_alt">Christopher Said</h1>
+                </div>
+            </a>
+            <nav>
+                <a class="nav_item" href="../index.html">Home</a>
+                <a class="nav_item" href="work.html">My Work</a>
+                <a class="nav_item" href="../resume/resume.html">Resume</a>
+                <a class="nav_item" href="../contact/contact.html">Contact</a>
+            </nav>
+            <nav class="mobile_nav">
+                <!-- Code taken from W3Schools-->
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><i class="fa-solid fa-bars"></i></button>
+                    <!-- Bars from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/bars?f=classic&s=solid -->
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="../index.html">Home</a>
+                        <a href="work.html">My Work</a>
+                        <a href="../resume/resume.html">Resume</a>
+                        <a href="../contact/contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="progress_container">
+                <div class="progress_bar" id="scroll_indicator"></div>
+            </div> <!-- Taken from W3Schools.com -->
+        </header>
+        <main>
+            <div class="content">
+                <div class="tab_btn_container">
+                    <button class="tab_btn" id="design_btn"
+                            onclick="displayTab('design_content', this, '#D0E17A')"
+                            style="background-color: #D0E17A;">Design
+                    </button>
+                    <button class="tab_btn" id="development_btn"
+                            onclick="displayTab('development_content', this, '#A4A9CB')">Development
+                    </button>
+                </div>
+                <div class="tab_content" id="design_content" style="display: block;">
+                    <h3>Design Work</h3>
+                    <div class="tab_content_container">
+                        <div class="portfolio_item">
+                            <img alt="Grace Abounding in OCD website redesign prototype." class="portfolio_piece"
+                                 src="../assets/3x/graceAbounding@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Grace Abounding in OCD Website Redesign</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Original Website: <a href="https://graceaboundinginocd.com/"
+                                                                 target="_blank">https://graceaboundinginocd.com/</a>
+                                        </li>
+                                        <li>Software Used: Adobe XD, Adobe Illustrator, Adobe Firefly</li>
+                                        <li>Skills Used: Information Architecture, Design Proposal Drafting,
+                                            Wireframing,
+                                            Prototyping, UI/UX Design, Color Theory, Color Psychology
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        I was tasked with creating a fully functional prototype for a website redesign
+                                        using
+                                        Adobe XD. I chose a website that has been deeply impactful to me but lacked
+                                        stellar
+                                        design. I began by creating a moodboard to nail down the style I was going for.
+                                        I decided to create a vintage feel with a subtle paper texture background and a
+                                        hand sketched aesthetic. I combined this with a color palette of beige, muted
+                                        purple, and off-black. I chose this due to purple's associations with the mind.
+                                        The combination of muted tones and the beige create the desired effect of
+                                        calming the visitor to the site. These choices were made to accomplish the
+                                        purpose of the site as set out by its owner.
+                                    </p>
+
+                                    <p>
+                                        After making decisions from the moodboard, I designed the information
+                                        architecture for the site and laid it out in a flow chart. Then I moved to draft
+                                        a design proposal including the process, the direction chosen, the timeline, and
+                                        the price. Finally, I began to layout the design in Adobe XD. To save time, I
+                                        made good use of Adobe Firefly to generate images matching the style I selected
+                                        for the website. From there I took the generated images into Adobe Illustrator
+                                        and made any necessary changes.
+                                    </p>
+                                </div>
+                                <button class="modal_btn" onclick="displayModal('modal1', 'modalOverlay1')">View
+                                    Design
+                                </button>
+                                <div class="modal_overlay" id="modalOverlay1">
+                                    <div class="modal" id="modal1">
+                                        <iframe allowfullscreen frameborder="0"
+                                                height="800"
+                                                loading="lazy"
+                                                src="https://xd.adobe.com/embed/a0f66262-b078-4669-8be9-23c21a24d11c-f5a5/"
+                                                width="800"></iframe>
+                                        <button class="modal_btn" onclick="displayModal('modal1', 'modalOverlay1')">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Urban Gardens website design prototype." class="portfolio_piece"
+                                 src="../assets/3x/urbanGardens@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Urban Gardens Website Design</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe XD, Adobe Illustrator, Adobe Photoshop, Adobe Firefly
+                                        </li>
+                                        <li>Skills Used: Information Architecture, Design Proposal Drafting,
+                                            Wireframing,
+                                            Prototyping, UI/UX Design, Color Theory, Color Psychology, Prompt
+                                            Engineering
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This was a project wherein I was given a basic concept for a business but few
+                                        details. I began by building out the details of the company for which I was
+                                        designing a website for. Once I had determined the history, mission, goals, and
+                                        brand of this hypothetical client, I started sketching potential wireframes.
+                                        From here I created a moodboard to finalize the direction I wanted the visuals
+                                        to take. I chose to go in the direction of a modern and minimalist theme for the
+                                        site. As such images would have a grainy, lo-fi effect on them and the color
+                                        palette I chose consisted of neutrals with a green to offset. A design proposal
+                                        was then drafted identifying these things and offering a timeline and cost.
+                                    </p>
+                                    <p>
+                                        From that point, I began to implement the specifics into the basic wireframe
+                                        that I had built by finding and generating images and adjusting them as needed
+                                        in Adobe Photoshop and Adobe Illustrator. I also used ChatGPT to generate the
+                                        copy for this site according to my specific promptings. I used my knowledge of
+                                        typography to find fonts that would also match the theming and brand voice that
+                                        I had created. Finally, I added basic functionality to the wireframe, turning it
+                                        into a prototype.
+                                    </p>
+                                </div>
+                                <button class="modal_btn" onclick="displayModal('modal2', 'modalOverlay2')">View
+                                    Design
+                                </button>
+                                <div class="modal_overlay" id="modalOverlay2">
+                                    <div class="modal" id="modal2">
+                                        <iframe allowfullscreen frameborder="0"
+                                                height="800"
+                                                loading="lazy"
+                                                src="https://xd.adobe.com/embed/a4e9f247-f08d-4276-9562-d00582dfff9a-f1ba/"
+                                                width="800"></iframe>
+                                        <button class="modal_btn" onclick="displayModal('modal2', 'modalOverlay2')">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Legendairy vegan cheese logo design." class="portfolio_piece"
+                                 src="../assets/3x/legendairyLogo@3x.png">
+                            <div class="portfolio_description">
+                                <h4>LegenDairy Vegan Cheese Logo</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe Illustrator</li>
+                                        <li>Skills Used: Logo Design, Packaging Design, Vector Illustration, Ideation,
+                                            Branding, Style Guide Creation, Mockups
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        I was given the brand name LegenDairy, a vegan cheese company, and a design
+                                        brief that required me to make reference to a mythical creature in the logo
+                                        design. From there I began to sketch out the ideas that came to me. I settled on
+                                        the concept of a fairy milkmaid as I felt that it conveyed the concept of a
+                                        cheese having magical properties, as it was not made from milk, yet still having
+                                        a handmade, quality, human touch to it. I customized a typeface that was already
+                                        rounded and conveyed a sense of fluidity to it so as to accentuate the friendly
+                                        and natural feel of the brand. It also was a nod to the missing milk. I chose
+                                        colors that would evoke a vintage feel and cause the consumer to think back to
+                                        an old farm and the milkman.
+                                    </p>
+
+                                    <p>
+                                        With all of this decided, I put it together in my vector illustration program. I
+                                        also used mockups to create packaging for the brand. The colors were customized
+                                        for each type of cheese. I finished the process with the creation of a style
+                                        guide which formalizes how the various assets should be used in relation to each
+                                        other. It includes a type scale and the official color palette with the color
+                                        codes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Elysium Art House Facebook ad." class="portfolio_piece"
+                                 src="../assets/3x/socialAd@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Elysium Art House Social Media Ad</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe InDesign</li>
+                                        <li>Skills Used: Layout Design, Diecut Creation, Social Media Marketing
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This project called for the creation of a die-cut invitation to the grand
+                                        opening of a new art house. What is featured here is the social media
+                                        advertisement for Facebook that would accompany physical invitations which would
+                                        be sent out. I decided to feature one of the pieces of art that was in the
+                                        physical invitation prominently on the ad. Using Adobe InDesign, I was quickly
+                                        able to make several variations of the ad for LinkedIn, Instagram, and Twitter.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Cover design for The Brothers Grimm." class="portfolio_piece"
+                                 src="../assets/3x/grimmCover@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Cover &amp; Interior Design of The Brothers Grimm</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe InDesign, Adobe Illustrator, Adobe Firefly</li>
+                                        <li>Skills Used: Graphic Design, Layout Design, Typographic Hierarchy, Printing,
+                                            Font Selection
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This project entailed designing a book from the ground up. I was given the text
+                                        of the Brothers Grimm completely unformatted and had to format every sentence,
+                                        paragraph, and page so that it would be legible, attractive, and intuitive. I
+                                        also was tasked with designing the cover and spine of the book. I decided to
+                                        design the book in the style of a modernized illuminated medieval manuscript.
+                                        The assets on the cover were created using Adobe Firefly and then brought into
+                                        Adobe Illustrator for significant fine tuning. I then took pieces from the cover
+                                        and incorporated throughout the pages of the book as a means of tying it
+                                        together as a cohesive whole.
+                                    </p>
+
+                                    <p>
+                                        Professional book design decisions were made for this work. You will notice that
+                                        each paragraph meets the next without a space. This is because indents were
+                                        selected to denote the beginning of each paragraph. In professional printing,
+                                        you can select one method or the other, but not both. Also of note is the
+                                        colophon designed to look like a Turnip. This is an homage to the typeface used
+                                        for both its legibility and old European flair, Turnip.
+                                    </p>
+
+                                    <p>
+                                        The layout had to be done with printing in mind. The finished manuscript and
+                                        cover design were sent off to a professional printer so that a physical copy
+                                        could be made. This means that each measurement had to be precise and exact or
+                                        the entire work could have been destroyed. It was executed precisely right and
+                                        printed as intended. The PDF version of the book can be viewed by clicking
+                                        below.
+                                    </p>
+                                </div>
+                                <button class="modal_btn" onclick="displayModal('modal3', 'modalOverlay3')">View
+                                    Design
+                                </button>
+                                <div class="modal_overlay" id="modalOverlay3">
+                                    <div class="modal" id="modal3">
+                                        <iframe allowfullscreen frameborder="0"
+                                                height="800"
+                                                loading="lazy"
+                                                src="../pdfs/brothersGrimmFairyTalesBookDesign.pdf"
+                                                width="800"></iframe>
+                                        <button class="modal_btn" onclick="displayModal('modal3', 'modalOverlay3')">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Trifold brochure for the Napa Valley Wine Train." class="portfolio_piece"
+                                 src="../assets/3x/napaBrochure@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Napa Valley Wine Train Trifold Brochure</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe InDesign</li>
+                                        <li>Skills Used: Graphic Design, Layout Design, Typography, Printing, Folding
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        In this project, many assets were provided in advance, as was the copy. This was
+                                        mostly an exercise in playing with color, type, and one fantastically high
+                                        resolution photo of a wine glass. The visual arrangement of elements in this
+                                        trifold allow each to evoke a sense of elegance and sophistication fitting of
+                                        the Napa Valley wine tasting experience. I used Adobe InDesign to arrange the
+                                        pieces and fine tune the typography. InDesign was also used to place where the
+                                        folds would need to go for the printed brochure.
+                                    </p>
+
+                                    <p>
+                                        Once the design was complete in InDesign, I had to adjust the print settings and
+                                        ensure that the document printed correctly. From there I proceeded to take the
+                                        printed version and utilized special tools to ensure a perfect crease on each
+                                        fold line. The PDF version can be viewed below, however, it does not appear as a
+                                        trifold because much of that exists in the printing settings.
+                                    </p>
+                                </div>
+                                <button class="modal_btn" onclick="displayModal('modal4', 'modalOverlay4')">View
+                                    Design
+                                </button>
+                                <div class="modal_overlay" id="modalOverlay4">
+                                    <div class="modal" id="modal4">
+                                        <iframe allowfullscreen frameborder="0"
+                                                height="800"
+                                                loading="lazy"
+                                                src="../pdfs/indesignNapaTrifold.pdf"
+                                                width="800"></iframe>
+                                        <button class="modal_btn" onclick="displayModal('modal4', 'modalOverlay4')">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Netflix title card typographic treatment." class="portfolio_piece"
+                                 src="../assets/3x/netflixTitleCard@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Netflix Title Card</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe Illustrator, Adobe Firefly</li>
+                                        <li>Skills Used: Graphic Design, Typography
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This project was a blast! I was instructed to randomly generate a 3-5 word title
+                                        for a Netflix show. I received “Admiration for the Robotic Police” back from the
+                                        generator. I envisioned it as a dystopian sci-fi political action thriller. I
+                                        used Adobe Firefly to generate the background image. As it was an earlier
+                                        version of that program, the image came out a bit distorted and malformed. I
+                                        believe that actually adds to the effect it has. It creates the eerie and
+                                        unsettled atmosphere that I had desired. The way it both intently stares at the
+                                        title while also staring blankly off into space highlights the impression that
+                                        this is a soulless and emotionless automaton.
+                                    </p>
+
+                                    <p>
+                                        Once the image was chosen and placed, I set about designing the title treatment.
+                                        I chose a font that felt futuristic but also playful to be ironic. I found some
+                                        icons and colorized them and merged them with the stems of letters that I
+                                        extended to turn into flag poles. This was done to highlight the political
+                                        aspect of the show. With that, the project was done and communicated all the
+                                        messages that I wanted the title card to get across to the viewer. These Netflix
+                                        title cards only have a short moment to convince a viewer to click on it and get
+                                        more information, which is something I feel this design effectively
+                                        accomplishes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_item">
+                            <img alt="Classical music album cover design exploring typographic voice."
+                                 class="portfolio_piece" src="../assets/3x/typographicVoice@3x.png">
+                            <div class="portfolio_description">
+                                <h4>Album Cover Design</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Software Used: Adobe Photoshop</li>
+                                        <li>Skills Used: Graphic Design, Typography, Typographic Voice, Photo
+                                            Manipulation, Communication
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This was one of my favorite design projects that I have done. It is an
+                                        exploration of typographic voice, using fonts to convey different emotions, by
+                                        designing album covers for different genres. However, I was given boundaries to
+                                        work within. I got a random photo and a random title. I had to use the same
+                                        photo and title for all the different genres, but I could edit the photo however
+                                        I wanted and I was required to use different fonts for each genre. The point is
+                                        that by simply using a different typeface, an entirely different emotion can be
+                                        conveyed to the viewer. The four genres are classical, country, rock, and
+                                        techno. The PDF displays them in that order.
+                                    </p>
+
+                                    <p>
+                                        For the classical album, I chose an art deco font for the label and a basic
+                                        script font for the title to convey elegance and harken back to a prior time.
+                                        The photo of a glass which I was given, I then chopped up into four pieces and
+                                        rotated each in different direction. Next, I added grain to the pieces and
+                                        overlaid it all in a calming blue. This creates a tension between dissonance and
+                                        consonance. There is both a calming in the font and color, but a tension in the
+                                        random rotation and broken up images now made grainy.
+                                    </p>
+
+                                    <p>
+                                        For the country album, I chose a rough, textured font for the label and a
+                                        handwriting based script font for the title. The photo of the glass is left
+                                        unaltered for the most part. This is to communicate the simplicity of the
+                                        country man. The text of the title has been adjusted to meet the curve of the
+                                        liquid in the glass. This draws the eye to the liquid and makes the viewer
+                                        question what the contents of the glass really are.
+                                    </p>
+
+                                    <p>
+                                        For the rock album, I chose a font that puts each letter at a different size and
+                                        hight so that nothing really lines up. For the title I chose a very punchy yet
+                                        squat, all caps font. The image is flipped upside down and the highlights are
+                                        turned up. All is overlaid in red. This all comes together to make it feel like
+                                        the whole composition is in ordered disarray and being compressed in emotion and
+                                        anger
+                                    </p>
+
+                                    <p>
+                                        For the techno album, I chose a font that is very angular and futuristic for the
+                                        label and a pixel based bitmap font for the title as direct throwback to the old
+                                        days of computing. The image of the glass as been warped and distorted so that
+                                        the glass now looks like sound waves. All of it is overlaid with a green that is
+                                        reminiscent of a hacker’s screen.
+                                    </p>
+                                </div>
+                                <button class="modal_btn" onclick="displayModal('modal5', 'modalOverlay5')">View
+                                    Design
+                                </button>
+                                <div class="modal_overlay" id="modalOverlay5">
+                                    <div class="modal" id="modal5">
+                                        <iframe allowfullscreen frameborder="0"
+                                                height="800"
+                                                loading="lazy"
+                                                src="../pdfs/typographicVoice.pdf"
+                                                width="800"></iframe>
+                                        <button class="modal_btn" onclick="displayModal('modal5', 'modalOverlay5')">
+                                            Close
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab_content" id="development_content">
+                    <h3>Development Work</h3>
+                    <div class="tab_content_container">
+                        <div class="portfolio_item">
+                            <img alt="Home page of The Sous Chef." class="portfolio_piece"
+                                 src="../assets/3x/sousChef@3x.png">
+                            <div class="portfolio_description">
+                                <h4>The Sous Chef Website</h4>
+                                <hr>
+                                <div>
+                                    <h5>Key Points</h5>
+                                    <ul>
+                                        <li>Technologies Used: HTML, CSS, JavaScript, PHP, Bootstrap, SASS, MySQL, Git
+                                        </li>
+                                        <li>Skills Used: Web Design, Coding, CRUD Operations, Session Variables,
+                                            Prepared Statements, AJAX Calls, JSON, Cookies, Local Storage, Dynamic
+                                            Content, Animations, Honeypot Form, Error Handling, SMTP Mail, MVC, Object
+                                            Oriented JS, Object Oriented PHP
+                                        </li>
+                                        <li>Note: Log in with wdv341 as username and password.</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5>Description</h5>
+                                    <p>
+                                        This is the capstone website for my Web Development AAS which demonstrates the
+                                        technical ability I possess in a wide array of technical coding and web design.
+                                        It incorporates both front end and back end technologies and it features a live
+                                        connection to a database which the site dynamically displays content from. The
+                                        site features an admin section where new recipes can be added to the database to
+                                        display on the front end. This all happens dynamically each time the site is
+                                        loaded. It also features many forms and pages that update according to user
+                                        input. The site communicates back and forth by sending data in JSON and then
+                                        decoding it between PHP and JavaScript respectively. The PHP contains prepared
+                                        statements to access the MySQL database that underpins the whole site. The site
+                                        also performs CRUD operations, allowing full admin control from the website
+                                        while logged in without the need to visit a hosting account control panel. The
+                                        visuals of the site feature complex animations and provide ample user feedback.
+                                        There is also a Git repo that contains all the PHP code. This can be found by
+                                        clicking the GitHub logo in the footer.
+                                    </p>
+                                </div>
+                                <a href="../work/TheSousChef/home.php" target="_blank">
+                                    <button class="modal_btn">View Site</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="border_top">
+            <div class="footer_left border_right">
+                <div class="footer_left_left_half">
+                    <div class="copyright">&copy; 2024 Christopher Said - All Rights Reserved</div>
+                </div>
+                <div class="footer_left_right_half">
+                    <a class="no_underline logo_link" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                    <!-- LinkedIn logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/linkedin?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <!-- Instagram logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/instagram?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-xl"></i></a>
+                    <!-- GitHub logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/github?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-xl"></i></a>
+                    <!-- Flickr logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/flickr?f=brands&s=solid -->
+                    <a class="no_underline logo_link hover_item"><i class="fa-brands fa-creative-commons-by fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt hover_item_alt"><i
+                            class="fa-brands fa-creative-commons-by fa-xl"></i></a>
+                    <!-- Creative Commons BY logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/creative-commons-by?f=brands&s=solid -->
+                    <div class="toast" id="toast">
+                        <h6 class="toast_heading">Attribution</h6>
+                        <div class="attribution"><a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
+                        </div>
+                        <div class="attribution"><a href="https://fontawesome.com/">Brand and other icons by Font
+                            Awesome</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_right" onclick="scrollToTop()">
+                <i class="fa-solid fa-chevron-up fa-2xl"></i>
+                <!-- Chevron-up from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/chevron-up?f=classic&s=solid -->
+            </div>
+        </footer>
+    </body>
+</html>
