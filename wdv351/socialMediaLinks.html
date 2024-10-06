@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Social Media Integration</title>
+
+        <style>
+            body {
+                display: grid;
+                grid-template-columns: 100px;
+                justify-items: center;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Social Media Integration</h1>
+
+        <h2>Facebook Implementation</h2>
+        <!-- facebook implementation -->
+        <div id="fb-root"></div>
+        <script async crossorigin="anonymous" defer
+                src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0"></script>
+
+        <div class="fb-like" data-action="like" data-href="https://developers.facebook.com/docs/plugins/"
+             data-layout="standard" data-share="true" data-size="" data-width=""></div>
+
+        <h2>LinkedIn Implementation</h2>
+        <!-- linkedin implementation -->
+        <script src="https://platform.linkedin.com/in.js" type="text/javascript">en_US</script>
+        <script data-url="https://www.christophersaid.com/" type="IN/Share"></script>
+
+        <h2>Pinterest Implementation</h2>
+        <!-- pinterest implementation -->
+        <script
+                async
+                defer src="//assets.pinterest.com/js/pinit.js"
+                type="text/javascript"
+        ></script>
+        <a
+                data-pin-do="buttonPin"
+                data-pin-height="28"
+                data-pin-save="true"
+                data-pin-tall="true"
+                href="https://www.pinterest.com/pin/create/button/?url=http://www.foodiecrush.com/2014/03/filet-mignon-with-porcini-mushroom-compound-butter/&media=https://i.pinimg.com/736x/17/34/8e/17348e163a3212c06e61c41c4b22b87a.jpg&description=So%20delicious!"
+        >
+        </a>
+
+        <h2>X (Twitter) Implementation</h2>
+        <!-- x(twitter) implementation -->
+        <script>window.twttr = (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                    t = window.twttr || {};
+            if (d.getElementById(id)) return t;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+
+            t._e = [];
+            t.ready = function(f) {
+                t._e.push(f);
+            };
+
+            return t;
+        }(document, "script", "twitter-wjs"));</script>
+
+        <a class="twitter-follow-button"
+           href="https://twitter.com/ChrisSaidWhat05"
+           data-size="large">
+            Follow @TwitterDev</a>
+    </body>
+</html>
