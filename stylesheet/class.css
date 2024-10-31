@@ -28,6 +28,38 @@
     display: block;
 }
 
+.content_display_btn {
+    background-color: var(--tertiaryColor);
+    border: 2px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizeH6);
+    padding: 10px;
+    transition: color 1s, background-color 1s;
+}
+
+.content_display_btn:hover {
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    cursor: pointer;
+}
+
+.content_display_btn_sm {
+    background-color: var(--tertiaryColor);
+    border: 2px solid var(--secondaryColor);
+    color: var(--secondaryColor);
+    font-family: var(--tertiaryFont);
+    font-size: var(--fontSizePg);
+    padding: 5px;
+    transition: color 1s, background-color 1s;
+}
+
+.content_display_btn_sm:hover {
+    background-color: var(--primaryColor);
+    color: var(--tertiaryColor);
+    cursor: pointer;
+}
+
 .copyright {
     color: var(--secondaryColor);
     font-family: var(--secondaryFont);
@@ -47,6 +79,21 @@
 
 .cs_logo {
     width: 100px;
+}
+
+.dot {
+    background-color: var(--tertiaryColor);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    margin: 0 2px;
+    transition: background-color 0.6s ease;
+    width: 15px;
+}
+
+.dot_active, .dot:hover {
+    background-color: #787A7D;
 }
 
 .download_btn {
@@ -73,6 +120,11 @@
 
 .edu_school {
     margin-top: 0;
+}
+
+.fade {
+    animation-duration: 1.5s;
+    animation-name: fade;
 }
 
 .fast_fact_container {
@@ -227,41 +279,6 @@
     color: var(--primaryColor);
 }
 
-.modal {
-    display: none;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-}
-
-.modal_btn {
-    background-color: var(--tertiaryColor);
-    border: 1px solid var(--secondaryColor);
-    color: var(--secondaryColor);
-    font-family: var(--tertiaryFont);
-    padding: 5px;
-    transition: color 1s, background-color 1s;
-}
-
-.modal_btn:hover {
-    background-color: var(--primaryColor);
-    color: var(--tertiaryColor);
-    cursor: pointer;
-}
-
-.modal_overlay {
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    display: none; /* Initially hidden */
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Below the modal but above other content */
-}
-
 .mobile_nav {
     display: none;
 }
@@ -281,7 +298,46 @@
     font-size: var(--fontSizeH6);
 }
 
+.next {
+    border-radius: 3px 0 0 3px !important;
+    right: 0;
+}
+
+.notice {
+    background-color: #CBCEE1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+}
+
+.notice h4 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.notice p {
+    font-weight: bold;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding-left: .5%;
+}
+
+.notice_heading {
+    align-items: center;
+    display: flex;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.notice_heading lord-icon {
+    display: inline;
+    width: 65px;
+}
+
 .no_underline {
+    color: inherit;
     text-decoration: none;
 }
 
@@ -311,6 +367,26 @@
     max-width: 500px;
 }
 
+.prev, .next {
+    border-radius: 0 3px 3px 0;
+    color: #787A7D;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -22px;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    transition: 0.6s ease;
+    user-select: none;
+    width: auto;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--secondaryColor);
+    color: var(--tertiaryColor);
+}
+
 .progress_bar {
     background: var(--primaryColor);
     height: 10px;
@@ -329,6 +405,28 @@
     justify-self: start !important;
 }
 
+.return_origin_btn {
+    background-color: var(--tertiaryColor);
+    border: 2px solid var(--secondaryColor);
+    border-radius: 100%;
+    position: fixed;
+    right: 20px;
+    top: 25%;
+    transition: color 1s, background-color 1s;
+    z-index: 100;
+}
+
+.return_origin_btn:hover {
+    background-color: #787A7D;
+    color: var(--tertiaryColor);
+    cursor: pointer;
+}
+
+.return_origin_btn lord-icon {
+    height: 50px;
+    width: 50px;
+}
+
 .skill_bar_container {
     background-color: var(--tertiaryColor);
     width: 100%;
@@ -340,6 +438,27 @@
     padding-block: 10px;
     padding-right: 10px;
     text-align: right;
+}
+
+.slides {
+    display: none;
+    user-select: none;
+}
+
+.slide_number {
+    background-color: var(--tertiaryColor);
+    color: var(--secondaryColor);
+    font-size: var(--fontSizePg);
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.slideshow_container {
+    margin: auto;
+    max-width: 1000px;
+    position: relative;
 }
 
 .tab_btn {

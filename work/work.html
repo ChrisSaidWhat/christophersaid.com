@@ -14,6 +14,7 @@
         <link href="../stylesheet/global.css" rel="stylesheet" type="text/css">
         <link href="../stylesheet/class.css" rel="stylesheet" type="text/css">
         <link href="../stylesheet/id.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/animation.css" rel="stylesheet" type="text/css">
         <link href="../stylesheet/responsive.css" rel="stylesheet" type="text/css">
 
         <script crossorigin="anonymous" src="https://kit.fontawesome.com/73da6968f8.js"></script>
@@ -178,7 +179,7 @@
                 <div class="tab_content" id="design_content" style="display: block;">
                     <h3>Design Work</h3>
                     <div class="tab_content_container">
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef1">
                             <img alt="Grace Abounding in OCD website redesign prototype." class="portfolio_piece"
                                  src="../assets/3x/graceAbounding@3x.png">
                             <div class="portfolio_description">
@@ -223,24 +224,12 @@
                                         and made any necessary changes.
                                     </p>
                                 </div>
-                                <button class="modal_btn" onclick="displayModal('modal1', 'modalOverlay1')">View
-                                    Design
-                                </button>
-                                <div class="modal_overlay" id="modalOverlay1">
-                                    <div class="modal" id="modal1">
-                                        <iframe allowfullscreen frameborder="0"
-                                                height="800"
-                                                loading="lazy"
-                                                src="https://xd.adobe.com/embed/a0f66262-b078-4669-8be9-23c21a24d11c-f5a5/"
-                                                width="800"></iframe>
-                                        <button class="modal_btn" onclick="displayModal('modal1', 'modalOverlay1')">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
+                                <a class="no_underline" href="designGraceAbounding.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef2">
                             <img alt="Urban Gardens website design prototype." class="portfolio_piece"
                                  src="../assets/3x/urbanGardens@3x.png">
                             <div class="portfolio_description">
@@ -281,28 +270,16 @@
                                         into a prototype.
                                     </p>
                                 </div>
-                                <button class="modal_btn" onclick="displayModal('modal2', 'modalOverlay2')">View
-                                    Design
-                                </button>
-                                <div class="modal_overlay" id="modalOverlay2">
-                                    <div class="modal" id="modal2">
-                                        <iframe allowfullscreen frameborder="0"
-                                                height="800"
-                                                loading="lazy"
-                                                src="https://xd.adobe.com/embed/a4e9f247-f08d-4276-9562-d00582dfff9a-f1ba/"
-                                                width="800"></iframe>
-                                        <button class="modal_btn" onclick="displayModal('modal2', 'modalOverlay2')">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
+                                <a class="no_underline" href="designUrbanGardens.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef3">
                             <img alt="Legendairy vegan cheese logo design." class="portfolio_piece"
                                  src="../assets/3x/legendairyLogo@3x.png">
                             <div class="portfolio_description">
-                                <h4>LegenDairy Vegan Cheese Logo</h4>
+                                <h4>LegenDairy Vegan Cheese Branding</h4>
                                 <hr>
                                 <div>
                                     <h5>Key Points</h5>
@@ -337,6 +314,9 @@
                                         codes.
                                     </p>
                                 </div>
+                                <a class="no_underline" href="designLegendairyBranding.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio_item">
@@ -366,7 +346,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef4">
                             <img alt="Cover design for The Brothers Grimm." class="portfolio_piece"
                                  src="../assets/3x/grimmCover@3x.png">
                             <div class="portfolio_description">
@@ -413,24 +393,12 @@
                                         below.
                                     </p>
                                 </div>
-                                <button class="modal_btn" onclick="displayModal('modal3', 'modalOverlay3')">View
-                                    Design
-                                </button>
-                                <div class="modal_overlay" id="modalOverlay3">
-                                    <div class="modal" id="modal3">
-                                        <iframe allowfullscreen frameborder="0"
-                                                height="800"
-                                                loading="lazy"
-                                                src="../pdfs/brothersGrimmFairyTalesBookDesign.pdf"
-                                                width="800"></iframe>
-                                        <button class="modal_btn" onclick="displayModal('modal3', 'modalOverlay3')">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
+                                <a class="no_underline" href="designBrothersGrimm.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef5">
                             <img alt="Trifold brochure for the Napa Valley Wine Train." class="portfolio_piece"
                                  src="../assets/3x/napaBrochure@3x.png">
                             <div class="portfolio_description">
@@ -464,21 +432,9 @@
                                         trifold because much of that exists in the printing settings.
                                     </p>
                                 </div>
-                                <button class="modal_btn" onclick="displayModal('modal4', 'modalOverlay4')">View
-                                    Design
-                                </button>
-                                <div class="modal_overlay" id="modalOverlay4">
-                                    <div class="modal" id="modal4">
-                                        <iframe allowfullscreen frameborder="0"
-                                                height="800"
-                                                loading="lazy"
-                                                src="../pdfs/indesignNapaTrifold.pdf"
-                                                width="800"></iframe>
-                                        <button class="modal_btn" onclick="displayModal('modal4', 'modalOverlay4')">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
+                                <a class="no_underline" href="designNapaValleyBrochure.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
                         <div class="portfolio_item">
@@ -523,7 +479,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="portfolio_item">
+                        <div class="portfolio_item" id="designRef6">
                             <img alt="Classical music album cover design exploring typographic voice."
                                  class="portfolio_piece" src="../assets/3x/typographicVoice@3x.png">
                             <div class="portfolio_description">
@@ -588,21 +544,9 @@
                                         reminiscent of a hacker’s screen.
                                     </p>
                                 </div>
-                                <button class="modal_btn" onclick="displayModal('modal5', 'modalOverlay5')">View
-                                    Design
-                                </button>
-                                <div class="modal_overlay" id="modalOverlay5">
-                                    <div class="modal" id="modal5">
-                                        <iframe allowfullscreen frameborder="0"
-                                                height="800"
-                                                loading="lazy"
-                                                src="../pdfs/typographicVoice.pdf"
-                                                width="800"></iframe>
-                                        <button class="modal_btn" onclick="displayModal('modal5', 'modalOverlay5')">
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
+                                <a class="no_underline" href="designTypographicVoiceAlbums.html">
+                                    <button class="content_display_btn_sm">View Design</button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -649,41 +593,8 @@
                                         clicking the GitHub logo in the footer.
                                     </p>
                                 </div>
-                                <a href="../work/TheSousChef/home.php" target="_blank">
-                                    <button class="modal_btn">View Site</button>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio_item">
-                            <img alt="Home page of Matisse and Mauve Art Gallery." class="portfolio_piece"
-                                 src="../assets/3x/matisseMauve@3x.png">
-                            <div class="portfolio_description">
-                                <h4>Matisse &amp; Mauve Art Website</h4>
-                                <hr>
-                                <div>
-                                    <h5>Key Points</h5>
-                                    <ul>
-                                        <li>Technologies Used: WordPress, Stripe, CSS
-                                        </li>
-                                        <li>Skills Used: Themes, Plugins, WooCommerce, Web Design, UI/UX
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h5>Description</h5>
-                                    <p>
-                                        This WordPress website was a demonstration of mastery over the WooCommerce
-                                        plugin. I was given free reign in the content, design, and functionality of the
-                                        site. However, the site was required to implement Stripe in test mode so that it
-                                        could have full e-commerce functionality. The site also calculates sales tax and
-                                        applies it at checkout. There are discounts and coupon codes implemented as
-                                        well. Cross-sells and upsells are also present in some of items. I decided to
-                                        design it in such a way as to accentuate the premium feel via muted colors and a
-                                        minimal theme.
-                                    </p>
-                                </div>
-                                <a href="http://art.christophersaid.com/" target="_blank">
-                                    <button class="modal_btn">View Site</button>
+                                <a class="no_underline" href="../work/TheSousChef/home.php" target="_blank">
+                                    <button class="content_display_btn_sm">View Site</button>
                                 </a>
                             </div>
                         </div>
@@ -726,8 +637,8 @@
                                         to bring to mind the childhood Nintendo games we all played.
                                     </p>
                                 </div>
-                                <a href="http://conference.christophersaid.com/" target="_blank">
-                                    <button class="modal_btn">View Site</button>
+                                <a class="no_underline" href="http://conference.christophersaid.com/" target="_blank">
+                                    <button class="content_display_btn_sm">View Site</button>
                                 </a>
                             </div>
                         </div>

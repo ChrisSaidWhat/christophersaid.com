@@ -1,6 +1,8 @@
-@media screen and (width: 1728px) {
-    :root {
-        --fontSizeH1: 3.5rem
+/* general responsive styling across all potential screen sizes */
+
+@media screen and (max-width: 1920px) {
+    .notice_heading lord-icon {
+        width: 50px;
     }
 }
 
@@ -9,22 +11,18 @@
         width: 80%;
     }
 
-    iframe {
-        height: 600px !important;
-    }
-
-    .modal button {
-        left: 50%;
-        position: fixed;
-        top: 100%;
-    }
-
     .portfolio_item {
         grid-template-columns: 1.5fr 2fr;
     }
 
     .portfolio_piece {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .slideshow_container {
+        max-width: 90%;
     }
 }
 
@@ -53,10 +51,6 @@
 
     header {
         grid-template-columns: 2fr .5fr;
-    }
-
-    iframe {
-        height: 400px !important;
     }
 
     nav {
@@ -161,6 +155,12 @@
 
     .show {
         display: block;
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .notice_heading lord-icon {
+        width: 40px;
     }
 }
 
@@ -269,6 +269,11 @@
     .logo_link_alt {
         display: block;
     }
+
+    .return_origin_btn lord-icon {
+        height: 35px;
+        width: 35px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -294,11 +299,6 @@
 }
 
 @media screen and (max-width: 500px) {
-    iframe {
-        height: 400px !important;
-        width: 400px !important;
-    }
-
     .copyright {
         font-size: var(--fontSizeSm);
     }
@@ -357,13 +357,17 @@
 }
 
 @media screen and (max-width: 400px) {
-    iframe {
-        height: 300px !important;
-        width: 300px !important;
+    .notice_heading lord-icon {
+        width: 32px;
     }
 
     .portfolio_item:last-child {
         margin-bottom: 20%;
+    }
+
+    .return_origin_btn lord-icon {
+        height: 25px;
+        width: 25px;
     }
 }
 
@@ -405,6 +409,17 @@
     }
 }
 
+/* specific screen sizes for most common devices */
+
+/*
+references:
+https://blisk.io/devices
+https://gs.statcounter.com/screen-resolution-stats/desktop/worldwide
+https://gs.statcounter.com/screen-resolution-stats/tablet/worldwide
+https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
+*/
+
+/* desktop: 1920 x 1080 (24.85% market share Sep 2024) */
 @media screen and (width: 1920px) {
     :root {
         --fontSizeHero: 5.3rem;
@@ -415,6 +430,14 @@
     }
 }
 
+/* 2021 16" MacBook Pro 1728 x 1117 */
+@media screen and (width: 1728px) {
+    :root {
+        --fontSizeH1: 3.5rem;
+    }
+}
+
+/* desktop: 1536 x 864 (11.85% market share Sep 2024) */
 @media screen and (width: 1536px) {
     :root {
         --fontSizeH1: 3rem;
@@ -440,6 +463,7 @@
     }
 }
 
+/* desktop: 1440 x 900 (4.63%  market share Sep 2024) */
 @media screen and (width: 1440px) {
     :root {
         --fontSizeH1: 2.9rem;
@@ -463,6 +487,8 @@
     }
 }
 
+/* tablet: 1366 x 1024 landscape orientation (3.4% market share Sep 2024) */
+/* desktop: 1366 x 768 (12.76% market share Sep 2024) */
 @media screen and (width: 1366px) {
     :root {
         --fontSizeH1: 2.7rem;
@@ -482,6 +508,8 @@
     }
 }
 
+/* desktop: 1280 x 720 (6.37% market share Sep 2024) */
+/* tablet: 1280 x 800 (6.4% market share Sep 2024) */
 @media screen and (width: 1280px) {
     /* Must override the styling in less specific range based media queries */
     :root {
@@ -503,6 +531,10 @@
         width: 65px;
     }
 
+    .notice h4 {
+        font-size: 2rem;
+    }
+
     .portfolio_item {
         grid-template-columns: .75fr 1fr !important;
     }
@@ -512,15 +544,17 @@
     }
 }
 
+/* windows laptop 1280 x 800 */
 @media screen and (width: 1280px) and (height: 800px) {
     form {
         margin-bottom: 11%;
     }
 }
 
+/* 2021 iPad Pro 11 landscape orientation 1194 x 834 */
 @media screen and (width: 1194px) {
     :root {
-        --fontSizeH1: 2.5rem;
+        --fontSizeH1: 2.4rem;
         --fontSizeH4: 1.4rem;
         --fontSizeHero: 3rem;
         --fontSizePg: 1rem;
@@ -552,8 +586,54 @@
     .hero_container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .notice h4 {
+        font-size: 2rem;
+    }
 }
 
+/* tablet: 1180 X 820 landscape orientation (7.99% market share Sep 2024) */
+@media screen and (width: 1180px) {
+    :root {
+        --fontSizeH1: 2.2rem;
+        --fontSizeH4: 1.4rem;
+        --fontSizeHero: 3rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 14.5%;
+    }
+
+    lord-icon {
+        height: 125px;
+        width: 125px;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .hero_container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .notice h4 {
+        font-size: 2rem;
+    }
+}
+
+/* iPad Pro 10 landscape orientation 1112 x 834 */
 @media screen and (width: 1112px) {
     :root {
         --fontSizeH1: 1.9rem;
@@ -588,8 +668,14 @@
     .hero_container {
         grid-template-columns: 1fr 1fr;
     }
+
+    .notice h4 {
+        font-size: 2rem;
+    }
 }
 
+/* tablet: 1080 x 810 (11.2% market share Sep 2024) */
+/* iPad 10 landscape orientation 1080 x 810 */
 @media screen and (width: 1080px) {
     :root {
         --fontSizeH1: 2.2rem;
@@ -625,6 +711,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .notice h4 {
+        font-size: 2rem;
+    }
+
     .portfolio_description li, .portfolio_description p {
         width: unset;
     }
@@ -638,6 +728,8 @@
     }
 }
 
+/* tablet: 1024 x 1366 (3.4% market share Sep 2024) */
+/* tablet: 1024 x 768 landscape orientation (20.09% market share Sep 2024) */
 @media screen and (width: 1024px) {
     :root {
         --fontSizeH1: 1.9rem;
@@ -673,6 +765,10 @@
         grid-template-columns: 1fr 1fr;
     }
 
+    .notice h4 {
+        font-size: 2rem;
+    }
+
     .portfolio_description li, .portfolio_description p {
         width: unset;
     }
@@ -686,6 +782,563 @@
     }
 }
 
+@media screen and (width: 1024px) and (height: 1366px) {
+    .return_origin_btn {
+        top: 13%;
+    }
+}
+
+@media screen and (width: 1024px) and (height: 768px) {
+    .return_origin_btn {
+        top: 20%;
+    }
+}
+
+/* Google Pixel 8 Pro 998 x 448 landscape orientation */
+@media screen and (width: 998px) {
+    :root {
+        --fontSizeH1: 1.9rem;
+        --fontSizeH4: 1.4rem;
+        --fontSizeHero: 4.1rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 70.5%;
+    }
+
+    lord-icon {
+        height: 125px;
+        width: 125px;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .hero_container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .notice h4 {
+        font-size: 2rem;
+    }
+
+    .portfolio_description li, .portfolio_description p {
+        width: unset;
+    }
+
+    .portfolio_item {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .portfolio_piece {
+        width: 85%;
+    }
+}
+
+@media screen and (width: 998px) and (height: 448px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* iPhone 15 Plus and 15 Pro Max, iPhone 14 Pro Max 932 x 430 landscape orientation */
+@media screen and (width: 932px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 932px) and (height: 430px) {
+    .return_origin_btn {
+        top: 37%;
+    }
+}
+
+/* iPhone 14 Plus, iPhone 13 Pro Max, iPhone 12 Pro Max 926 x 428 landscape orientation */
+@media screen and (width: 926px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 926px) and (height: 428px) {
+    .return_origin_btn {
+        top: 35%;
+    }
+}
+
+/* mobile: 915 x 412 landscape orientation (4.14% market share Sep 2024) */
+/* Galaxy S20 Ultra, Google Pixel 8, Google Pixel 7 and 7a, Google Pixel 6 915 x 412 landscape orientation */
+@media screen and (width: 915px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 915px) and (height: 412px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* mobile: 896 x 414 landscape orientation (3.8% market share Sep 2024) */
+/* iPhone 11 and 11 Pro Max, iPhone XR and XS Max 896 x 414 landscape orientation */
+@media screen and (width: 896px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 896px) and (height: 414px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Google Pixel 6 Pro 892 x 412 landscape orientation */
+@media screen and (width: 892px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 892px) and (height: 412px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* mobile: 873 x 393 landscape orientation (5.7% market share Sep 2024) */
+@media screen and (width: 873px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 873px) and (height: 393px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Google Pixel 4 XL 869 x 412 landscape orientation */
+@media screen and (width: 869px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 869px) and (height: 412px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Galaxy S21 Plus, Galaxy S20 Plus 854 x 384 landscape orientation */
+@media screen and (width: 854px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 854px) and (height: 384px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Galaxy Note 5 853 x 480 landscape orientation */
+@media screen and (width: 853px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 853px) and (height: 480px) {
+    .return_origin_btn {
+        top: 32%;
+    }
+}
+
+/* iPhone 15 and 15 Pro, iPhone 14 Pro 852 x 393 landscape orientation */
+@media screen and (width: 852px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 852px) and (height: 393px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Google Pixel 5 851 x 393 landscape orientation */
+@media screen and (width: 851px) {
+    :root {
+        --fontSizeH1: 1.8rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 851px) and (height: 393px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* Galaxy S9 Plus, Google Pixel 3 XL 846 x 412 landscape orientation */
+@media screen and (width: 846px) {
+    :root {
+        --fontSizeH1: 2.2rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 846px) and (height: 412px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* mobile: 844 x 390 landscape orientation (7.19% market share Sep 2024) */
+/* iPhone 14, iPhone 13 and 13 Pro, iPhone 12 and 12 Pro 844 x 390 landscape orientation */
+@media screen and (width: 844px) {
+    :root {
+        --fontSizeH1: 2.2rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 844px) and (height: 390px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* iPad Pro 11 834 x 1194 */
+/* iPad Pro 10 834 x 1112 */
 @media screen and (width: 834px) {
     :root {
         --fontSizeH1: 2.2rem;
@@ -716,6 +1369,141 @@
     }
 }
 
+@media screen and (width: 834px) and (height: 1194px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+@media screen and (width: 834px) and (height: 1112px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* Galaxy S24 Plus, Galaxy S23 Plus, Galaxy S22 Plus 832 x 384 landscape orientation */
+@media screen and (width: 832px) {
+    :root {
+        --fontSizeH1: 2.2rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 832px) and (height: 384px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* Google Pixel 4 830 x 393 landscape orientation */
+@media screen and (width: 830px) {
+    :root {
+        --fontSizeH1: 2.2rem;
+        --fontSizeHero: 3.7rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 67%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 12px;
+    }
+}
+
+@media screen and (width: 830px) and (height: 393px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* Galaxy S24 Ultra, Galaxy S23 Ultra, Galaxy S22 Ultra 824 x 384 landscape orientation */
+/* Google Pixel 3a XL, Google Pixel 2 XL 824 x 412 landscape orientation */
+@media screen and (width: 824px) {
+    :root {
+        --fontSizeH1: 2.1rem;
+        --fontSizeHero: 3.6rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 59.5%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 65%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .dropbtn {
+        padding: 15px;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 824px) and (height: 412px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+@media screen and (width: 824px) and (height: 384px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* tablet: 820 x 1180 (7.99% market share Sep 2024) */
 @media screen and (width: 820px) {
     :root {
         --fontSizeH1: 2.1rem;
@@ -744,8 +1532,61 @@
     .dropbtn {
         padding: 15px;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 820px) and (height: 1180px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* iPhone 13 Mini, iPhone 12 Mini, iPhone 11 Pro, iPhone X and XS 812 x 375 landscape orientation */
+@media screen and (width: 812px) {
+    :root {
+        --fontSizeH1: 2.1rem;
+        --fontSizeHero: 3.5rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 47.75%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 20px;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 812px) and (height: 375px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* tablet: 810 x 1080 (11.2% market share Sep 2024) */
+/* iPad 10 810 x 1080 */
 @media screen and (width: 810px) {
     :root {
         --fontSizeH1: 2.1rem;
@@ -774,8 +1615,62 @@
     .dropbtn {
         padding: 20px;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 810px) and (height: 1080px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* Google Pixel 3a 808 x 393 landscape orientation */
+@media screen and (width: 808px) {
+    :root {
+        --fontSizeH1: 2.1rem;
+        --fontSizeHero: 3.5rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 47.75%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 20px;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 808px) and (height: 393px) {
+    .return_origin_btn {
+        top: 40%;
+    }
+}
+
+/* tablet: 800 x 1280 (6.18% market share Sep 2024) */
+/* tablet: 1280 x 800 (6.4% market share Sep 2024) */
+/* Galaxy S20 and S21 800 x 360 landscape orientation */
 @media screen and (width: 800px) {
     :root {
         --fontSizeH1: 2rem;
@@ -804,11 +1699,119 @@
     .dropbtn {
         padding: 15px;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 800px) and (height: 1280px) {
+    .return_origin_btn {
+        top: 13%;
+    }
+}
+
+@media screen and (width: 800px) and (height: 360px) {
+    .return_origin_btn {
+        top: 50%;
+    }
+
+    .return_origin_btn lord-icon {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+/* Google Pixel 3 786 x 393 landscape orientation */
+@media screen and (width: 786px) {
+    :root {
+        --fontSizeH1: 2rem;
+        --fontSizeHero: 3.3rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 75%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 15px;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 786px) and (height: 393px) {
+    .return_origin_btn {
+        top: 42%;
+    }
+}
+
+/* Galaxy S24, Galaxy S23, Galaxy S22 780 x 360 landscape orientation */
+@media screen and (width: 780px) {
+    :root {
+        --fontSizeH1: 2rem;
+        --fontSizeHero: 3.3rem;
+        --fontSizePg: 1rem;
+    }
+
+    form {
+        margin-bottom: 75%;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeSm);
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .dropbtn {
+        padding: 15px;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 780px) and (height: 360px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* tablet: 768 x 1024 (20.09% market share Sep 2024) */
+/* iPad Mini 4 764 x 1024 */
+/* iPad Pro 9 768 x 1024 */
 @media screen and (width: 768px) {
     :root {
-        --fontSizeH1: 2.1rem !important;
+        --fontSizeH1: 2rem !important;
         --fontSizePg: 1rem !important;
     }
 
@@ -829,8 +1832,276 @@
     .cs_logo {
         width: 60%;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 768px) and (height: 1024px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+
+    .return_origin_btn lord-icon {
+        height: 35px;
+        width: 35px;
+    }
+}
+
+/* Galaxy S9, Galaxy S8 740 x 360 landscape orientation */
+@media screen and (width: 740px) {
+    :root {
+        --fontSizeH1: 2rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 740px) and (height: 360px) {
+    .return_origin_btn {
+        top: 45%;
+    }
+}
+
+/* iPhone 8 Plus, iPhone 7 Plus, iPhone 6S Plus 736 x 414 landscape orientation */
+@media screen and (width: 736px) {
+    :root {
+        --fontSizeH1: 2rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 736px) and (height: 414px) {
+    .return_origin_btn {
+        top: 37%;
+    }
+}
+
+/* Google Pixel 2, Google Pixel, Google Pixel XL 732 x 412 landscape orientation */
+@media screen and (width: 732px) {
+    :root {
+        --fontSizeH1: 2rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 732px) and (height: 412px) {
+    .return_origin_btn {
+        top: 37%;
+    }
+}
+
+/* LG G6, OnePlus 5t 720 x 360 landscape orientation */
+@media screen and (width: 720px) {
+    :root {
+        --fontSizeH1: 2rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 720px) and (height: 360px) {
+    .return_origin_btn {
+        top: 42%;
+    }
+}
+
+/* iPhone SE 2022, iPhone SE 2020, iPhone 8, iPhone 7, iPhone 6S 667 x 375 landscape orientation */
+@media screen and (width: 667px) {
+    :root {
+        --fontSizeH1: 1.7rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 667px) and (height: 375px) {
+    .return_origin_btn {
+        top: 37%;
+    }
+}
+
+/* Galaxy S7, Galaxy S6 and S6 Edge 640 x 360 landscape orientation */
+@media screen and (width: 640px) {
+    :root {
+        --fontSizeH1: 1.7rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 17.5%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 60%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 640px) and (height: 360px) {
+    .return_origin_btn {
+        top: 38%;
+    }
+}
+
+/* iPhone SE 568 x 320 landscape orientation */
+@media screen and (width: 568px) {
+    :root {
+        --fontSizeH1: 1.6rem !important;
+        --fontSizePg: 1rem !important;
+    }
+
+    form {
+        margin-bottom: 27%;
+    }
+
+    .copyright {
+        padding-left: 8.25%;
+    }
+
+    .cs_branding_container {
+        gap: 0;
+        grid-template-columns: .15fr .9fr;
+        padding-left: var(--space-sm);
+    }
+
+    .cs_logo {
+        width: 70%;
+    }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
+}
+
+@media screen and (width: 568px) and (height: 320px) {
+    .return_origin_btn {
+        top: 50%;
+    }
+}
+
+/* Galaxy Note 5 480 x 853 */
 @media screen and (width: 480px) {
     :root {
         --fontSizeH1: 2.2rem !important;
@@ -854,8 +2125,19 @@
     .cs_logo {
         width: 90%;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 480px) and (height: 853px) {
+    .return_origin_btn {
+        top: 17.5%;
+    }
+}
+
+/* Google Pixel 8 Pro 448 x 998 */
 @media screen and (width: 448px) {
     :root {
         --fontSizeH1: 2rem !important;
@@ -879,8 +2161,19 @@
     .cs_logo {
         width: 90%;
     }
+
+    .notice_heading lord-icon {
+        width: 40px;
+    }
 }
 
+@media screen and (width: 448px) and (height: 998px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* iPhone 15 Plus and 15 Pro Max, iPhone 14 Pro Max 430 x 932 */
 @media screen and (width: 430px) {
     :root {
         --fontSizeH1: 1.9rem !important;
@@ -892,6 +2185,13 @@
     }
 }
 
+@media screen and (width: 430px) and (height: 932px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* iPhone 14 Plus, iPhone 13 Pro Max, iPhone 12 Pro Max 428 x 926 */
 @media screen and (width: 428px) {
     :root {
         --fontSizeH1: 1.9rem !important;
@@ -903,6 +2203,15 @@
     }
 }
 
+@media screen and (width: 428px) and (height: 926px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+/* mobile: 414 x 896 (3.8% market share Sep 2024) */
+/* iPhone 11 and 11 Pro Max, iPhone XR and XS Max 414 x 896 */
+/* iPhone 8 Plus, iPhone 7 Plus, iPhone 6S Plus 414 x 736 */
 @media screen and (width: 414px) {
     :root {
         --fontSizePg: 1rem !important;
@@ -913,6 +2222,25 @@
     }
 }
 
+@media screen and (width: 414px) and (height: 896px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+@media screen and (width: 414px) and (height: 736px) {
+    .return_origin_btn {
+        top: 17.5%;
+    }
+}
+
+/* mobile: 412 x 915 (4.14% market share Sep 2024) */
+/* Galaxy S20 Ultra, Google Pixel 8, Google Pixel 7 and 7a, Google Pixel 6 412 x 915 */
+/* Google Pixel 6 Pro 412 x 892 */
+/* Google Pixel 4 XL 412 x 869 */
+/* Galaxy S9 Plus, Google Pixel 3 XL 412 x 846 */
+/* Google Pixel 3a XL, Google Pixel 2 XL 412 x 824 */
+/* Google Pixel 2, Google Pixel, Google Pixel XL 412 x 732 */
 @media screen and (width: 412px) {
     :root {
         --fontSizePg: 1rem !important;
@@ -923,6 +2251,48 @@
     }
 }
 
+@media screen and (width: 412px) and (height: 915px) {
+    .return_origin_btn {
+        top: 14.5%;
+    }
+}
+
+@media screen and (width: 412px) and (height: 892px) {
+    .return_origin_btn {
+        top: 14.5%;
+    }
+}
+
+@media screen and (width: 412px) and (height: 869px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+@media screen and (width: 412px) and (height: 846px) {
+    .return_origin_btn {
+        top: 15.5%;
+    }
+}
+
+@media screen and (width: 412px) and (height: 824px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 412px) and (height: 732px) {
+    .return_origin_btn {
+        top: 18%;
+    }
+}
+
+/* mobile: 393 x 873 (5.7% market share Sep 2024) */
+/* iPhone 15 and 15 Pro, iPhone 14 Pro 393 x 852 */
+/* Google Pixel 5 393 x 851 */
+/* Google Pixel 4 393 x 830 */
+/* Google Pixel 3a 393 x 808 */
+/* Google Pixel 3 393 x 786 */
 @media screen and (width: 393px) {
     :root {
         --fontSizePg: 1rem !important;
@@ -933,6 +2303,44 @@
     }
 }
 
+@media screen and (width: 393px) and (height: 873px) {
+    .return_origin_btn {
+        top: 15%;
+    }
+}
+
+@media screen and (width: 393px) and (height: 852px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 393px) and (height: 851px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 393px) and (height: 830px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 393px) and (height: 808px) {
+    .return_origin_btn {
+        top: 17%;
+    }
+}
+
+@media screen and (width: 393px) and (height: 786px) {
+    .return_origin_btn {
+        top: 17%;
+    }
+}
+
+/* mobile: 390 x 844 (7.19% market share Sep 2024) */
+/* iPhone 14, iPhone 13 and 13 Pro, iPhone 12 and 12 Pro 390 x 844 */
 @media screen and (width: 390px) {
     :root {
         --fontSizePg: 1rem !important;
@@ -943,9 +2351,18 @@
     }
 }
 
+@media screen and (width: 390px) and (height: 844px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+/* Galaxy S21 Plus, Galaxy S20 Plus 384 x 854 */
+/* Galaxy S24 Plus, Galaxy S23 Plus, Galaxy S22 Plus 384 x 832 */
+/* Galaxy S24 Ultra, Galaxy S23 Ultra, Galaxy S22 Ultra 384 x 824 */
 @media screen and (width: 384px) {
     :root {
-        --fontSizeH1: 1.7rem !important;
+        --fontSizeH1: 1.6rem !important;
         --fontSizePg: 1rem !important;
     }
 
@@ -954,9 +2371,30 @@
     }
 }
 
+@media screen and (width: 384px) and (height: 854px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 384px) and (height: 832px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 384px) and (height: 824px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+/* mobile: 375 x 812 (3.69% market share Sep 2024) */
+/* iPhone 13 Mini, iPhone 12 Mini, iPhone 11 Pro, iPhone X and XS 375 x 812 */
+/* iPhone SE 2022, iPhone SE 2020, iPhone 8, iPhone 7, iPhone 6S 375 x 667 */
 @media screen and (width: 375px) {
     :root {
-        --fontSizeH1: 1.7rem !important;
+        --fontSizeH1: 1.6rem !important;
         --fontSizePg: 1rem !important;
     }
 
@@ -965,16 +2403,65 @@
     }
 }
 
+@media screen and (width: 375px) and (height: 812px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 375px) and (height: 667px) {
+    .return_origin_btn {
+        top: 20%;
+    }
+}
+
+/* mobile: 360 x 800 (11.13% market share Sep 2024) */
+/* Galaxy S21, Galaxy S20 360 x 800 */
+/* Galaxy S24, Galaxy S23, Galaxy S22 360 x 780 */
+/* Galaxy S9, Galaxy S8 360 x 740 */
+/* LG G6, OnePlus 5t 360 x 720 */
+/* Galaxy S7, Galaxy S6 and S6 Edge 360 x 640 */
 @media screen and (width: 360px) {
     :root {
-        --fontSizeH1: 1.6rem !important;
+        --fontSizeH1: 1.5rem !important;
         --fontSizePg: 1rem !important;
     }
 }
 
+@media screen and (width: 360px) and (height: 800px) {
+    .return_origin_btn {
+        top: 16%;
+    }
+}
+
+@media screen and (width: 360px) and (height: 780px) {
+    .return_origin_btn {
+        top: 16.5%;
+    }
+}
+
+@media screen and (width: 360px) and (height: 740px) {
+    .return_origin_btn {
+        top: 17%;
+    }
+}
+
+@media screen and (width: 360px) and (height: 720px) {
+    .return_origin_btn {
+        top: 18%;
+    }
+}
+
+@media screen and (width: 360px) and (height: 640px) {
+    .return_origin_btn {
+        top: 20%;
+    }
+}
+
+/* iPhone SE 320 x 568 */
 @media screen and (width: 320px) {
     :root {
-        --fontSizeH1: 1.4rem !important;
+        --fontSizeH1: 1.3rem !important;
         --fontSizeHero: 1.6rem !important;
         --fontSizePg: 1rem !important;
     }
@@ -985,5 +2472,11 @@
 
     .dropbtn {
         padding: 7px;
+    }
+}
+
+@media screen and (width: 320px) and (height: 568px) {
+    .return_origin_btn {
+        top: 22%;
     }
 }
