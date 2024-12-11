@@ -11,6 +11,10 @@
         width: 80%;
     }
 
+    .formFields {
+        width: 100%;
+    }
+
     .portfolio_item {
         grid-template-columns: 1.5fr 2fr;
     }
@@ -189,11 +193,6 @@
         grid-template-columns: 1fr 50px;
     }
 
-    form {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr) .5fr;
-    }
-
     lord-icon {
         height: 100px;
         width: 100px;
@@ -237,6 +236,11 @@
         grid-template-columns: 2fr 1fr;
     }
 
+    .formFields {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr) .5fr;
+    }
+
     .footer_left {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -278,7 +282,7 @@
 
 @media screen and (max-width: 600px) {
     form {
-        margin-bottom: 20%;
+        margin-bottom: 10%;
     }
 
     .portfolio_description li, .portfolio_description p {
@@ -425,6 +429,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizeHero: 5.3rem;
     }
 
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
     form {
         margin-bottom: 16%;
     }
@@ -435,6 +443,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
     :root {
         --fontSizeH1: 3.5rem;
     }
+
+    div .grecaptcha-badge {
+        bottom: 150px !important;
+    }
 }
 
 /* desktop: 1536 x 864 (11.85% market share Sep 2024) */
@@ -443,6 +455,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizeH1: 3rem;
         --fontSizeH4: 1.6rem;
         --fontSizeHero: 4.4rem;
+    }
+
+    div .grecaptcha-badge {
+        bottom: 80px !important;
     }
 
     lord-icon {
@@ -468,6 +484,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
     :root {
         --fontSizeH1: 2.9rem;
         --fontSizeHero: 3.9rem;
+    }
+
+    div .grecaptcha-badge {
+        bottom: 120px !important;
     }
 
     form {
@@ -508,6 +528,30 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
     }
 }
 
+@media screen and (width: 1366px) and (height: 1024px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .formFields {
+        margin-top: 0;
+    }
+}
+
+@media screen and (width: 1366px) and (height: 768px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+}
+
 /* desktop: 1280 x 720 (6.37% market share Sep 2024) */
 /* tablet: 1280 x 800 (6.4% market share Sep 2024) */
 @media screen and (width: 1280px) {
@@ -544,8 +588,22 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
     }
 }
 
+@media screen and (width: 1280px) and (height: 720px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 11%;
+    }
+}
+
 /* windows laptop 1280 x 800 */
 @media screen and (width: 1280px) and (height: 800px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
     form {
         margin-bottom: 11%;
     }
@@ -558,6 +616,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizeH4: 1.4rem;
         --fontSizeHero: 3rem;
         --fontSizePg: 1rem;
+    }
+
+    div .grecaptcha-badge {
+        bottom: 120px !important;
     }
 
     form {
@@ -601,6 +663,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizePg: 1rem;
     }
 
+    div .grecaptcha-badge {
+        bottom: 120px !important;
+    }
+
     form {
         margin-bottom: 14.5%;
     }
@@ -640,6 +706,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizeH4: 1.4rem;
         --fontSizeHero: 3rem;
         --fontSizePg: 1rem;
+    }
+
+    div .grecaptcha-badge {
+        bottom: 120px !important;
     }
 
     form {
@@ -682,6 +752,10 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
         --fontSizeH4: 1.4rem;
         --fontSizeHero: 4.3rem;
         --fontSizePg: 1rem;
+    }
+
+    div .grecaptcha-badge {
+        bottom: 80px !important;
     }
 
     form {
@@ -783,12 +857,20 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 1024px) and (height: 1366px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
     .return_origin_btn {
         top: 13%;
     }
 }
 
 @media screen and (width: 1024px) and (height: 768px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
     .return_origin_btn {
         top: 20%;
     }
@@ -848,6 +930,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 998px) and (height: 448px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -885,6 +975,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 932px) and (height: 430px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 37%;
     }
@@ -922,6 +1020,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 926px) and (height: 428px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 35%;
     }
@@ -960,6 +1066,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 915px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -998,6 +1112,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 896px) and (height: 414px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1035,6 +1157,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 892px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1072,6 +1206,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 873px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1109,6 +1255,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 869px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1146,6 +1304,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 854px) and (height: 384px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1183,6 +1353,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 853px) and (height: 480px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 32%;
     }
@@ -1220,6 +1402,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 852px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1257,6 +1451,18 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 851px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .copyright {
+        font-size: var(--fontSizeXs);
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1294,6 +1500,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 846px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1332,6 +1546,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 844px) and (height: 390px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
@@ -1370,12 +1592,28 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 834px) and (height: 1194px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
 }
 
 @media screen and (width: 834px) and (height: 1112px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -1413,6 +1651,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 832px) and (height: 384px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
@@ -1450,6 +1696,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 830px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
@@ -1492,12 +1746,28 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 824px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
 }
 
 @media screen and (width: 824px) and (height: 384px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
@@ -1539,6 +1809,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 820px) and (height: 1180px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -1580,6 +1858,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 812px) and (height: 375px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1622,6 +1908,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 810px) and (height: 1080px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -1663,6 +1957,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 808px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 40%;
     }
@@ -1706,12 +2008,28 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 800px) and (height: 1280px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 13%;
     }
 }
 
 @media screen and (width: 800px) and (height: 360px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 50%;
     }
@@ -1759,6 +2077,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 786px) and (height: 393px) {
+    div .grecaptcha-badge {
+        bottom: 65px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 42%;
     }
@@ -1801,13 +2127,21 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 780px) and (height: 360px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
 }
 
 /* tablet: 768 x 1024 (20.09% market share Sep 2024) */
-/* iPad Mini 4 764 x 1024 */
+/* iPad Mini 4 768 x 1024 */
 /* iPad Pro 9 768 x 1024 */
 @media screen and (width: 768px) {
     :root {
@@ -1839,6 +2173,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 768px) and (height: 1024px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 0;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -1880,6 +2222,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 740px) and (height: 360px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 45%;
     }
@@ -1916,6 +2266,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 736px) and (height: 414px) {
+    div .grecaptcha-badge {
+        bottom: 135px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 37%;
     }
@@ -1952,6 +2310,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 732px) and (height: 412px) {
+    div .grecaptcha-badge {
+        bottom: 135px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 37%;
     }
@@ -1988,6 +2354,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 720px) and (height: 360px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 42%;
     }
@@ -2024,6 +2398,15 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 667px) and (height: 375px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+        width: 70%;
+    }
+
     .return_origin_btn {
         top: 37%;
     }
@@ -2060,6 +2443,15 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 640px) and (height: 360px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+        width: 70%;
+    }
+
     .return_origin_btn {
         top: 38%;
     }
@@ -2096,6 +2488,15 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 568px) and (height: 320px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+        width: 70%;
+    }
+
     .return_origin_btn {
         top: 50%;
     }
@@ -2132,6 +2533,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 480px) and (height: 853px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 17.5%;
     }
@@ -2168,6 +2577,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 448px) and (height: 998px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -2186,6 +2603,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 430px) and (height: 932px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -2204,6 +2629,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 428px) and (height: 926px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
@@ -2223,12 +2656,28 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 414px) and (height: 896px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
 }
 
 @media screen and (width: 414px) and (height: 736px) {
+    div .grecaptcha-badge {
+        bottom: 130px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 17.5%;
     }
@@ -2252,36 +2701,84 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 412px) and (height: 915px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 14.5%;
     }
 }
 
 @media screen and (width: 412px) and (height: 892px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 14.5%;
     }
 }
 
 @media screen and (width: 412px) and (height: 869px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
 }
 
 @media screen and (width: 412px) and (height: 846px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15.5%;
     }
 }
 
 @media screen and (width: 412px) and (height: 824px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 412px) and (height: 732px) {
+    div .grecaptcha-badge {
+        bottom: 130px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 18%;
     }
@@ -2304,36 +2801,84 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 393px) and (height: 873px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 15%;
     }
 }
 
 @media screen and (width: 393px) and (height: 852px) {
+    div .grecaptcha-badge {
+        bottom: 100px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 393px) and (height: 851px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 393px) and (height: 830px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 393px) and (height: 808px) {
+    div .grecaptcha-badge {
+        bottom: 70px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 17%;
     }
 }
 
 @media screen and (width: 393px) and (height: 786px) {
+    div .grecaptcha-badge {
+        bottom: 60px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 17%;
     }
@@ -2352,6 +2897,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 390px) and (height: 844px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
@@ -2372,18 +2925,42 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 384px) and (height: 854px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 384px) and (height: 832px) {
+    div .grecaptcha-badge {
+        bottom: 90px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 384px) and (height: 824px) {
+    div .grecaptcha-badge {
+        bottom: 80px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
@@ -2404,12 +2981,28 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 375px) and (height: 812px) {
+    div .grecaptcha-badge {
+        bottom: 65px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 375px) and (height: 667px) {
+    div .grecaptcha-badge {
+        bottom: 115px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 20%;
     }
@@ -2429,30 +3022,70 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 360px) and (height: 800px) {
+    div .grecaptcha-badge {
+        bottom: 65px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16%;
     }
 }
 
 @media screen and (width: 360px) and (height: 780px) {
+    div .grecaptcha-badge {
+        bottom: 570px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 16.5%;
     }
 }
 
 @media screen and (width: 360px) and (height: 740px) {
+    div .grecaptcha-badge {
+        bottom: 530px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 17%;
     }
 }
 
 @media screen and (width: 360px) and (height: 720px) {
+    div .grecaptcha-badge {
+        bottom: 500px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 18%;
     }
 }
 
 @media screen and (width: 360px) and (height: 640px) {
+    div .grecaptcha-badge {
+        bottom: 420px !important;
+    }
+
+    form {
+        margin-bottom: 10%;
+    }
+
     .return_origin_btn {
         top: 20%;
     }
@@ -2476,6 +3109,14 @@ https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide
 }
 
 @media screen and (width: 320px) and (height: 568px) {
+    div .grecaptcha-badge {
+        bottom: 380px !important;
+    }
+
+    form {
+        margin-bottom: 20%;
+    }
+
     .return_origin_btn {
         top: 22%;
     }

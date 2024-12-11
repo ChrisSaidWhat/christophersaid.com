@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="author" content="Christopher Said">
-        <meta name="description" content="The point of contact for web developer and graphic designer, Christopher Said, Ankeny, Iowa.">
-        <meta name="keywords" content="portfolio, contact form, point of contact, get in touch, schedule, book, hire, freelance, tutor, interview, web development, web developer, graphic design, graphic designer, photography, photographer, programming, programmer, software development, software developer, Iowa, Ankeny">
+        <meta content="Christopher Said" name="author">
+        <meta content="The point of contact for web developer and graphic designer, Christopher Said, Ankeny, Iowa."
+              name="description">
+        <meta content="portfolio, contact form, point of contact, get in touch, schedule, book, hire, freelance, tutor, interview, web development, web developer, graphic design, graphic designer, photography, photographer, programming, programmer, software development, software developer, Iowa, Ankeny"
+              name="keywords">
         <title>CS Design & Dev - Contact</title>
         <link href="../assets/favicon.svg" rel="icon" type="image/x-icon">
         <link href="../stylesheet/declaration.css" rel="stylesheet" type="text/css">
@@ -16,6 +18,7 @@
         <link href="../stylesheet/responsive.css" rel="stylesheet" type="text/css">
 
         <script crossorigin="anonymous" src="https://kit.fontawesome.com/73da6968f8.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lc2wK0pAAAAAKRizE0CrWRFCL8N7tR_JKZeFTQ8"></script>
 
         <script>
             //  code taken from W3Schools
@@ -36,43 +39,58 @@
                 }
             }
 
-            function formPreprocessing() {
-                let validForm = true;
+            // code for validation and Recaptcha taken form https://youtu.be/0L4Ge036Dbo?si=FCfsi8W525REt2xN
+            window.addEventListener("load", function () {
+                "use strict";
+                const form = document.querySelector("form");
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    let fields = document.querySelectorAll("form .formField");
+                    let valid = true;
 
-                if (validateFirstName()) {
-
-                }
-                else {
-                    validForm = false;
-                }
-
-                if (validateLastName()) {
-
-                }
-                else {
-                    validForm = false;
-                }
-
-                if (validateEmail()) {
-
-                }
-                else {
-                    validForm = false;
-                }
-
-                if (validateContactReason()) {
-
-                }
-                else {
-                    validForm = false;
-                }
-
-                if (validForm) {
-                    document.querySelector("form").submit();
-                    document.querySelector("form").reset();
-                    resetFunctionality();
-                }
-            }
+                    for (var i = 0; i < fields.length; i++) {
+                        fields[i].classList.remove("noError");
+                        if (fields[i].value === "") {
+                            fields[i].classList.add("hasError");
+                            valid = false;
+                        }
+                        else {
+                            fields[i].classList.remove("hasError");
+                            fields[i].classList.add("noError");
+                        }
+                    }
+                    if (valid) {
+                        document.querySelector(".formFields").style.display = "none";
+                        document.querySelector("#alert").innerText = "Processing your submission, please wait..."
+                        grecaptcha.ready(function () {
+                            grecaptcha.execute("6Lc2wK0pAAAAAKRizE0CrWRFCL8N7tR_JKZeFTQ8", {
+                                action: "contact"
+                            })
+                                    .then(function (token) {
+                                        let recaptchaResponse = document.getElementById("recaptchaResponse");
+                                        recaptchaResponse.value = token;
+                                        fetch("send.php", {
+                                            method: "POST",
+                                            body: new FormData(form),
+                                        })
+                                                .then((response) => response.text())
+                                                .then((response) => {
+                                                    const responseText = JSON.parse(response);
+                                                    if (responseText.error !== "") {
+                                                        document.querySelector("#alert").innerText = responseText.error;
+                                                        document.querySelector("#alert").classList.add("error");
+                                                        document.querySelector(".formFields").style.display = "block";
+                                                        return;
+                                                    }
+                                                    document.querySelector("#alert").innerText = responseText.success;
+                                                    document.querySelector("#alert").classList.add("success");
+                                                    window.location.replace("confirmation.html");
+                                                })
+                                    })
+                        })
+                    }
+                })
+            })
 
             function prepareFunctionality() {
                 //  code taken from ChatGPT after a discussion in which it was decided to modify previous iteration of this code
@@ -106,34 +124,6 @@
 
             window.onload = prepareFunctionality;
 
-            function prepareNewFirst() {
-                document.querySelector("#firstName").style.setProperty("color", "initial");
-                document.querySelector("#firstName").placeholder = "First Name";
-            }
-
-            function prepareNewLast() {
-                document.querySelector("#lastName").style.setProperty("color", "initial");
-                document.querySelector("#lastName").placeholder = "Last Name";
-            }
-
-            function prepareNewEmail() {
-                document.querySelector("#email").style.setProperty("color", "initial");
-                document.querySelector("#email").placeholder = "Email Address";
-            }
-
-            function prepareNewContactReason() {
-                document.querySelector("#contactReason").style.setProperty("color", "initial");
-                document.querySelector("#contactReason").style.setProperty("opacity", "1");
-                document.querySelector("#firstOpt").text = "Select A Reason...";
-            }
-
-            function resetFunctionality() {
-                prepareNewFirst();
-                prepareNewLast();
-                prepareNewEmail();
-                prepareNewContactReason();
-            }
-
             //  code taken from W3Schools.com
             window.onscroll = function () {
                 scrollIndicator()
@@ -152,84 +142,92 @@
                 document.documentElement.scrollTop = 0;
             }
 
-            function validateContactReason() {
-                let field = document.querySelector("#contactReason").value;
-                let validForm = true;
-
-                if (field === "") {
-                    validForm = false;
-                    document.querySelector("#contactReason").style.setProperty("color", "red");
-                    document.querySelector("#contactReason").style.setProperty("opacity", ".54");
-                    document.querySelector("#firstOpt").text = "*Must Select A Reason!";
-                }
-
-                return validForm;
-            }
-
-            function validateEmail() {
-                let field = document.querySelector("#email").value;
-                let validForm = true;
-                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (emailPattern.test(field) === false) {
-                    validForm = false;
-                    document.querySelector("#email").style.setProperty("color", "red");
-                    document.querySelector("#email").placeholder = "*Must Be A Valid Email!";
-                }
-
-                return validForm;
-            }
-
-            function validateFirstName() {
-                let field = document.querySelector("#firstName").value;
-                let validForm = true;
-
-                if (field === "") {
-                    validForm = false;
-                    document.querySelector("#firstName").style.setProperty("color", "red");
-                    document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
-                }
-                if (field === null) {
-                    validForm = false;
-                    document.querySelector("#firstName").style.setProperty("color", "red");
-                    document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
-                }
-                if (isNaN(field) === false && field.length > 0) {
-                    validForm = false;
-                    document.querySelector("#firstName").style.setProperty("color", "red");
-                    document.querySelector("#firstName").value = "";
-                    document.querySelector("#firstName").placeholder = "*Cannot Include Numbers!";
-                }
-
-                return validForm;
-            }
-
-            function validateLastName() {
-                let field = document.querySelector("#lastName").value;
-                let validForm = true;
-
-                if (field === "") {
-                    validForm = false;
-                    document.querySelector("#lastName").style.setProperty("color", "red");
-                    document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
-                }
-                if (field === null) {
-                    validForm = false;
-                    document.querySelector("#lastName").style.setProperty("color", "red");
-                    document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
-                }
-                if (isNaN(field) === false && field.length > 0) {
-                    validForm = false;
-                    document.querySelector("#lastName").style.setProperty("color", "red");
-                    document.querySelector("#lastName").value = "";
-                    document.querySelector("#lastName").placeholder = "*Cannot Include Numbers!";
-                }
-
-                return validForm;
-            }
+            // function validateContactReason() {
+            //     let field = document.querySelector("#contactReason").value;
+            //     let validForm = true;
+            //
+            //     if (field === "") {
+            //         validForm = false;
+            //         document.querySelector("#contactReason").style.setProperty("color", "red");
+            //         document.querySelector("#contactReason").style.setProperty("opacity", ".54");
+            //         document.querySelector("#firstOpt").text = "*Must Select A Reason!";
+            //     }
+            //
+            //     return validForm;
+            // }
+            //
+            // function validateEmail() {
+            //     let field = document.querySelector("#email").value;
+            //     let validForm = true;
+            //     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            //
+            //     if (emailPattern.test(field) === false) {
+            //         validForm = false;
+            //         document.querySelector("#email").style.setProperty("color", "red");
+            //         document.querySelector("#email").placeholder = "*Must Be A Valid Email!";
+            //     }
+            //
+            //     return validForm;
+            // }
+            //
+            // function validateFirstName() {
+            //     let field = document.querySelector("#firstName").value;
+            //     let validForm = true;
+            //
+            //     if (field === "") {
+            //         validForm = false;
+            //         document.querySelector("#firstName").style.setProperty("color", "red");
+            //         document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
+            //     }
+            //     if (field === null) {
+            //         validForm = false;
+            //         document.querySelector("#firstName").style.setProperty("color", "red");
+            //         document.querySelector("#firstName").placeholder = "*Cannot Be Blank!";
+            //     }
+            //     if (isNaN(field) === false && field.length > 0) {
+            //         validForm = false;
+            //         document.querySelector("#firstName").style.setProperty("color", "red");
+            //         document.querySelector("#firstName").value = "";
+            //         document.querySelector("#firstName").placeholder = "*Cannot Include Numbers!";
+            //     }
+            //
+            //     return validForm;
+            // }
+            //
+            // function validateLastName() {
+            //     let field = document.querySelector("#lastName").value;
+            //     let validForm = true;
+            //
+            //     if (field === "") {
+            //         validForm = false;
+            //         document.querySelector("#lastName").style.setProperty("color", "red");
+            //         document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
+            //     }
+            //     if (field === null) {
+            //         validForm = false;
+            //         document.querySelector("#lastName").style.setProperty("color", "red");
+            //         document.querySelector("#lastName").placeholder = "*Cannot Be Blank!";
+            //     }
+            //     if (isNaN(field) === false && field.length > 0) {
+            //         validForm = false;
+            //         document.querySelector("#lastName").style.setProperty("color", "red");
+            //         document.querySelector("#lastName").value = "";
+            //         document.querySelector("#lastName").placeholder = "*Cannot Include Numbers!";
+            //     }
+            //
+            //     return validForm;
+            // }
         </script>
 
         <style>
+            footer {
+                bottom: 0px;
+                left: 0px;
+                position: fixed;
+                right: 0px;
+                z-index: 0;
+            }
+
             h2 {
                 padding: var(--space-sm);
             }
@@ -238,6 +236,22 @@
                 align-items: center;
                 display: grid;
                 justify-items: center;
+            }
+
+            .hasError {
+                border: 1px solid #EC7846;
+            }
+
+            .noError {
+                border: 1px solid #D0E17AFF;
+            }
+
+            .error {
+                color: #EC7846;
+            }
+
+            .success {
+                color: #D0E17AFF;
             }
         </style>
     </head>
@@ -291,47 +305,51 @@
         </header>
         <h2 class="hero_text">I'd Love To Hear From You</h2>
         <main>
-            <form action="contactProcessing.php" method="post">
-                <div id="field_fname">
-                    <label for="firstName">First Name: </label>
-                    <input id="firstName" name="firstName" onclick="prepareNewFirst()" placeholder="First Name" required
-                           type="text">
-                </div>
+            <form id="contactForm" method="post">
+                <input id="recaptchaResponse" name="recaptchaResponse" type="hidden">
+                <div class="formFields">
+                    <div id="field_fname">
+                        <label for="firstName">First Name: </label>
+                        <input class="formField" id="firstName" name="firstName"
+                               placeholder="First Name" type="text">
+                    </div>
 
-                <div id="field_lname">
-                    <label for="lastName">Last Name: </label>
-                    <input id="lastName" name="lastName" onclick="prepareNewLast()" placeholder="Last Name" required
-                           type="text">
-                </div>
+                    <div id="field_lname">
+                        <label for="lastName">Last Name: </label>
+                        <input class="formField" id="lastName" name="lastName" placeholder="Last Name" type="text">
+                    </div>
 
-                <div id="field_email">
-                    <label for="email">Email: </label>
-                    <input id="email" name="email" onclick="prepareNewEmail()" placeholder="Email Address" required
-                           type="email">
-                </div>
+                    <div id="field_email">
+                        <label for="email">Email: </label>
+                        <input class="formField" id="email" name="email" placeholder="Email Address" type="email">
+                    </div>
 
-                <div id="field_select">
-                    <label for="contactReason">Reason For Contact: </label>
-                    <select id="contactReason" name="contactReason" onclick="prepareNewContactReason()" required>
-                        <option id="firstOpt" value="">Select A Reason...</option>
-                        <option value="Freelance/Contract Work">Freelance/Contract Work</option>
-                        <option value="Schedule An Interview">Schedule An Interview</option>
-                        <option value="Internship Offer">Internship Offer</option>
-                        <option value="Employment Offer">Employment Offer</option>
-                        <option value="Tutoring Request">Tutoring Request</option>
-                        <option value="Further Information Request">Further Information Request</option>
-                    </select>
-                </div>
+                    <div id="field_select">
+                        <label for="contactReason">Reason For Contact: </label>
+                        <select class="formField" id="contactReason" name="contactReason">
+                            <option id="firstOpt" value="">Select A Reason...</option>
+                            <option value="Freelance/Contract Work">Freelance/Contract Work</option>
+                            <option value="Schedule An Interview">Schedule An Interview</option>
+                            <option value="Internship Offer">Internship Offer</option>
+                            <option value="Employment Offer">Employment Offer</option>
+                            <option value="Tutoring Request">Tutoring Request</option>
+                            <option value="Further Information Request">Further Information Request</option>
+                        </select>
+                    </div>
 
-                <div id="field_textarea">
-                    <label for="additionalComments">Additional Comments: </label>
-                    <textarea id="additionalComments" name="additionalComments"
-                              placeholder="Write Message Here..."></textarea>
-                </div>
+                    <div id="field_textarea">
+                        <label for="additionalComments">Additional Comments: </label>
+                        <textarea class="formField" id="additionalComments"
+                                  name="additionalComments" placeholder="Write Message Here..."></textarea>
+                    </div>
 
-                <div id="form_btns">
-                    <input id="submitBtn" onclick="formPreprocessing()" type="button" value="SUBMIT">
-                    <input id="resetBtn" onclick="resetFunctionality()" type="reset" value="RESET">
+                    <div id="form_btns">
+                        <input id="submitBtn" type="submit" value="SUBMIT">
+                        <input id="resetBtn" type="reset" value="RESET">
+                    </div>
+                </div>
+                <div id="alert">
+
                 </div>
             </form>
         </main>

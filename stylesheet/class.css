@@ -228,6 +228,15 @@
     cursor: pointer;
 }
 
+.formFields {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr .5fr;
+    margin-bottom: 10%;
+    width: 1200px;
+}
+
 .headshot {
     background-color: var(--primaryColor);
     border: 4px solid var(--secondaryColor);

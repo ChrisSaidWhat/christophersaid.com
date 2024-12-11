@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Christopher Said" name="author">
+        <meta content="The point of contact for web developer and graphic designer, Christopher Said, Ankeny, Iowa."
+              name="description">
+        <meta content="portfolio, contact form, point of contact, get in touch, schedule, book, hire, freelance, tutor, interview, web development, web developer, graphic design, graphic designer, photography, photographer, programming, programmer, software development, software developer, Iowa, Ankeny"
+              name="keywords">
+        <title>CS Design & Dev - Contact</title>
+        <link href="../assets/favicon.svg" rel="icon" type="image/x-icon">
+        <link href="../stylesheet/declaration.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/global.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/class.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/id.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/animation.css" rel="stylesheet" type="text/css">
+        <link href="../stylesheet/responsive.css" rel="stylesheet" type="text/css">
+
+        <script crossorigin="anonymous" src="https://kit.fontawesome.com/73da6968f8.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lc2wK0pAAAAAKRizE0CrWRFCL8N7tR_JKZeFTQ8"></script>
+
+        <script>
+            //  code taken from W3Schools
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            window.onclick = function (event) {
+                if (!event.target.matches('.dropbtn')) {
+                    var dropdowns = document.getElementsByClassName("dropdown-content");
+                    var i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+
+            window.addEventListener("load", function () {
+                "use strict";
+                const form = document.querySelector("form");
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    let fields = document.querySelectorAll("form .formField");
+                    let valid = true;
+
+                    for (var i = 0; i < fields.length; i++) {
+                        fields[i].classList.remove("noError");
+                        if (fields[i].value === "") {
+                            fields[i].classList.add("hasError");
+                            valid = false;
+                        }
+                        else {
+                            fields[i].classList.remove("hasError");
+                            fields[i].classList.add("noError");
+                        }
+                    }
+                    if (valid) {
+                        document.querySelector(".formFields").style.display = "none";
+                        document.querySelector("#alert").innerText = "Processing your submission, please wait..."
+                        grecaptcha.ready(function() {
+                            grecaptcha.execute("6Lc2wK0pAAAAAKRizE0CrWRFCL8N7tR_JKZeFTQ8", { action: "contact"
+                            })
+                                    .then(function(token) {
+                                        let recaptchaResponse = document.getElementById("recaptchaResponse");
+                                        recaptchaResponse.value = token;
+                                        fetch("send.php", {
+                                            method: "POST",
+                                            body: new FormData(form),
+                                        })
+                                                .then((response) => response.text())
+                                                .then((response) => {
+                                                    const responseText = JSON.parse(response);
+                                                    if(responseText.error !== "") {
+                                                        document.querySelector("#alert").innerText = responseText.error;
+                                                        document.querySelector("#alert").classList.add("error");
+                                                        document.querySelector(".formFields").style.display = "block";
+                                                        return;
+                                                    }
+                                                    document.querySelector("#alert").innerText = responseText.success;
+                                                    document.querySelector("#alert").classList.add("success");
+                                                })
+                            })
+                        })
+                    }
+                })
+            })
+
+            function prepareFunctionality() {
+                //  code taken from ChatGPT after a discussion in which it was decided to modify previous iteration of this code
+                const toast = document.getElementById('toast');
+
+                // Function to attach event listeners to both .hover_item and .logo_link_alt
+                function attachHoverListeners() {
+                    const hoverItems = document.querySelectorAll('.hover_item, .hover_item_alt');
+
+                    hoverItems.forEach(hoverItem => {
+                        hoverItem.addEventListener('mouseenter', () => {
+                            toast.style.visibility = 'visible';
+                            toast.style.opacity = '1';
+                        });
+
+                        hoverItem.addEventListener('mouseleave', () => {
+                            setTimeout(() => {
+                                toast.style.visibility = 'hidden';
+                                toast.style.opacity = '0';
+                            }, 4000); // Toast disappears after 4 seconds
+                        });
+                    });
+                }
+
+                // Attach listeners initially
+                attachHoverListeners();
+
+                // Optional: Re-attach listeners on window resize (if dynamic layout changes are frequent)
+                window.addEventListener('resize', attachHoverListeners);
+            }
+
+            window.onload = prepareFunctionality;
+
+
+            //  code taken from W3Schools.com
+            window.onscroll = function () {
+                scrollIndicator()
+            };
+
+            function scrollIndicator() {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll_indicator").style.width = scrolled + "%";
+            }
+
+            //  code taken from W3Schools.com
+            function scrollToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+        </script>
+
+        <style>
+            h2 {
+                padding: var(--space-sm);
+            }
+
+            main {
+                align-items: center;
+                display: grid;
+                justify-items: center;
+            }
+
+            .hasError {
+                border: 1px solid red;
+            }
+
+            .noError {
+                border: 1px solid green;
+            }
+
+            .error {
+                color: red;
+            }
+
+            .success {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9K6SPKXYX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-S9K6SPKXYX');
+    </script>
+
+    <body>
+        <header class="border_bottom">
+            <a class="no_underline" href="../index.html">
+                <div class="cs_branding_container border_right">
+                    <img alt="CS Design & Dev logo." class="cs_logo" src="../assets/personalMonogramLogo.svg">
+                    <h1 class="branding_main">Christopher Said Design & Dev</h1>
+                    <h1 class="branding_alt">Christopher Said</h1>
+                </div>
+            </a>
+            <nav>
+                <a class="nav_item" href="../index.html">Home</a>
+                <a class="nav_item" href="../work/work.html">My Work</a>
+                <a class="nav_item" href="../resume/resume.html">Resume</a>
+                <a class="nav_item" href="../contact/contact.html">Contact</a>
+            </nav>
+            <nav class="mobile_nav">
+                <!-- Code taken from W3Schools-->
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="myFunction()"><i class="fa-solid fa-bars"></i></button>
+                    <!-- Bars from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/bars?f=classic&s=solid -->
+                    <div class="dropdown-content" id="myDropdown">
+                        <a href="../index.html">Home</a>
+                        <a href="../work/work.html">My Work</a>
+                        <a href="../resume/resume.html">Resume</a>
+                        <a href="../contact/contact.html">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="progress_container">
+                <div class="progress_bar" id="scroll_indicator"></div>
+            </div> <!-- Taken from W3Schools.com -->
+        </header>
+        <h2 class="hero_text">I'd Love To Hear From You</h2>
+        <main>
+            <form action="contactProcessing.php" id="contactForm" method="post">
+                <input type="hidden" name="recaptchaResponse" id="recaptchaResponse">
+                <div class="formFields">
+                    <div id="field_fname">
+                        <label for="firstName">First Name: </label>
+                        <input class="formField" id="firstName" name="firstName"
+                               placeholder="First Name" type="text">
+                    </div>
+
+                    <div id="field_lname">
+                        <label for="lastName">Last Name: </label>
+                        <input class="formField" id="lastName" name="lastName" placeholder="Last Name" type="text">
+                    </div>
+
+                    <div id="field_email">
+                        <label for="email">Email: </label>
+                        <input class="formField" id="email" name="email" placeholder="Email Address" type="email">
+                    </div>
+
+                    <div id="field_select">
+                        <label for="contactReason">Reason For Contact: </label>
+                        <select class="formField" id="contactReason" name="contactReason">
+                            <option id="firstOpt" value="">Select A Reason...</option>
+                            <option value="Freelance/Contract Work">Freelance/Contract Work</option>
+                            <option value="Schedule An Interview">Schedule An Interview</option>
+                            <option value="Internship Offer">Internship Offer</option>
+                            <option value="Employment Offer">Employment Offer</option>
+                            <option value="Tutoring Request">Tutoring Request</option>
+                            <option value="Further Information Request">Further Information Request</option>
+                        </select>
+                    </div>
+
+                    <div id="field_textarea">
+                        <label for="additionalComments">Additional Comments: </label>
+                        <textarea class="formField" id="additionalComments"
+                                  name="additionalComments" placeholder="Write Message Here..."></textarea>
+                    </div>
+
+                    <div id="form_btns">
+                        <input id="submitBtn" type="submit" value="SUBMIT">
+                        <input id="resetBtn" type="reset" value="RESET">
+                    </div>
+                </div>
+                <div id="alert">
+
+                </div>
+            </form>
+        </main>
+        <footer class="border_top">
+            <div class="footer_left border_right">
+                <div class="footer_left_left_half">
+                    <div class="copyright">&copy; 2024 Christopher Said - All Rights Reserved</div>
+                </div>
+                <div class="footer_left_right_half">
+                    <a class="no_underline logo_link" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.linkedin.com/in/cs-design-and-dev/"
+                       target="_blank"><i class="fa-brands fa-linkedin fa-xl"></i></a>
+                    <!-- LinkedIn logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/linkedin?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.instagram.com/christopher_said_design/"
+                       target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    <!-- Instagram logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/instagram?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://github.com/ChrisSaidWhat" target="_blank"><i
+                            class="fa-brands fa-github fa-xl"></i></a>
+                    <!-- GitHub logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/github?f=brands&s=solid -->
+                    <a class="no_underline logo_link" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt" href="https://www.flickr.com/people/195699998@N02/"
+                       target="_blank"><i class="fa-brands fa-flickr fa-xl"></i></a>
+                    <!-- Flickr logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/flickr?f=brands&s=solid -->
+                    <a class="no_underline logo_link hover_item"><i class="fa-brands fa-creative-commons-by fa-2xl"></i></a>
+                    <a class="no_underline logo_link_alt hover_item_alt"><i
+                            class="fa-brands fa-creative-commons-by fa-xl"></i></a>
+                    <!-- Creative Commons BY logo from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/creative-commons-by?f=brands&s=solid -->
+                    <div class="toast" id="toast">
+                        <h6 class="toast_heading">Attribution</h6>
+                        <div class="attribution"><a href="https://lordicon.com/">Animated icons by Lordicon.com</a>
+                        </div>
+                        <div class="attribution"><a href="https://fontawesome.com/">Brand and other icons by Font
+                            Awesome</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_right" onclick="scrollToTop()">
+                <i class="fa-solid fa-chevron-up fa-2xl"></i>
+                <!-- Chevron-up from Font Awesome is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+                    and is available at https://fontawesome.com/icons/chevron-up?f=classic&s=solid -->
+            </div>
+        </footer>
+    </body>
+</html>
